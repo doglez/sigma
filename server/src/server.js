@@ -1,0 +1,76 @@
+import colors from "colors";
+import cookieParser from "cookie-parser";
+import express from "express";
+import ExpressMongoSanitize from "express-mongo-sanitize";
+import rateLimit from "express-rate-limit";
+import helmet from "helmet";
+import morgan from "morgan";
+import xss from "xss-clean";
+import hpp from "hpp";
+import cors from "cors";
+import Config from "./config/Config.js";
+import ConnectDB from "./database/ConnectDB.js";
+import Routes from "./routes/Routes.js";
+import ErrorHandler from "./middleware/ErrorHandler.js";
+
+colors.enable();
+
+const app = express();
+ConnectDB();
+
+// Body parser
+app.use(express.json());
+
+// Cookie parser
+app.use(cookieParser());
+
+// Dev loggin middleware
+if (Config.NODE_ENV === "development") {
+    app.use(morgan("dev"));
+}
+
+// Sanitize data prevent NoSQL injection && sanitize data
+app.use(
+    ExpressMongoSanitize({
+        replaceWith: "_",
+    })
+);
+
+// Set security header with helmet
+app.use(helmet());
+
+// Prevent XSS attacks
+app.use(xss());
+
+// Rate limit
+const limmiter = rateLimit({
+    windowMs: 10 * 60 * 1000,
+    max: 100,
+});
+app.use(limmiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
+// Enable CORS
+app.use(cors());
+
+// Routes
+app.use("/api/v1", Routes);
+
+// Error handler
+app.use(ErrorHandler);
+
+// Listen port
+const server = app.listen(Config.PORT, () => {
+    console.log(
+        `Server running in ${Config.NODE_ENV} mode on http://localhost:${Config.PORT}`
+            .yellow.bold
+    );
+});
+
+// Handle unhandle promise rejection
+process.on("unhandledRejection", (err, promise) => {
+    console.error(`Error: ${err}`.bgRed);
+    server.close(() => process.exit(1));
+});
