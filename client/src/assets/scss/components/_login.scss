@@ -1,0 +1,18 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 30px;
+
+    background: #ffffff;
+    border: 1px solid $dark;
+    border-radius: 5px;
+
+    .login-input {
+        outline: none;
+    }
+
+    .error-login {
+        font-size: smaller;
+    }
+}
