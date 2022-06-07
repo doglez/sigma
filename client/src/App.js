@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
+import Login from "./pages/Auth/Login.jsx";
+import PasswordRecovery from "./pages/Auth/PasswordRecovery.jsx";
 import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
-import PasswordRecovery from "./pages/PasswordRecovery.jsx";
 
 function App() {
     return (

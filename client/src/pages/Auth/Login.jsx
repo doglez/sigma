@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import Logo from "../assets/images/summation.png";
+import Logo from "../../assets/images/summation.png";
 
 const Login = () => {
     const [viewPass, setViewPass] = useState(false);
@@ -16,7 +16,7 @@ const Login = () => {
     };
 
     return (
-        <div className="row d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center mt-5">
             <Formik
                 initialValues={{ email: "", password: "" }}
                 validationSchema={Yup.object({

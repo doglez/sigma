@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import React, { useState } from "react";
-import Logo from "../assets/images/summation.png";
+import Logo from "../../assets/images/summation.png";
 
 YupPassword(Yup);
 
@@ -18,7 +18,7 @@ const PasswordRecovery = () => {
     };
 
     return (
-        <div className="row d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center mt-5">
             <Formik
                 initialValues={{ password: "", passwordConfirm: "" }}
                 validationSchema={Yup.object({
