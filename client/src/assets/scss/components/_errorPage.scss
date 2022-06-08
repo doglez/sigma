@@ -1,0 +1,9 @@
+.error-page {
+    margin-top: $topNavbarHeight + 10;
+
+    .bi-emoji-frown {
+        font-size: 150px;
+        background-color: $warning;
+        padding: 0 10px;
+    }
+}

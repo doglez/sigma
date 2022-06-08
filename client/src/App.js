@@ -14,6 +14,7 @@ import Notifications from "./pages/Home/Notify/Notifications.jsx";
 import PersonalSettings from "./pages/PersonalSettings/PersonalSettings.jsx";
 import Providers from "./pages/Providers/Providers.jsx";
 import NavBar from "./templates/NavBar.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 function App() {
     return (
@@ -43,6 +44,7 @@ function App() {
                     <Route path="personalsettings">
                         <Route index element={<PersonalSettings />} />
                     </Route>
+                    <Route path="*" element={<ErrorPage />} />
                 </Route>
                 <Route path="/login">
                     <Route index element={<Login />} />
