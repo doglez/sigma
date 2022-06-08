@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "../assets/images/summation.png";
 
 const NavBar = () => {
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const HandleDrawer = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -15,7 +21,7 @@ const NavBar = () => {
                         data-bs-target="#offcanvasTrigger"
                         aria-controls="offcanvasTrigger"
                     >
-                        <span className="navbar-toggler-icon" />
+                        <i className="bi bi-list menu-icon" />
                     </button>
                     {/* End Offcanvas button trigger */}
 
@@ -33,17 +39,22 @@ const NavBar = () => {
                     <button
                         className="navbar-toggler"
                         type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
+                        onClick={HandleDrawer}
                     >
-                        <span className="navbar-toggler-icon" />
+                        <i
+                            className={
+                                mobileOpen
+                                    ? "bi bi-x-lg menu-icon"
+                                    : "bi bi-list menu-icon"
+                            }
+                        />
                     </button>
                     <div
-                        className="collapse navbar-collapse"
-                        id="navbarSupportedContent"
+                        className={
+                            !mobileOpen
+                                ? "navbar-collapse d-none"
+                                : "navbar-collapse"
+                        }
                     >
                         <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
                             <li className="nav-item navbar-tablet">
@@ -51,27 +62,44 @@ const NavBar = () => {
                                     className="nav-link"
                                     aria-current="page"
                                     to="/home/notifications"
+                                    onClick={HandleDrawer}
                                 >
                                     <i className="bi bi-bell-fill" />
                                 </Link>
                             </li>
                             <li className="nav-item navbar-tablet">
-                                <Link className="nav-link" to="home">
+                                <Link
+                                    className="nav-link"
+                                    to="home"
+                                    onClick={HandleDrawer}
+                                >
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item navbar-tablet">
-                                <Link className="nav-link" to="/maintenance">
+                                <Link
+                                    className="nav-link"
+                                    to="/maintenance"
+                                    onClick={HandleDrawer}
+                                >
                                     Maintenance
                                 </Link>
                             </li>
                             <li className="nav-item navbar-tablet">
-                                <Link className="nav-link" to="/providers">
+                                <Link
+                                    className="nav-link"
+                                    to="/providers"
+                                    onClick={HandleDrawer}
+                                >
                                     Providers
                                 </Link>
                             </li>
                             <li className="nav-item navbar-tablet">
-                                <Link className="nav-link" to="/inventory">
+                                <Link
+                                    className="nav-link"
+                                    to="/inventory"
+                                    onClick={HandleDrawer}
+                                >
                                     Inventory
                                 </Link>
                             </li>
@@ -94,6 +122,7 @@ const NavBar = () => {
                                     <Link
                                         className="dropdown-item text-white dropdown-item-modify"
                                         to="/personalsettings"
+                                        onClick={HandleDrawer}
                                     >
                                         Personal Settings
                                     </Link>
