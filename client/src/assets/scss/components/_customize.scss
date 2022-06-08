@@ -1,5 +1,16 @@
 $font-family-base: "Ubuntu", sans-serif;
+$offcanvas-widh: 270px;
+$topNavbarHeight: 58px;
 
 * {
     font-family: $font-family-base;
+}
+
+.main-page {
+    margin-left: $offcanvas-widh;
+    margin-top: $topNavbarHeight + 10;
+
+    @include media-breakpoint-down(lg) {
+        margin-left: 0;
+    }
 }

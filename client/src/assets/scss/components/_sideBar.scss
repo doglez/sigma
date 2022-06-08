@@ -1,0 +1,20 @@
+.side-bar {
+    width: $offcanvas-widh;
+}
+
+@include media-breakpoint-up(lg) {
+    body {
+        overflow: auto !important;
+    }
+
+    .offcanvas-backdrop::before {
+        display: none;
+    }
+
+    .side-bar {
+        transform: none;
+        visibility: visible !important;
+        top: $topNavbarHeight;
+        height: calc(100% - $topNavbarHeight);
+    }
+}

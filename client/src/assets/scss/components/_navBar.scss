@@ -1,0 +1,14 @@
+@include media-breakpoint-down(lg) {
+    #navbarDropdown {
+        margin-left: -15px;
+    }
+
+    .navbar-tablet {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.dropdown-item-modify:hover {
+    background-color: $secondary !important;
+}
