@@ -14,11 +14,16 @@ const SideBar = ({ links }) => {
                 id="offcanvasTrigger"
                 aria-labelledby="offcanvasLabel"
             >
-                <div className="offcanvas-body p-0">
+                <div
+                    className="offcanvas-body p-0 "
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                >
                     <div className="d-flex justify-content-center mt-3">
                         <img
                             src="https://via.placeholder.com/75"
                             alt="Company-Name"
+                            className="rounded"
                         />
                     </div>
                     {links === "home" ? (
