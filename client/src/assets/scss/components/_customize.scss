@@ -2,6 +2,8 @@ $font-family-base: "Ubuntu", sans-serif;
 $offcanvas-widh: 270px;
 $topNavbarHeight: 58px;
 
+$pink: $pink-400;
+
 * {
     font-family: $font-family-base;
 }
@@ -13,4 +15,18 @@ $topNavbarHeight: 58px;
     @include media-breakpoint-down(lg) {
         margin-left: 0;
     }
+}
+
+.border-pink {
+    border: 2px $pink-400 solid;
+}
+.border-orange {
+    border: 2px $orange-400 solid;
+}
+.border-teal {
+    border: 2px $teal-400 solid;
+}
+
+.scrollable-vertical {
+    overflow-x: scroll;
 }
