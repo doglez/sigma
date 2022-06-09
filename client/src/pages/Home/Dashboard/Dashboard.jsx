@@ -1,4 +1,5 @@
 import React from "react";
+import DetailCards from "./DetailCards.jsx";
 import SummaryTable from "./SummaryTable.jsx";
 
 const Dashboard = () => {
@@ -35,6 +36,7 @@ const Dashboard = () => {
                     <option value={3}>Three</option>
                 </select>
             </div>
+            <DetailCards />
             <SummaryTable />
         </div>
     );
