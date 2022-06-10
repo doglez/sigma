@@ -1,8 +1,8 @@
 $font-family-base: "Ubuntu", sans-serif;
 $offcanvas-widh: 270px;
 $topNavbarHeight: 58px;
-
-$pink: $pink-400;
+$deep-saffron: #fb9538;
+$old-lavender: #786e79;
 
 * {
     font-family: $font-family-base;
@@ -29,4 +29,20 @@ $pink: $pink-400;
 
 .scrollable-vertical {
     overflow-x: scroll;
+}
+
+.text-deep-saffron {
+    color: $deep-saffron;
+}
+
+.bg-old-lavender {
+    background-color: $old-lavender;
+}
+
+.border-old-lavender {
+    border: 2px $old-lavender solid;
+}
+
+.error-validation {
+    font-size: smaller;
 }

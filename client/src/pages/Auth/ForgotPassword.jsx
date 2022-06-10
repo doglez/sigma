@@ -43,7 +43,7 @@ const ForgotPassword = () => {
                                 required
                             />
                         </div>
-                        <div className="text-danger error-login p-0">
+                        <div className="text-danger error-validation p-0">
                             <ErrorMessage name="email" />
                         </div>
                         <button type="submit" className="btn btn-primary mt-3">

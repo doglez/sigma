@@ -62,7 +62,7 @@ const Login = () => {
                                 required
                             />
                         </div>
-                        <div className="text-danger error-login p-0">
+                        <div className="text-danger error-validation p-0">
                             <ErrorMessage name="email" />
                         </div>
                         <div className="mt-3 border rounded d-flex flex-column">
@@ -88,7 +88,7 @@ const Login = () => {
                                 />
                             </div>
                         </div>
-                        <div className="text-danger error-login p-0">
+                        <div className="text-danger error-validation p-0">
                             <ErrorMessage name="password" />
                         </div>
                         <button type="submit" className="btn btn-primary mt-3">

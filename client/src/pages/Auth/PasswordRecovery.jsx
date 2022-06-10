@@ -87,7 +87,7 @@ const PasswordRecovery = () => {
                                 />
                             </div>
                         </div>
-                        <div className="text-danger error-login p-0">
+                        <div className="text-danger error-validation p-0">
                             <ErrorMessage name="password" />
                         </div>
                         <div className="mt-3 border rounded d-flex flex-column">
@@ -113,7 +113,7 @@ const PasswordRecovery = () => {
                                 />
                             </div>
                         </div>
-                        <div className="text-danger error-login p-0">
+                        <div className="text-danger error-validation p-0">
                             <ErrorMessage name="passwordConfirm" />
                         </div>
                         <button type="submit" className="btn btn-primary mt-3">
