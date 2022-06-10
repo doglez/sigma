@@ -21,7 +21,10 @@ const SideBar = ({ links }) => {
                 >
                     <div className="d-flex justify-content-center mt-3">
                         <img
-                            src="https://via.placeholder.com/75"
+                            src={
+                                process.env.REACT_APP_FILE_UPLOAD_URL +
+                                "logo-company.png"
+                            }
                             alt="Company-Name"
                             className="rounded"
                         />
