@@ -98,7 +98,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="name"
                                 >
@@ -119,7 +119,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="address"
                                 >
@@ -140,7 +140,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="zipCode"
                                 >
@@ -161,7 +161,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="country"
                                 >
@@ -188,7 +188,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="stateProvince"
                                 >
@@ -215,7 +215,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="currency"
                                 >
@@ -242,7 +242,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="phone"
                                 >
@@ -263,7 +263,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="email"
                                 >
@@ -284,7 +284,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-4 pb-3">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-5"
                                     id="inputGroupPrepend"
                                     htmlFor="website"
                                 >
@@ -305,7 +305,7 @@ const SetupCompany = () => {
                         <div className="col-md-6 col-lg-8">
                             <div className="input-group">
                                 <label
-                                    className="input-group-text"
+                                    className="input-group-text col-2"
                                     htmlFor="files"
                                 >
                                     Upload Logo
