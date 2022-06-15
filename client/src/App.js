@@ -10,7 +10,7 @@ import SetupTheme from "./pages/Home/Setups/SetupTheme.jsx";
 import Users from "./pages/Home/UserHome/Users.jsx";
 import Inventory from "./pages/Inventory/Inventory.jsx";
 import Maintenance from "./pages/Maintentance/Maintenance.jsx";
-import Notifications from "./pages/Home/Notify/Notifications.jsx";
+import Notifications from "./pages/Home/Notifications/Notifications.jsx";
 import PersonalSettings from "./pages/PersonalSettings/PersonalSettings.jsx";
 import Providers from "./pages/Providers/Providers.jsx";
 import NavBar from "./templates/NavBar.jsx";
