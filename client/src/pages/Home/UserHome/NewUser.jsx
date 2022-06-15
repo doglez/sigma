@@ -287,7 +287,6 @@ const NewUser = () => {
                                     className="form-control"
                                 />
                             </div>
-                            <div className="text-danger error-validation p-0 text-start"></div>
                             {!errorUpload ? (
                                 <></>
                             ) : (
