@@ -18,6 +18,9 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import NewUser from "./pages/Home/UserHome/NewUser.jsx";
 import EditUser from "./pages/Home/UserHome/EditUser.jsx";
 import DeleteUser from "./pages/Home/UserHome/DeleteUser.jsx";
+import NewDepartments from "./pages/Home/Departments/NewDepartments.jsx";
+import EditDepartments from "./pages/Home/Departments/EditDepartments.jsx";
+import DeleteDepartments from "./pages/Home/Departments/DeleteDepartments.jsx";
 
 function App() {
     return (
@@ -34,7 +37,18 @@ function App() {
                             <Route path="edit/:id" element={<EditUser />} />
                             <Route path="delete/:id" element={<DeleteUser />} />
                         </Route>
-                        <Route path="departments" element={<Departments />} />
+                        <Route path="departments">
+                            <Route index element={<Departments />} />
+                            <Route path="new" element={<NewDepartments />} />
+                            <Route
+                                path="edit/:id"
+                                element={<EditDepartments />}
+                            />
+                            <Route
+                                path="delete/:id"
+                                element={<DeleteDepartments />}
+                            />
+                        </Route>
                         <Route
                             path="notifications"
                             element={<Notifications />}
