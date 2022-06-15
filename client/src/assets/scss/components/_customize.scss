@@ -29,6 +29,9 @@ $old-lavender: #786e79;
 
 .scrollable-vertical {
     overflow-x: scroll;
+    @include media-breakpoint-up(lg) {
+        overflow-x: hidden;
+    }
 }
 
 .text-deep-saffron {
@@ -45,4 +48,8 @@ $old-lavender: #786e79;
 
 .error-validation {
     font-size: smaller;
+}
+
+.button-action {
+    width: 75px;
 }

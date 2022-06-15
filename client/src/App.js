@@ -15,6 +15,9 @@ import PersonalSettings from "./pages/PersonalSettings/PersonalSettings.jsx";
 import Providers from "./pages/Providers/Providers.jsx";
 import NavBar from "./templates/NavBar.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import NewUser from "./pages/Home/UserHome/NewUser.jsx";
+import EditUser from "./pages/Home/UserHome/EditUser.jsx";
+import DeleteUser from "./pages/Home/UserHome/DeleteUser.jsx";
 
 function App() {
     return (
@@ -25,7 +28,12 @@ function App() {
                         <Route index element={<Dashboard />} />
                         <Route path="setupcompany" element={<SetupCompany />} />
                         <Route path="setuptheme" element={<SetupTheme />} />
-                        <Route path="users" element={<Users />} />
+                        <Route path="users">
+                            <Route index element={<Users />} />
+                            <Route path="new" element={<NewUser />} />
+                            <Route path="edit/:id" element={<EditUser />} />
+                            <Route path="delete/:id" element={<DeleteUser />} />
+                        </Route>
                         <Route path="departments" element={<Departments />} />
                         <Route
                             path="notifications"
