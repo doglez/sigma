@@ -21,6 +21,7 @@ import DeleteUser from "./pages/Home/UserHome/DeleteUser.jsx";
 import NewDepartments from "./pages/Home/Departments/NewDepartments.jsx";
 import EditDepartments from "./pages/Home/Departments/EditDepartments.jsx";
 import DeleteDepartments from "./pages/Home/Departments/DeleteDepartments.jsx";
+import Task from "./pages/Home/Notifications/Task.jsx";
 
 function App() {
     return (
@@ -49,10 +50,10 @@ function App() {
                                 element={<DeleteDepartments />}
                             />
                         </Route>
-                        <Route
-                            path="notifications"
-                            element={<Notifications />}
-                        />
+                        <Route path="notifications">
+                            <Route index element={<Notifications />} />
+                            <Route path="task/:id" element={<Task />} />
+                        </Route>
                     </Route>
                     <Route path="maintenance">
                         <Route index element={<Maintenance />} />
