@@ -26,7 +26,6 @@ const SetupTheme = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="lenguage"
                                 >
                                     Lenguage

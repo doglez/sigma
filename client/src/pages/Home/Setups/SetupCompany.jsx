@@ -99,7 +99,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="name"
                                 >
                                     Name
@@ -120,7 +119,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="address"
                                 >
                                     Address
@@ -141,7 +139,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="zipCode"
                                 >
                                     Zip Code
@@ -162,7 +159,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="country"
                                 >
                                     Country
@@ -189,7 +185,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="stateProvince"
                                 >
                                     State/Province
@@ -216,7 +211,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="currency"
                                 >
                                     Currency
@@ -243,7 +237,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="phone"
                                 >
                                     Phone
@@ -264,7 +257,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="email"
                                 >
                                     Email
@@ -285,7 +277,6 @@ const SetupCompany = () => {
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-5"
-                                    id="inputGroupPrepend"
                                     htmlFor="website"
                                 >
                                     Website
