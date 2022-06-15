@@ -107,7 +107,6 @@ const SetupCompany = () => {
                                     name="name"
                                     className="form-control"
                                     type="text"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -127,7 +126,6 @@ const SetupCompany = () => {
                                     name="address"
                                     className="form-control"
                                     type="text"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -147,7 +145,6 @@ const SetupCompany = () => {
                                     name="zipCode"
                                     className="form-control"
                                     type="text"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -245,7 +242,6 @@ const SetupCompany = () => {
                                     name="phone"
                                     className="form-control"
                                     type="text"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -265,7 +261,6 @@ const SetupCompany = () => {
                                     name="email"
                                     className="form-control"
                                     type="email"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -285,7 +280,6 @@ const SetupCompany = () => {
                                     name="website"
                                     className="form-control"
                                     type="text"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -306,7 +300,6 @@ const SetupCompany = () => {
                                     id="files"
                                     onChange={filesSelectedHandler}
                                     className="form-control"
-                                    multiple
                                 />
                             </div>
                             <div className="text-danger error-validation p-0 text-start"></div>
