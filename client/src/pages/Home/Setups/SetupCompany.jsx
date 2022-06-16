@@ -167,7 +167,7 @@ const SetupCompany = () => {
                                     required
                                 >
                                     <option defaultValue>
-                                        Select your Coutry
+                                        Select your Country
                                     </option>
                                     <option value={1}>One</option>
                                     <option value={2}>Two</option>

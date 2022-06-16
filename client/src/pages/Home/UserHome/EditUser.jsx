@@ -177,7 +177,7 @@ const EditUser = () => {
                                 </Field>
                             </div>
                             <div className="text-danger error-validation p-0 text-start">
-                                <ErrorMessage name="country" />
+                                <ErrorMessage name="department" />
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 pb-3">
@@ -195,7 +195,7 @@ const EditUser = () => {
                                     required
                                 >
                                     <option defaultValue>
-                                        Select your Coutry
+                                        Select your Country
                                     </option>
                                     <option value={1}>One</option>
                                     <option value={2}>Two</option>
