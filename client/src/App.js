@@ -43,6 +43,8 @@ import EquipmentTypeList from "./pages/Inventory/EquipmentType/EquipmentTypeList
 import NewEquipmentType from "./pages/Inventory/EquipmentType/NewEquipmentType.jsx";
 import EditEquipmentType from "./pages/Inventory/EquipmentType/EditEquipmentType.jsx";
 import DeleteEquipmentType from "./pages/Inventory/EquipmentType/DeleteEquipmentType.jsx";
+import EditPassword from "./pages/PersonalSettings/EditPassword.jsx";
+import EditMyInfo from "./pages/PersonalSettings/EditMyInfo.jsx";
 
 function App() {
     return (
@@ -124,8 +126,12 @@ function App() {
                             />
                         </Route>
                     </Route>
-                    <Route path="personalsettings">
-                        <Route index element={<PersonalSettings />} />
+                    <Route
+                        path="personalsettings"
+                        element={<PersonalSettings />}
+                    >
+                        <Route index element={<EditMyInfo />} />
+                        <Route path="password" element={<EditPassword />} />
                     </Route>
                     <Route path="*" element={<ErrorPage />} />
                 </Route>
