@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProvidersList = () => {
     return (
         <div className="container">
-            <div className="scrollable-vertical">
+            <div className="scrollable-horizontal">
                 <h1 className="text-deep-saffron py-4 text-center">
                     Providers List
                 </h1>

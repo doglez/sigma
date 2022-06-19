@@ -12,7 +12,7 @@ const Users = () => {
                 New User
             </Link>
 
-            <div className="scrollable-vertical">
+            <div className="scrollable-horizontal">
                 <table className="table">
                     <thead>
                         <tr>

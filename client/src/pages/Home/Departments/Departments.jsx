@@ -10,7 +10,7 @@ const Departments = () => {
             <Link role="button" className="btn btn-primary mb-2" to="new">
                 New Department
             </Link>
-            <div className="scrollable-vertical">
+            <div className="scrollable-horizontal">
                 <table className="table">
                     <thead>
                         <tr>

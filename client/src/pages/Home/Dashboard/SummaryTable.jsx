@@ -2,7 +2,7 @@ import React from "react";
 
 const SummaryTable = () => {
     return (
-        <div className="scrollable-vertical">
+        <div className="scrollable-horizontal">
             <table className="table">
                 <thead>
                     <tr>
