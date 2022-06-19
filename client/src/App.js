@@ -22,6 +22,11 @@ import NewDepartments from "./pages/Home/Departments/NewDepartments.jsx";
 import EditDepartments from "./pages/Home/Departments/EditDepartments.jsx";
 import DeleteDepartments from "./pages/Home/Departments/DeleteDepartments.jsx";
 import Task from "./pages/Home/Notifications/Task.jsx";
+import MaintenancePlans from "./pages/Maintentance/MaintenancePlans/MaintenancePlans.jsx";
+import NewPlan from "./pages/Maintentance/MaintenancePlans/NewPlan.jsx";
+import EditPlan from "./pages/Maintentance/MaintenancePlans/EditPlan.jsx";
+import DeletePlan from "./pages/Maintentance/MaintenancePlans/DeletePlan.jsx";
+import KanbanBoard from "./pages/Maintentance/KanbanBoard/KanbanBoard.jsx";
 
 function App() {
     return (
@@ -55,8 +60,14 @@ function App() {
                             <Route path="task/:id" element={<Task />} />
                         </Route>
                     </Route>
-                    <Route path="maintenance">
-                        <Route index element={<Maintenance />} />
+                    <Route path="maintenance" element={<Maintenance />}>
+                        <Route index element={<KanbanBoard />} />
+                        <Route path="maintenanceplans">
+                            <Route index element={<MaintenancePlans />} />
+                            <Route path="new" element={<NewPlan />} />
+                            <Route path="edit/:id" element={<EditPlan />} />
+                            <Route path="delete/:id" element={<DeletePlan />} />
+                        </Route>
                     </Route>
                     <Route path="providers">
                         <Route index element={<Providers />} />
