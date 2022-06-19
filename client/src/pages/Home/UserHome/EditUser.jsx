@@ -14,6 +14,7 @@ const EditUser = () => {
 
     const filesSelectedHandler = (e) => {
         setSelectedFile(e.target.files[0]);
+        setErrorUpload();
     };
 
     const onSubmitFiles = () => {

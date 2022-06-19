@@ -18,7 +18,7 @@ const DeletePlan = () => {
                 onSubmit={(values) => {
                     // props.login(values)
 
-                    toast.success("Upload Success");
+                    toast.success("Successfully deleted");
                     console.log(values);
                 }}
             >
