@@ -27,6 +27,14 @@ import NewPlan from "./pages/Maintentance/MaintenancePlans/NewPlan.jsx";
 import EditPlan from "./pages/Maintentance/MaintenancePlans/EditPlan.jsx";
 import DeletePlan from "./pages/Maintentance/MaintenancePlans/DeletePlan.jsx";
 import KanbanBoard from "./pages/Maintentance/KanbanBoard/KanbanBoard.jsx";
+import ProvidersList from "./pages/Providers/ProvidersInfo/ProvidersList.jsx";
+import NewProvider from "./pages/Providers/ProvidersInfo/NewProvider.jsx";
+import EditProvider from "./pages/Providers/ProvidersInfo/EditProvider.jsx";
+import DeleteProvider from "./pages/Providers/ProvidersInfo/DeleteProvider.jsx";
+import AgreementsList from "./pages/Providers/Agreements/AgreementsList.jsx";
+import NewAgreement from "./pages/Providers/Agreements/NewAgreement.jsx";
+import EditAgreement from "./pages/Providers/Agreements/EditAgreement.jsx";
+import DeleteAgreement from "./pages/Providers/Agreements/DeleteAgreement.jsx";
 
 function App() {
     return (
@@ -69,8 +77,23 @@ function App() {
                             <Route path="delete/:id" element={<DeletePlan />} />
                         </Route>
                     </Route>
-                    <Route path="providers">
-                        <Route index element={<Providers />} />
+                    <Route path="providers" element={<Providers />}>
+                        <Route index element={<ProvidersList />} />
+                        <Route path="new" element={<NewProvider />} />
+                        <Route path="edit/:id" element={<EditProvider />} />
+                        <Route path="delete/:id" element={<DeleteProvider />} />
+                        <Route path="agreements">
+                            <Route index element={<AgreementsList />} />
+                            <Route path="new" element={<NewAgreement />} />
+                            <Route
+                                path="edit/:id"
+                                element={<EditAgreement />}
+                            />
+                            <Route
+                                path="delete/:id"
+                                element={<DeleteAgreement />}
+                            />
+                        </Route>
                     </Route>
                     <Route path="inventory">
                         <Route index element={<Inventory />} />
