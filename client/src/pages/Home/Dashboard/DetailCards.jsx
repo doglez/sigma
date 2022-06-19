@@ -3,7 +3,7 @@ import React from "react";
 const DetailCards = () => {
     return (
         <div className="container">
-            <div className="row">
+            <div className="row my-3">
                 <div className="card text-white bg-secondary mb-3 col me-3">
                     <div className="card-header">Backlog</div>
                     <div className="card-body">

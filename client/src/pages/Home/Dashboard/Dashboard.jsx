@@ -4,7 +4,7 @@ import SummaryTable from "./SummaryTable.jsx";
 
 const Dashboard = () => {
     return (
-        <div className="container">
+        <div className="container pt-4">
             <div className="d-flex justify-content-between">
                 <select
                     className="form-select mb-3 border-pink"
