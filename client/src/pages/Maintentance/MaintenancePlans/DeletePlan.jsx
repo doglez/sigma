@@ -23,9 +23,12 @@ const DeletePlan = () => {
                 }}
             >
                 <Form className="text-center">
-                    <h1 className="text-deep-saffron py-4 ">
-                        New Maintenance Plan Information
+                    <h1 className="text-danger pt-4 ">
+                        Warning you are going to delete the Plan
                     </h1>
+                    <h5 className="text-danger pb-4">
+                        This change is irreversible.
+                    </h5>
 
                     <div className="row">
                         <div className="col-md-6 col-lg-4 pb-3">
