@@ -49,6 +49,7 @@ const EditAgreement = () => {
                     reference: "Servers & Storage",
                     startDate: "2021-06-17",
                     expDate: "2022-06-16",
+                    equipments: ["Server 1"],
                 }}
                 validationSchema={Yup.object({
                     agreementNumber: Yup.string()
@@ -73,7 +74,7 @@ const EditAgreement = () => {
                 }}
             >
                 <Form className="text-center">
-                    <h1 className="text-deep-saffron py-4 ">Edit Agreement</h1>
+                    <h1 className="text-deep-saffron py-4 ">New Agreement</h1>
 
                     <div className="row">
                         <div className="col-md-6 col-lg-4 pb-3">
@@ -89,7 +90,6 @@ const EditAgreement = () => {
                                     className="form-control"
                                     type="text"
                                     required
-                                    disabled
                                 />
                             </div>
                             <div className="text-danger error-validation p-0 text-start">
@@ -160,26 +160,7 @@ const EditAgreement = () => {
                                 <ErrorMessage name="startDate" />
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-4 pb-3">
-                            <div className="input-group">
-                                <label
-                                    className="input-group-text col-5"
-                                    htmlFor="expDate"
-                                >
-                                    Expiration Date
-                                </label>
-                                <Field
-                                    name="expDate"
-                                    className="form-control"
-                                    type="date"
-                                    required
-                                />
-                            </div>
-                            <div className="text-danger error-validation p-0 text-start">
-                                <ErrorMessage name="expDate" />
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-lg-8 pb-3">
+                        <div className="col-md-6 col-lg-8">
                             <div className="input-group">
                                 <label
                                     className="input-group-text col-2"
@@ -201,6 +182,101 @@ const EditAgreement = () => {
                                     {errorUpload}
                                 </div>
                             )}
+                        </div>
+                        <div className="col-md-6 col-lg-4 pb-3">
+                            <div className="input-group">
+                                <label
+                                    className="input-group-text col-5"
+                                    htmlFor="expDate"
+                                >
+                                    Expiration Date
+                                </label>
+                                <Field
+                                    name="expDate"
+                                    className="form-control"
+                                    type="date"
+                                    required
+                                />
+                            </div>
+                            <div className="text-danger error-validation p-0 text-start">
+                                <ErrorMessage name="expDate" />
+                            </div>
+                        </div>
+                        <div className="col-md-6 col-lg-4 pb-3">
+                            <div className="input-group">
+                                <div
+                                    className="input-group-text col-5"
+                                    id="checkbox-group"
+                                >
+                                    Equipments
+                                </div>
+                                <div
+                                    className="form-control scrollable-vertical"
+                                    role="group"
+                                    aria-labelledby="checkbox-group"
+                                >
+                                    <div className="form-check">
+                                        <label
+                                            className="form-check-label"
+                                            htmlFor="server1"
+                                        >
+                                            Server 1
+                                        </label>
+                                        <Field
+                                            type="checkbox"
+                                            id="server1"
+                                            className="form-check-input"
+                                            name="equipments"
+                                            value="Server 1"
+                                        />
+                                    </div>
+                                    <div className="form-check">
+                                        <label
+                                            className="form-check-label"
+                                            htmlFor="server2"
+                                        >
+                                            Server 2
+                                        </label>
+                                        <Field
+                                            type="checkbox"
+                                            id="server2"
+                                            className="form-check-input"
+                                            name="equipments"
+                                            value="Server 2"
+                                        />
+                                    </div>
+                                    <div className="form-check">
+                                        <label
+                                            className="form-check-label"
+                                            htmlFor="server3"
+                                        >
+                                            Server 3
+                                        </label>
+                                        <Field
+                                            type="checkbox"
+                                            id="server3"
+                                            className="form-check-input"
+                                            name="equipments"
+                                            value="Server 3"
+                                        />
+                                    </div>
+                                    <div className="form-check">
+                                        <label
+                                            className="form-check-label"
+                                            htmlFor="server4"
+                                        >
+                                            Server 4
+                                        </label>
+                                        <Field
+                                            type="checkbox"
+                                            id="server4"
+                                            className="form-check-input"
+                                            name="equipments"
+                                            value="Server 4"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <ToastContainer />
                     </div>

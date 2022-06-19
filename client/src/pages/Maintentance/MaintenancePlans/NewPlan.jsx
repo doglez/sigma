@@ -25,6 +25,7 @@ const NewPlan = () => {
                     department: "",
                     chief: "",
                     timesYear: 12,
+                    equipments: [],
                 }}
                 validationSchema={Yup.object({
                     name: Yup.string()
@@ -32,10 +33,6 @@ const NewPlan = () => {
                         .required("Name is required"),
                     department: Yup.string().required("Department is required"),
                     chief: Yup.string().required("Chief is required"),
-                    timesYear: Yup.number()
-                        .min(1, "At least once a year.")
-                        .max(12, "Maximum 12 times a year.")
-                        .required("Tiemes a year required"),
                 })}
                 onSubmit={(values) => {
                     // props.login(values)
@@ -154,12 +151,97 @@ const NewPlan = () => {
                                     <Field
                                         name="timesYear"
                                         className="form-control"
-                                        type="number"
+                                        as="select"
                                         required
-                                    />
+                                    >
+                                        <option value="1">Once a year</option>
+                                        <option value="2">Twice a year</option>
+                                        <option value="4">
+                                            4 times a year
+                                        </option>
+                                        <option value="6">
+                                            6 times a year
+                                        </option>
+                                        <option value="12">
+                                            12 times a year
+                                        </option>
+                                    </Field>
                                 </div>
-                                <div className="text-danger error-validation p-0 text-start">
-                                    <ErrorMessage name="timesYear" />
+                            </div>
+                            <div className="col-md-6 col-lg-4 pb-3">
+                                <div className="input-group">
+                                    <div
+                                        className="input-group-text col-5"
+                                        id="checkbox-group"
+                                    >
+                                        Equipments
+                                    </div>
+                                    <div
+                                        className="form-control scrollable-vertical"
+                                        role="group"
+                                        aria-labelledby="checkbox-group"
+                                    >
+                                        <div className="form-check">
+                                            <label
+                                                className="form-check-label"
+                                                htmlFor="server1"
+                                            >
+                                                Server 1
+                                            </label>
+                                            <Field
+                                                type="checkbox"
+                                                id="server1"
+                                                className="form-check-input"
+                                                name="equipments"
+                                                value="Server 1"
+                                            />
+                                        </div>
+                                        <div className="form-check">
+                                            <label
+                                                className="form-check-label"
+                                                htmlFor="server2"
+                                            >
+                                                Server 2
+                                            </label>
+                                            <Field
+                                                type="checkbox"
+                                                id="server2"
+                                                className="form-check-input"
+                                                name="equipments"
+                                                value="Server 2"
+                                            />
+                                        </div>
+                                        <div className="form-check">
+                                            <label
+                                                className="form-check-label"
+                                                htmlFor="server3"
+                                            >
+                                                Server 3
+                                            </label>
+                                            <Field
+                                                type="checkbox"
+                                                id="server3"
+                                                className="form-check-input"
+                                                name="equipments"
+                                                value="Server 3"
+                                            />
+                                        </div>
+                                        <div className="form-check">
+                                            <label
+                                                className="form-check-label"
+                                                htmlFor="server4"
+                                            >
+                                                Server 4
+                                            </label>
+                                            <Field
+                                                type="checkbox"
+                                                id="server4"
+                                                className="form-check-input"
+                                                name="equipments"
+                                                value="Server 4"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <ToastContainer />
