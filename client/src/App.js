@@ -35,6 +35,14 @@ import AgreementsList from "./pages/Providers/Agreements/AgreementsList.jsx";
 import NewAgreement from "./pages/Providers/Agreements/NewAgreement.jsx";
 import EditAgreement from "./pages/Providers/Agreements/EditAgreement.jsx";
 import DeleteAgreement from "./pages/Providers/Agreements/DeleteAgreement.jsx";
+import EquipmentList from "./pages/Inventory/Equipment/EquipmentList.jsx";
+import NewEquipment from "./pages/Inventory/Equipment/NewEquipment.jsx";
+import EditEquipment from "./pages/Inventory/Equipment/EditEquipment.jsx";
+import DeleteEquipment from "./pages/Inventory/Equipment/DeleteEquipment.jsx";
+import EquipmentTypeList from "./pages/Inventory/EquipmentType/EquipmentTypeList.jsx";
+import NewEquipmentType from "./pages/Inventory/EquipmentType/NewEquipmentType.jsx";
+import EditEquipmentType from "./pages/Inventory/EquipmentType/EditEquipmentType.jsx";
+import DeleteEquipmentType from "./pages/Inventory/EquipmentType/DeleteEquipmentType.jsx";
 
 function App() {
     return (
@@ -95,8 +103,26 @@ function App() {
                             />
                         </Route>
                     </Route>
-                    <Route path="inventory">
-                        <Route index element={<Inventory />} />
+                    <Route path="inventory" element={<Inventory />}>
+                        <Route index element={<EquipmentList />} />
+                        <Route path="new" element={<NewEquipment />} />
+                        <Route path="edit/:id" element={<EditEquipment />} />
+                        <Route
+                            path="delete/:id"
+                            element={<DeleteEquipment />}
+                        />
+                        <Route path="typelist">
+                            <Route index element={<EquipmentTypeList />} />
+                            <Route path="new" element={<NewEquipmentType />} />
+                            <Route
+                                path="edit/:id"
+                                element={<EditEquipmentType />}
+                            />
+                            <Route
+                                path="delete/:id"
+                                element={<DeleteEquipmentType />}
+                            />
+                        </Route>
                     </Route>
                     <Route path="personalsettings">
                         <Route index element={<PersonalSettings />} />
