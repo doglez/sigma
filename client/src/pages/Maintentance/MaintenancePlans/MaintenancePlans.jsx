@@ -18,7 +18,7 @@ const MaintenancePlans = () => {
                             <th scope="col">Plan Name</th>
                             <th scope="col">Department</th>
                             <th scope="col">Chief</th>
-                            <th scope="col">Equipments quantity</th>
+                            <th scope="col">Equipments Qty.</th>
                             <th scope="col">Times a year</th>
                             <th scope="col">Actions</th>
                         </tr>
