@@ -21,7 +21,7 @@ const Users = () => {
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Department</th>
-                            <th scope="col">Profile</th>
+                            <th scope="col">Role</th>
                             <th scope="col">Picture</th>
                             <th scope="col">Actions</th>
                         </tr>
