@@ -24,12 +24,12 @@ const EditPassword = () => {
         <div className="container">
             <Formik
                 initialValues={{
-                    password: "",
+                    currentPassword: "",
                     newPassword: "",
                     passwordConfirm: "",
                 }}
                 validationSchema={Yup.object({
-                    password: Yup.string().required(
+                    currentPassword: Yup.string().required(
                         "Your password is required."
                     ),
                     newPassword: Yup.string()
@@ -79,14 +79,14 @@ const EditPassword = () => {
                         <div className="input-group">
                             <label
                                 className="input-group-text col-4 col-3"
-                                htmlFor="password"
+                                htmlFor="currentPassword"
                             >
-                                Your Password
+                                Current Password
                             </label>
                             <div className="form-control">
                                 <div className="d-flex justify-content-between">
                                     <Field
-                                        name="password"
+                                        name="currentPassword"
                                         className="border-0 login-input pt-1 col-sm-10"
                                         type={viewPass ? "text" : "password"}
                                         placeholder="********"
@@ -104,7 +104,7 @@ const EditPassword = () => {
                             </div>
                         </div>
                         <div className="text-danger error-validation p-0 text-start">
-                            <ErrorMessage name="password" />
+                            <ErrorMessage name="currentPassword" />
                         </div>
                     </div>
                     <div className="col-5 my-3">
