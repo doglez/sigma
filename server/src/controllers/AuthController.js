@@ -110,6 +110,54 @@ export const login = AsyncHandler(async (req, res, next) => {
 });
 
 /**
+ * @name getMe
+ * @description Get own info
+ * @route GET /api/v1/auth/me
+ * @access Private
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns Response
+ */
+export const getMe = AsyncHandler(async (req, res, next) => {
+    const user = await User.findById(req.user.id);
+
+    res.status(200).json({
+        success: true,
+        data: user,
+    });
+});
+
+/**
+ * @name updateMe
+ * @description Update own info
+ * @route PUT /api/v1/auth/updateme
+ * @access Private
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns Response
+ */
+export const updateMe = AsyncHandler(async (req, res, next) => {
+    const { country, stateProvince, phone } = req.body;
+
+    const user = await User.findByIdAndUpdate(
+        req.user.id,
+        {
+            country,
+            stateProvince,
+            phone,
+        },
+        { new: true, runValidators: true }
+    );
+
+    res.status(200).json({
+        success: true,
+        data: user,
+    });
+});
+
+/**
  * @name logout
  * @description Logout user
  * @route GET /api/v1/auth/logout
