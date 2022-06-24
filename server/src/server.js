@@ -31,7 +31,13 @@ if (Config.NODE_ENV === "development") {
 }
 
 // File uploading
-app.use(fileUpload());
+app.use(
+    fileUpload({
+        limits: { fieldSize: Config.MAX_FILE_UPLOAD },
+        safeFileNames: true,
+        abortOnLimit: true,
+    })
+);
 
 // Sanitize data prevent NoSQL injection && sanitize data
 app.use(
