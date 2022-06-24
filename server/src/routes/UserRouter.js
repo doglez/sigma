@@ -13,10 +13,17 @@ import User from "../models/User.js";
 
 const UserRouter = express.Router();
 UserRouter.use(protect);
-UserRouter.use(authorize("super-admin", "admin", "chief"));
 
-UserRouter.route("/").get(AdvancedResults(User), getUsers).post(createUser);
-UserRouter.route("/:id").get(showUser).put(updateUser).delete(deleteUser);
-UserRouter.route("/uploadphoto/:id").put(uploadPhoto);
+UserRouter.route("/")
+    .get(AdvancedResults(User), getUsers)
+    .post(authorize("super-admin", "admin", "chief"), createUser);
+UserRouter.route("/:id")
+    .get(showUser)
+    .put(authorize("super-admin", "admin", "chief"), updateUser)
+    .delete(authorize("super-admin", "admin", "chief"), deleteUser);
+UserRouter.route("/uploadphoto/:id").put(
+    authorize("super-admin", "admin", "chief"),
+    uploadPhoto
+);
 
 export default UserRouter;
