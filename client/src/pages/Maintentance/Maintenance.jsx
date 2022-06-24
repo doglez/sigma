@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import SideBar from "../../templates/SideBar.jsx";
+import SideBar from "../templates/SideBar.jsx";
 
 const Maintenance = () => {
     return (

@@ -13,7 +13,6 @@ import Maintenance from "./pages/Maintentance/Maintenance.jsx";
 import Notifications from "./pages/Home/Notifications/Notifications.jsx";
 import PersonalSettings from "./pages/PersonalSettings/PersonalSettings.jsx";
 import Providers from "./pages/Providers/Providers.jsx";
-import NavBar from "./templates/NavBar.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import NewUser from "./pages/Home/UserHome/NewUser.jsx";
 import EditUser from "./pages/Home/UserHome/EditUser.jsx";
@@ -45,6 +44,7 @@ import EditEquipmentType from "./pages/Inventory/EquipmentType/EditEquipmentType
 import DeleteEquipmentType from "./pages/Inventory/EquipmentType/DeleteEquipmentType.jsx";
 import EditPassword from "./pages/PersonalSettings/EditPassword.jsx";
 import EditMyInfo from "./pages/PersonalSettings/EditMyInfo.jsx";
+import NavBar from "./pages/templates/NavBar.jsx";
 
 function App() {
     return (

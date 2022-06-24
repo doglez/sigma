@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import Logo from "../assets/images/summation.png";
+import Logo from "../../assets/images/summation.png";
 
 const NavBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
