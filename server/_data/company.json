@@ -1,0 +1,16 @@
+[
+    {
+        "_id": "62b61ee5191a35fd7edbd83f",
+        "name": "Example Inc.",
+        "address": "Mountain View",
+        "zipCode": "94043",
+        "country": "United States",
+        "stateProvince": "California",
+        "currency": "US$",
+        "phone": 2222222222,
+        "email": "company@example.com",
+        "website": "https://www.example.com/",
+        "tag": "unique",
+        "logo": "logo-company.png"
+    }
+]

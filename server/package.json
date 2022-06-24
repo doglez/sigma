@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "NODE_ENV=production node server",
-    "dev": "nodemon src/server"
+    "dev": "nodemon src/server",
+    "imp": "node src/database/Seeders -i",
+    "del": "node src/database/Seeders -d"
   },
   "keywords": [],
   "author": "",

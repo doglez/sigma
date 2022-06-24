@@ -1,0 +1,122 @@
+[
+    {
+        "_id": "62b63bede321b7c5e3ce81f6",
+        "collaboratorNumber": "100001",
+        "name": "Super",
+        "lastName": "Admin",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999900,
+        "email": "superadmin@example.com",
+        "role": "super-admin",
+        "department": "62b530b13a5c49c42f5ec64c"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81f7",
+        "collaboratorNumber": "100002",
+        "name": "Admin",
+        "lastName": "Compliance",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999901,
+        "email": "admin@example.com",
+        "role": "admin",
+        "department": "62b6375e7aa7f9a610c4ddc4"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81f9",
+        "collaboratorNumber": "100004",
+        "name": "Supervisor",
+        "lastName": "Telecommunications",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999903,
+        "email": "supervisor.telecommunications@example.com",
+        "role": "supervisor",
+        "department": "62b635604e2888409023c006"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81f8",
+        "collaboratorNumber": "100003",
+        "name": "Chief",
+        "lastName": "Telecommunications",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999902,
+        "email": "chief.telecommunications@example.com",
+        "role": "chief",
+        "department": "62b635604e2888409023c006"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81fa",
+        "collaboratorNumber": "100005",
+        "name": "Engineer One",
+        "lastName": "Telecommunications",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999904,
+        "email": "engineerone.telecommunications@example.com",
+        "role": "engineer",
+        "department": "62b635604e2888409023c006"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81fb",
+        "collaboratorNumber": "100006",
+        "name": "Engineer Two",
+        "lastName": "Telecommunications",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999905,
+        "email": "engineertwo.telecommunications@example.com",
+        "role": "engineer",
+        "department": "62b635604e2888409023c006"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81fc",
+        "collaboratorNumber": "100007",
+        "name": "Chief",
+        "lastName": "Electromechanical",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999906,
+        "email": "chief.electromechanical@example.com",
+        "role": "chief",
+        "department": "62b6354d4e2888409023c003"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81fd",
+        "collaboratorNumber": "100008",
+        "name": "Engineer One",
+        "lastName": "Electromechanical",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999907,
+        "email": "engineerone.electromechanical@example.com",
+        "role": "engineer",
+        "department": "62b6354d4e2888409023c003"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81fe",
+        "collaboratorNumber": "100009",
+        "name": "Engineer Two",
+        "lastName": "Electromechanical",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999908,
+        "email": "engineertwo.electromechanical@example.com",
+        "role": "engineer",
+        "department": "62b6354d4e2888409023c003"
+    },
+    {
+        "_id": "62b63bede321b7c5e3ce81ff",
+        "collaboratorNumber": "100010",
+        "name": "Auditor",
+        "lastName": "Audit",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999909,
+        "email": "auditor@example.com",
+        "role": "auditor",
+        "department": "62b635a34e2888409023c012"
+    }
+]

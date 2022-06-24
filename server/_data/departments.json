@@ -1,0 +1,38 @@
+[
+    {
+        "_id": "62b530b13a5c49c42f5ec64c",
+        "departmentNumber": "100001",
+        "name": "Cybersecurity",
+        "email": "cybersecurity@example.com"
+    },
+    {
+        "_id": "62b6354d4e2888409023c003",
+        "departmentNumber": "100002",
+        "name": "Electromechanical",
+        "email": "electromechanical@example.com"
+    },
+    {
+        "_id": "62b635604e2888409023c006",
+        "departmentNumber": "100003",
+        "name": "Telecommunications",
+        "email": "telecommunications@example.com"
+    },
+    {
+        "_id": "62b6356e4e2888409023c009",
+        "departmentNumber": "100004",
+        "name": "Servers",
+        "email": "servers@example.com"
+    },
+    {
+        "_id": "62b635a34e2888409023c012",
+        "departmentNumber": "100005",
+        "name": "Audit",
+        "email": "audit@example.com"
+    },
+    {
+        "_id": "62b6375e7aa7f9a610c4ddc4",
+        "departmentNumber": "100006",
+        "name": "Regulatory Compliance",
+        "email": "regulatory.compliance@example.com"
+    }
+]
