@@ -1,3 +1,4 @@
+import Config from "../config/Config.js";
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
@@ -186,5 +187,92 @@ export const deleteUser = AsyncHandler(async (req, res, next) => {
     res.status(200).json({
         success: true,
         data: `User ${user.email} was deleted`,
+    });
+});
+
+/**
+ * @name uploadPhoto
+ * @description Upload array files
+ * @route PUT /api/v1/users/uploadphoto/:id
+ * @access Private
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns Response
+ */
+export const uploadPhoto = AsyncHandler(async (req, res, next) => {
+    let user = await User.findById(req.params.id);
+
+    if (!user) {
+        return next(new ErrorResponse(`User not found`, 400));
+    }
+
+    if (
+        user.id !== req.user.id &&
+        req.user.role !== "super-admin" &&
+        req.user.role !== "admin" &&
+        req.user.role !== "chief"
+    ) {
+        return next(new ErrorResponse(`User is not authorized`, 400));
+    }
+
+    if (!req.files) {
+        return next(new ErrorResponse(`Please upload a file`, 400));
+    }
+
+    let files = [];
+
+    if (!req.files.file.length) {
+        files = [req.files.file];
+    } else {
+        files = [...req.files.file];
+    }
+
+    if (files.length > 1) {
+        return next(new ErrorResponse(`Only accept 1 files maximum`, 400));
+    }
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        if (file.mimetype !== "image/jpeg" && file.mimetype !== "image/png") {
+            return next(new ErrorResponse(`Only supports JPG or PNG`, 400));
+        }
+
+        if (file.size > Config.MAX_FILE_UPLOAD) {
+            return next(
+                new ErrorResponse(
+                    `Some file size is more than ${
+                        Config.MAX_FILE_UPLOAD / 1000000
+                    }MB`,
+                    400
+                )
+            );
+        }
+
+        file.name = `${user.id}_${file.name}`;
+
+        file.mv(`${Config.FILE_UPLOAD_PATH}/${file.name}`, async (error) => {
+            if (error) {
+                console.error(error);
+                return next(
+                    new ErrorResponse("Problems with file upload", 500)
+                );
+            }
+        });
+    }
+
+    user = await User.findByIdAndUpdate(
+        req.params.id,
+        { photo: files[0].name },
+        {
+            new: true,
+            runValidators: true,
+        }
+    );
+
+    res.status(200).json({
+        success: true,
+        data: user,
     });
 });

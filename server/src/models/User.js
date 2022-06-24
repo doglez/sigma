@@ -75,6 +75,9 @@ const UserSchema = new mongoose.Schema(
             ],
             lowercase: true,
         },
+        photo: {
+            type: String,
+        },
         role: {
             type: String,
             enum: [

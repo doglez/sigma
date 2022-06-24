@@ -12,6 +12,7 @@ import Config from "./config/Config.js";
 import ConnectDB from "./database/ConnectDB.js";
 import Routes from "./routes/Routes.js";
 import ErrorHandler from "./middleware/ErrorHandler.js";
+import fileUpload from "express-fileupload";
 
 colors.enable();
 
@@ -28,6 +29,9 @@ app.use(cookieParser());
 if (Config.NODE_ENV === "development") {
     app.use(morgan("dev"));
 }
+
+// File uploading
+app.use(fileUpload());
 
 // Sanitize data prevent NoSQL injection && sanitize data
 app.use(
@@ -54,6 +58,9 @@ app.use(hpp());
 
 // Enable CORS
 app.use(cors());
+
+// Route to access public dir
+app.use(express.static("public"));
 
 // Routes
 app.use("/api/v1", Routes);
