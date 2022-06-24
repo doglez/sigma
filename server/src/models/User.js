@@ -34,13 +34,6 @@ const UserSchema = new mongoose.Schema(
             maxlength: [25, "Last Name can not be more than 25 characters."],
             minlength: [3, "Last Name must be at least 3 characters."],
         },
-        department: {
-            type: String,
-            required: [true, "Department is required."],
-            trim: true,
-            maxlength: [25, "Department can not be more than 25 characters."],
-            minlength: [3, "Department must be at least 3 characters."],
-        },
         country: {
             type: String,
             required: [true, "Country is required."],
@@ -96,11 +89,18 @@ const UserSchema = new mongoose.Schema(
         },
         resetPasswordToken: String,
         resetPasswordExpire: Date,
+        department: {
+            type: mongoose.Schema.ObjectId,
+            ref: "Department",
+        },
     },
     {
         timestamps: true,
     }
 );
+
+// Prevent user from selecting more than one department
+UserSchema.index({ department: 1 }, { unique: true });
 
 // Encrypt password using bcrypt
 UserSchema.pre("save", async function (next) {

@@ -33,6 +33,8 @@ const DepartmentSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
 
@@ -46,6 +48,14 @@ DepartmentSchema.pre("save", async function (next) {
     }
 
     this.name = await splitStr.join(" ");
+});
+
+// Reverse populate with virtuals
+DepartmentSchema.virtual("user", {
+    ref: "User",
+    localField: "_id",
+    foreignField: "department",
+    justOne: false,
 });
 
 export default mongoose.model("Department", DepartmentSchema);

@@ -1,5 +1,6 @@
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Department from "../models/Department.js";
+import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
 /**
@@ -27,7 +28,10 @@ export const getDepartments = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showDepartments = AsyncHandler(async (req, res, next) => {
-    const department = await Department.findById(req.params.id);
+    const department = await Department.findById(req.params.id).populate({
+        path: "user",
+        select: "name email",
+    });
 
     if (!department) {
         return next(
@@ -125,6 +129,17 @@ export const deleteDepartment = AsyncHandler(async (req, res, next) => {
         return next(
             new ErrorResponse(
                 `Department not found with id ${req.params.id}`,
+                400
+            )
+        );
+    }
+
+    // Validate if the department has users
+    const users = await User.find({ department: department.id });
+    if (users.length > 0) {
+        return next(
+            new ErrorResponse(
+                `Department cannot be deleted because it has users`,
                 400
             )
         );

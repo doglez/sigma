@@ -1,5 +1,6 @@
 import Config from "../config/Config.js";
 import AsyncHandler from "../middleware/AsyncHandler.js";
+import Department from "../models/Department.js";
 import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 import SendEmails from "../utilis/SendEmails.js";
@@ -65,6 +66,12 @@ export const createUser = AsyncHandler(async (req, res, next) => {
         email,
         role,
     } = req.body;
+
+    if (!(await Department.findById(department))) {
+        return next(
+            new ErrorResponse(`Department not found with id of ${department}`)
+        );
+    }
 
     const user = await User.create({
         collaboratorNumber,
