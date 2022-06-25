@@ -9,7 +9,8 @@
         "phone": 504999900,
         "email": "superadmin@example.com",
         "role": "super-admin",
-        "department": "62b530b13a5c49c42f5ec64c"
+        "department": "62b530b13a5c49c42f5ec64c",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81f7",
@@ -21,7 +22,8 @@
         "phone": 504999901,
         "email": "admin@example.com",
         "role": "admin",
-        "department": "62b6375e7aa7f9a610c4ddc4"
+        "department": "62b6375e7aa7f9a610c4ddc4",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81f9",
@@ -33,7 +35,8 @@
         "phone": 504999903,
         "email": "supervisor.telecommunications@example.com",
         "role": "supervisor",
-        "department": "62b635604e2888409023c006"
+        "department": "62b635604e2888409023c006",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81f8",
@@ -45,7 +48,8 @@
         "phone": 504999902,
         "email": "chief.telecommunications@example.com",
         "role": "chief",
-        "department": "62b635604e2888409023c006"
+        "department": "62b635604e2888409023c006",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81fa",
@@ -57,7 +61,8 @@
         "phone": 504999904,
         "email": "engineerone.telecommunications@example.com",
         "role": "engineer",
-        "department": "62b635604e2888409023c006"
+        "department": "62b635604e2888409023c006",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81fb",
@@ -69,7 +74,8 @@
         "phone": 504999905,
         "email": "engineertwo.telecommunications@example.com",
         "role": "engineer",
-        "department": "62b635604e2888409023c006"
+        "department": "62b635604e2888409023c006",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81fc",
@@ -81,7 +87,8 @@
         "phone": 504999906,
         "email": "chief.electromechanical@example.com",
         "role": "chief",
-        "department": "62b6354d4e2888409023c003"
+        "department": "62b6354d4e2888409023c003",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81fd",
@@ -93,7 +100,8 @@
         "phone": 504999907,
         "email": "engineerone.electromechanical@example.com",
         "role": "engineer",
-        "department": "62b6354d4e2888409023c003"
+        "department": "62b6354d4e2888409023c003",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81fe",
@@ -105,7 +113,8 @@
         "phone": 504999908,
         "email": "engineertwo.electromechanical@example.com",
         "role": "engineer",
-        "department": "62b6354d4e2888409023c003"
+        "department": "62b6354d4e2888409023c003",
+        "password": "Pass123@"
     },
     {
         "_id": "62b63bede321b7c5e3ce81ff",
@@ -117,6 +126,7 @@
         "phone": 504999909,
         "email": "auditor@example.com",
         "role": "auditor",
-        "department": "62b635a34e2888409023c012"
+        "department": "62b635a34e2888409023c012",
+        "password": "Pass123@"
     }
 ]
