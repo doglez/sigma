@@ -60,7 +60,6 @@ export const register = AsyncHandler(async (req, res, next) => {
         });
 
         res.status(200).json({
-            success: true,
             data: "Email sent",
         });
     } catch (error) {
@@ -123,7 +122,6 @@ export const getMe = AsyncHandler(async (req, res, next) => {
     const user = await User.findById(req.user.id);
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });
@@ -152,7 +150,6 @@ export const updateMe = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });
@@ -214,7 +211,6 @@ export const forgotPassword = AsyncHandler(async (req, res, next) => {
         });
 
         res.status(200).json({
-            success: true,
             data: "Email sent",
         });
     } catch (error) {
@@ -452,7 +448,6 @@ export const uploadMyPhoto = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });
@@ -480,7 +475,6 @@ const sendTokenResponse = (user, statusCode, res) => {
     }
 
     res.status(statusCode).cookie("token", token.options).json({
-        success: true,
         token,
     });
 };

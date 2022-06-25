@@ -43,7 +43,6 @@ export const showDepartments = AsyncHandler(async (req, res, next) => {
     }
 
     res.status(200).json({
-        success: true,
         data: department,
     });
 });
@@ -68,7 +67,6 @@ export const createDepartment = AsyncHandler(async (req, res, next) => {
     });
 
     res.status(201).json({
-        success: true,
         data: department,
     });
 });
@@ -107,7 +105,6 @@ export const updateDepartment = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: department,
     });
 });
@@ -148,7 +145,6 @@ export const deleteDepartment = AsyncHandler(async (req, res, next) => {
     await department.remove();
 
     res.status(200).json({
-        success: true,
         data: `Department ${department.name} was deleted`,
     });
 });

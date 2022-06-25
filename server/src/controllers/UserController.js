@@ -39,7 +39,6 @@ export const showUser = AsyncHandler(async (req, res, next) => {
     }
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });
@@ -105,7 +104,6 @@ export const createUser = AsyncHandler(async (req, res, next) => {
         });
 
         res.status(200).json({
-            success: true,
             data: user,
         });
     } catch (error) {
@@ -165,7 +163,6 @@ export const updateUser = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });
@@ -192,7 +189,6 @@ export const deleteUser = AsyncHandler(async (req, res, next) => {
     await user.remove();
 
     res.status(200).json({
-        success: true,
         data: `User ${user.email} was deleted`,
     });
 });
@@ -279,7 +275,6 @@ export const uploadPhoto = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: user,
     });
 });

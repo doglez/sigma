@@ -17,7 +17,6 @@ export const getCompany = AsyncHandler(async (req, res, next) => {
     const company = await Company.find({ tag: "unique" });
 
     res.status(200).json({
-        success: true,
         data: company,
     });
 });
@@ -81,7 +80,6 @@ export const createOrUpdateCompany = AsyncHandler(async (req, res, next) => {
     }
 
     res.status(201).json({
-        success: true,
         data: company,
     });
 });
@@ -166,7 +164,6 @@ export const uploadLogo = AsyncHandler(async (req, res, next) => {
     );
 
     res.status(200).json({
-        success: true,
         data: company,
     });
 });
