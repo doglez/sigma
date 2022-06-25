@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Logo from "../../assets/images/summation.png";
+// import { LoginCrt } from "../../redux/actions/auth-crt.js";
+import { connect } from "react-redux";
+import { LoginCrt } from "../../redux/reducers/authSlice.js";
 
-const Login = () => {
+const Login = (props) => {
     const [viewPass, setViewPass] = useState(false);
 
     const hadleView = () => {
@@ -34,8 +37,8 @@ const Login = () => {
                         ),
                 })}
                 onSubmit={(values) => {
-                    // props.login(values)
-                    console.log(values);
+                    props.login(values);
+                    // console.log(values);
                 }}
             >
                 <Form className="login-form shadow-lg bg-body rounded col-3">
@@ -107,4 +110,12 @@ const Login = () => {
     );
 };
 
-export default Login;
+const mapStateToProps = (state) => ({
+    authReducer: state.authReducer,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    login: (loginData) => dispatch(LoginCrt(loginData)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
