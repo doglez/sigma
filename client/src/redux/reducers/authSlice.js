@@ -4,7 +4,6 @@ import axios from "axios";
 const authUrl = `${process.env.REACT_APP_API_URL_SERVER}/${process.env.REACT_APP_API_URL_SERVER_VERSION}/auth/login`;
 
 const initialState = {
-    success: false,
     token: "",
     error: "",
 };
@@ -14,12 +13,10 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         loginSuccess: (state, action) => {
-            state.success = action.payload.success;
             state.token = action.payload.token;
             state.error = "";
         },
         loginFail: (state, action) => {
-            state.success = action.payload.success;
             state.token = "";
             state.error = action.payload.error;
         },

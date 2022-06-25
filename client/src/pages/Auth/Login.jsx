@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import Logo from "../../assets/images/summation.png";
-// import { LoginCrt } from "../../redux/actions/auth-crt.js";
 import { connect } from "react-redux";
 import { LoginCrt } from "../../redux/reducers/authSlice.js";
 
 const Login = (props) => {
     const [viewPass, setViewPass] = useState(false);
+    const errorLogin = props.authReducer.error;
 
     const hadleView = () => {
         if (viewPass === false) {
@@ -38,7 +38,6 @@ const Login = (props) => {
                 })}
                 onSubmit={(values) => {
                     props.login(values);
-                    // console.log(values);
                 }}
             >
                 <Form className="login-form shadow-lg bg-body rounded col-3">
@@ -52,6 +51,13 @@ const Login = (props) => {
                     <h4 className="fw-bold">Log in to your account.</h4>
 
                     <div className="row">
+                        {!errorLogin ? (
+                            <></>
+                        ) : (
+                            <div className="text-danger error-validation p-0 text-start">
+                                {errorLogin}
+                            </div>
+                        )}
                         <div className="border rounded d-flex flex-column">
                             <label htmlFor="inputEmail">
                                 <i className="bi bi-envelope pe-1" />
@@ -114,8 +120,8 @@ const mapStateToProps = (state) => ({
     authReducer: state.authReducer,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    login: (loginData) => dispatch(LoginCrt(loginData)),
-});
+const mapDispatchToProps = {
+    login: (loginData) => LoginCrt(loginData),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
