@@ -45,10 +45,17 @@ import DeleteEquipmentType from "./pages/Inventory/EquipmentType/DeleteEquipment
 import EditPassword from "./pages/PersonalSettings/EditPassword.jsx";
 import EditMyInfo from "./pages/PersonalSettings/EditMyInfo.jsx";
 import NavBar from "./pages/templates/NavBar.jsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import NoPermitPath from "./pages/NoPermitPath.jsx";
+import { MyInfoCrt } from "./redux/reducers/myInfoSlice.js";
 
 function App() {
+    const dispatch = useDispatch();
     const token = useSelector((state) => state.authReducer.token);
+    if (token) {
+        dispatch(MyInfoCrt());
+    }
+    const myRole = useSelector((state) => state.myInfoReducer.role);
 
     return (
         <BrowserRouter>
@@ -88,10 +95,17 @@ function App() {
                         <Route path="/" element={<NavBar />}>
                             <Route path="home" element={<Home />}>
                                 <Route index element={<Dashboard />} />
-                                <Route
-                                    path="setupcompany"
-                                    element={<SetupCompany />}
-                                />
+                                {myRole === "super-admin" ? (
+                                    <Route
+                                        path="setupcompany"
+                                        element={<SetupCompany />}
+                                    />
+                                ) : (
+                                    <Route
+                                        path="setupcompany"
+                                        element={<NoPermitPath />}
+                                    />
+                                )}
                                 <Route
                                     path="setuptheme"
                                     element={<SetupTheme />}
