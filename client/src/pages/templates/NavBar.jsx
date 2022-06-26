@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "../../assets/images/summation.png";
 import { LogoutCrt } from "../../redux/reducers/authSlice.js";
+import { MyInfoCrt } from "../../redux/reducers/myInfoSlice.js";
 
 const NavBar = () => {
     const dispatch = useDispatch();
+    dispatch(MyInfoCrt());
 
     const handlerLogout = () => {
         dispatch(LogoutCrt());
