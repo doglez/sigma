@@ -86,6 +86,7 @@ export const LoginCrt = (loginData) => async (dispatch) => {
             dispatch(loginSuccess(r.data));
         })
         .catch((e) => {
+            window.location.reload();
             dispatch(loginFail(e.response.data));
             localStorage.removeItem("MmVQtoHjRadQgkFO");
         });
@@ -101,10 +102,12 @@ export const LogoutCrt = () => async (dispatch) => {
     await axios
         .get(`${process.env.REACT_APP_API_URL_SERVER}/auth/logout`)
         .then((r) => {
+            window.location.reload();
             dispatch(logoutSuccess(r.data));
             localStorage.removeItem("MmVQtoHjRadQgkFO");
         })
         .catch((e) => {
+            window.location.reload();
             dispatch(logoutFail(e.response.data));
             localStorage.removeItem("MmVQtoHjRadQgkFO");
         });
