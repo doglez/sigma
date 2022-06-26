@@ -5,6 +5,7 @@ dotenv.config({ path: "./.env" });
 const Config = {
     NODE_ENV: process.env.NODE_ENV,
     PORT: process.env.PORT,
+    CORS_ADMIT_URL: process.env.CORS_ADMIT_URL,
     MONGO_URL: process.env.MONGO_URL,
     FILE_UPLOAD_PATH: process.env.FILE_UPLOAD_PATH,
     MAX_FILE_UPLOAD: process.env.MAX_FILE_UPLOAD,

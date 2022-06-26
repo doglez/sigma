@@ -67,7 +67,13 @@ app.use(limmiter);
 app.use(hpp());
 
 // Enable CORS
-app.use(cors());
+app.use(
+    cors({
+        origin: Config.CORS_ADMIT_URL,
+        credentials: true, //access-control-allow-credentials:true
+        optionSuccessStatus: 200,
+    })
+);
 
 // Route to access public dir
 app.use(express.static("public"));
