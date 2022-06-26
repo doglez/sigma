@@ -465,6 +465,25 @@ export const uploadMyPhoto = AsyncHandler(async (req, res, next) => {
     });
 });
 
+export const tokenValidationEnable = AsyncHandler(async (req, res, next) => {
+    // Bearer token that comes from the request
+    const bearerTokenReq = req.headers.authorization;
+    const tokenHeader = bearerTokenReq.split(" ")[1];
+
+    const tokenFind = await Token.findOne({
+        user: req.user.id,
+        token: tokenHeader,
+    });
+
+    if (tokenFind.status === "disable") {
+        return next(new ErrorResponse("Token disable", 500));
+    }
+
+    res.status(200).json({
+        success: true,
+    });
+});
+
 /**
  * @name sendTokenResponse
  * @description Get token from model and create cookie

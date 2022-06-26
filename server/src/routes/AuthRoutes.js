@@ -6,6 +6,7 @@ import {
     logout,
     register,
     resetPassword,
+    tokenValidationEnable,
     updateMe,
     updatePassword,
     uploadMyPhoto,
@@ -20,6 +21,7 @@ AuthRoutes.get("/me", protect, getMe);
 AuthRoutes.put("/updateme", protect, updateMe);
 AuthRoutes.put("/uploadmyphoto", protect, uploadMyPhoto);
 AuthRoutes.get("/logout", protect, logout);
+AuthRoutes.get("/tokenval", protect, tokenValidationEnable);
 AuthRoutes.post("/forgotpassword", forgotPassword);
 AuthRoutes.put("/resetpassword/:resettoken", resetPassword);
 AuthRoutes.post("/updatepassword", protect, updatePassword);

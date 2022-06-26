@@ -8,7 +8,7 @@ let initialState = {
 };
 
 const getInitialState = () => {
-    const auth = localStorage.getItem("auth");
+    const auth = localStorage.getItem("MmVQtoHjRadQgkFO");
 
     try {
         const token = JSON.parse(auth);
@@ -17,12 +17,24 @@ const getInitialState = () => {
 
         if (new Date(expireToken * 1000) > new Date()) {
             axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+            axios
+                .get(`${process.env.REACT_APP_API_URL_SERVER}/auth/tokenval`)
+                .catch((error) => {
+                    // console.error(error);
+                    localStorage.removeItem("MmVQtoHjRadQgkFO");
+                    window.location.reload();
+                    return initialState;
+                });
+
             return { token, error: "" };
         }
-        localStorage.removeItem("auth");
+
+        localStorage.removeItem("MmVQtoHjRadQgkFO");
         return initialState;
     } catch (error) {
         // console.error(error);
+
         return initialState;
     }
 };
@@ -32,7 +44,12 @@ const authSlice = createSlice({
     initialState: getInitialState(),
     reducers: {
         loginSuccess: (state, action) => {
-            localStorage.setItem("auth", JSON.stringify(action.payload.token));
+            // The token is stored in local storage under the name MmVQtoHjRadQgkFO
+
+            localStorage.setItem(
+                "MmVQtoHjRadQgkFO",
+                JSON.stringify(action.payload.token)
+            );
             axios.defaults.headers.post[
                 "Authorization"
             ] = `Bearer ${action.payload.token}`;
@@ -70,7 +87,7 @@ export const LoginCrt = (loginData) => async (dispatch) => {
         })
         .catch((e) => {
             dispatch(loginFail(e.response.data));
-            localStorage.removeItem("auth");
+            localStorage.removeItem("MmVQtoHjRadQgkFO");
         });
 };
 
@@ -85,11 +102,11 @@ export const LogoutCrt = () => async (dispatch) => {
         .get(`${process.env.REACT_APP_API_URL_SERVER}/auth/logout`)
         .then((r) => {
             dispatch(logoutSuccess(r.data));
-            localStorage.removeItem("auth");
+            localStorage.removeItem("MmVQtoHjRadQgkFO");
         })
         .catch((e) => {
             dispatch(logoutFail(e.response.data));
-            localStorage.removeItem("auth");
+            localStorage.removeItem("MmVQtoHjRadQgkFO");
         });
 };
 
