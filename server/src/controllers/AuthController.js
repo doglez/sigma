@@ -4,6 +4,7 @@ import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 import SendEmails from "../utilis/SendEmails.js";
 import crypto from "crypto";
+import Token from "../models/Token.js";
 
 /**
  * @name register
@@ -156,7 +157,7 @@ export const updateMe = AsyncHandler(async (req, res, next) => {
 
 /**
  * @name logout
- * @description Logout user
+ * @description Logout user and disable token from DB
  * @route GET /api/v1/auth/logout
  * @access Private
  * @param {*} req
@@ -164,7 +165,19 @@ export const updateMe = AsyncHandler(async (req, res, next) => {
  * @param {*} next
  * @returns Response
  */
-export const logout = AsyncHandler((req, res, next) => {
+export const logout = AsyncHandler(async (req, res, next) => {
+    // Bearer token that comes from the request
+    const bearerTokenReq = req.headers.authorization;
+    const tokenHeader = bearerTokenReq.split(" ")[1];
+
+    const tokenFind = await Token.findOne({
+        user: req.user.id,
+        token: tokenHeader,
+    });
+
+    tokenFind.status = "disable";
+    await tokenFind.save();
+
     res.cookie("token", "none", {
         expires: new Date(Date.now() + 10 * 1000),
     });
@@ -473,6 +486,11 @@ const sendTokenResponse = (user, statusCode, res) => {
     if (Config.NODE_ENV === "production") {
         options.secure = true;
     }
+
+    Token.create({
+        user: user.id,
+        token: token,
+    });
 
     res.status(statusCode).cookie("token", token.options).json({
         token,
