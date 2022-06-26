@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import Login from "./pages/Auth/Login.jsx";
 import PasswordRecovery from "./pages/Auth/PasswordRecovery.jsx";
@@ -45,104 +45,178 @@ import DeleteEquipmentType from "./pages/Inventory/EquipmentType/DeleteEquipment
 import EditPassword from "./pages/PersonalSettings/EditPassword.jsx";
 import EditMyInfo from "./pages/PersonalSettings/EditMyInfo.jsx";
 import NavBar from "./pages/templates/NavBar.jsx";
+import { useSelector } from "react-redux";
 
 function App() {
+    const token = useSelector((state) => state.authReducer.token);
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<NavBar />}>
-                    <Route path="home" element={<Home />}>
-                        <Route index element={<Dashboard />} />
-                        <Route path="setupcompany" element={<SetupCompany />} />
-                        <Route path="setuptheme" element={<SetupTheme />} />
-                        <Route path="users">
-                            <Route index element={<Users />} />
-                            <Route path="new" element={<NewUser />} />
-                            <Route path="edit/:id" element={<EditUser />} />
-                            <Route path="delete/:id" element={<DeleteUser />} />
-                        </Route>
-                        <Route path="departments">
-                            <Route index element={<Departments />} />
-                            <Route path="new" element={<NewDepartments />} />
-                            <Route
-                                path="edit/:id"
-                                element={<EditDepartments />}
-                            />
-                            <Route
-                                path="delete/:id"
-                                element={<DeleteDepartments />}
-                            />
-                        </Route>
-                        <Route path="notifications">
-                            <Route index element={<Notifications />} />
-                            <Route path="task/:id" element={<Task />} />
-                        </Route>
-                    </Route>
-                    <Route path="maintenance" element={<Maintenance />}>
-                        <Route index element={<KanbanBoard />} />
-                        <Route path="maintenanceplans">
-                            <Route index element={<MaintenancePlans />} />
-                            <Route path="new" element={<NewPlan />} />
-                            <Route path="edit/:id" element={<EditPlan />} />
-                            <Route path="delete/:id" element={<DeletePlan />} />
-                        </Route>
-                    </Route>
-                    <Route path="providers" element={<Providers />}>
-                        <Route index element={<ProvidersList />} />
-                        <Route path="new" element={<NewProvider />} />
-                        <Route path="edit/:id" element={<EditProvider />} />
-                        <Route path="delete/:id" element={<DeleteProvider />} />
-                        <Route path="agreements">
-                            <Route index element={<AgreementsList />} />
-                            <Route path="new" element={<NewAgreement />} />
-                            <Route
-                                path="edit/:id"
-                                element={<EditAgreement />}
-                            />
-                            <Route
-                                path="delete/:id"
-                                element={<DeleteAgreement />}
-                            />
-                        </Route>
-                    </Route>
-                    <Route path="inventory" element={<Inventory />}>
-                        <Route index element={<EquipmentList />} />
-                        <Route path="new" element={<NewEquipment />} />
-                        <Route path="edit/:id" element={<EditEquipment />} />
+                {!token ? (
+                    <Route>
                         <Route
-                            path="delete/:id"
-                            element={<DeleteEquipment />}
+                            path="*"
+                            element={<Navigate to="/login" replace />}
                         />
-                        <Route path="typelist">
-                            <Route index element={<EquipmentTypeList />} />
-                            <Route path="new" element={<NewEquipmentType />} />
+                        <Route path="/login">
+                            <Route index element={<Login />} />
                             <Route
-                                path="edit/:id"
-                                element={<EditEquipmentType />}
+                                path="forgotpassword"
+                                element={<ForgotPassword />}
                             />
                             <Route
-                                path="delete/:id"
-                                element={<DeleteEquipmentType />}
+                                path="passwordrecovery"
+                                element={<PasswordRecovery />}
                             />
                         </Route>
                     </Route>
-                    <Route
-                        path="personalsettings"
-                        element={<PersonalSettings />}
-                    >
-                        <Route index element={<EditMyInfo />} />
-                        <Route path="password" element={<EditPassword />} />
+                ) : (
+                    <Route>
+                        <Route
+                            path="/login/*"
+                            element={<Navigate to="/home" replace />}
+                        />
+                        <Route
+                            path="/login"
+                            element={<Navigate to="/home" replace />}
+                        />
+                        <Route
+                            path="/"
+                            element={<Navigate to="/home" replace />}
+                        />
+                        <Route path="/" element={<NavBar />}>
+                            <Route path="home" element={<Home />}>
+                                <Route index element={<Dashboard />} />
+                                <Route
+                                    path="setupcompany"
+                                    element={<SetupCompany />}
+                                />
+                                <Route
+                                    path="setuptheme"
+                                    element={<SetupTheme />}
+                                />
+                                <Route path="users">
+                                    <Route index element={<Users />} />
+                                    <Route path="new" element={<NewUser />} />
+                                    <Route
+                                        path="edit/:id"
+                                        element={<EditUser />}
+                                    />
+                                    <Route
+                                        path="delete/:id"
+                                        element={<DeleteUser />}
+                                    />
+                                </Route>
+                                <Route path="departments">
+                                    <Route index element={<Departments />} />
+                                    <Route
+                                        path="new"
+                                        element={<NewDepartments />}
+                                    />
+                                    <Route
+                                        path="edit/:id"
+                                        element={<EditDepartments />}
+                                    />
+                                    <Route
+                                        path="delete/:id"
+                                        element={<DeleteDepartments />}
+                                    />
+                                </Route>
+                                <Route path="notifications">
+                                    <Route index element={<Notifications />} />
+                                    <Route path="task/:id" element={<Task />} />
+                                </Route>
+                            </Route>
+                            <Route path="maintenance" element={<Maintenance />}>
+                                <Route index element={<KanbanBoard />} />
+                                <Route path="maintenanceplans">
+                                    <Route
+                                        index
+                                        element={<MaintenancePlans />}
+                                    />
+                                    <Route path="new" element={<NewPlan />} />
+                                    <Route
+                                        path="edit/:id"
+                                        element={<EditPlan />}
+                                    />
+                                    <Route
+                                        path="delete/:id"
+                                        element={<DeletePlan />}
+                                    />
+                                </Route>
+                            </Route>
+                            <Route path="providers" element={<Providers />}>
+                                <Route index element={<ProvidersList />} />
+                                <Route path="new" element={<NewProvider />} />
+                                <Route
+                                    path="edit/:id"
+                                    element={<EditProvider />}
+                                />
+                                <Route
+                                    path="delete/:id"
+                                    element={<DeleteProvider />}
+                                />
+                                <Route path="agreements">
+                                    <Route index element={<AgreementsList />} />
+                                    <Route
+                                        path="new"
+                                        element={<NewAgreement />}
+                                    />
+                                    <Route
+                                        path="edit/:id"
+                                        element={<EditAgreement />}
+                                    />
+                                    <Route
+                                        path="delete/:id"
+                                        element={<DeleteAgreement />}
+                                    />
+                                </Route>
+                            </Route>
+                            <Route path="inventory" element={<Inventory />}>
+                                <Route index element={<EquipmentList />} />
+                                <Route path="new" element={<NewEquipment />} />
+                                <Route
+                                    path="edit/:id"
+                                    element={<EditEquipment />}
+                                />
+                                <Route
+                                    path="delete/:id"
+                                    element={<DeleteEquipment />}
+                                />
+                                <Route path="typelist">
+                                    <Route
+                                        index
+                                        element={<EquipmentTypeList />}
+                                    />
+                                    <Route
+                                        path="new"
+                                        element={<NewEquipmentType />}
+                                    />
+                                    <Route
+                                        path="edit/:id"
+                                        element={<EditEquipmentType />}
+                                    />
+                                    <Route
+                                        path="delete/:id"
+                                        element={<DeleteEquipmentType />}
+                                    />
+                                </Route>
+                            </Route>
+                            <Route
+                                path="personalsettings"
+                                element={<PersonalSettings />}
+                            >
+                                <Route index element={<EditMyInfo />} />
+                                <Route
+                                    path="password"
+                                    element={<EditPassword />}
+                                />
+                            </Route>
+                            <Route path="*" element={<ErrorPage />} />
+                        </Route>
                     </Route>
-                    <Route path="*" element={<ErrorPage />} />
-                </Route>
-                <Route path="/login">
-                    <Route index element={<Login />} />
-                    <Route path="forgotpassword" element={<ForgotPassword />} />
-                    <Route
-                        path="passwordrecovery"
-                        element={<PasswordRecovery />}
-                    />
-                </Route>
+                )}
             </Routes>
         </BrowserRouter>
     );

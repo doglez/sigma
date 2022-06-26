@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "../../assets/images/summation.png";
+import { LogoutCrt } from "../../redux/reducers/authSlice.js";
 
 const NavBar = () => {
+    const dispatch = useDispatch();
+
+    const handlerLogout = () => {
+        dispatch(LogoutCrt());
+    };
+
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const HandleDrawer = () => {
@@ -128,12 +136,13 @@ const NavBar = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link
+                                    <span
                                         className="dropdown-item text-white bg-dark dropdown-item-modify"
-                                        to="/logout"
+                                        onClick={handlerLogout}
+                                        style={{ cursor: "pointer" }}
                                     >
                                         Sign out
-                                    </Link>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
