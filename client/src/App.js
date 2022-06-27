@@ -102,7 +102,7 @@ function App() {
                                     />
                                 ) : (
                                     <Route
-                                        path="setupcompany"
+                                        path="*"
                                         element={<NoPermitPath />}
                                     />
                                 )}
@@ -112,30 +112,54 @@ function App() {
                                 />
                                 <Route path="users">
                                     <Route index element={<Users />} />
-                                    <Route path="new" element={<NewUser />} />
-                                    <Route
-                                        path="edit/:id"
-                                        element={<EditUser />}
-                                    />
-                                    <Route
-                                        path="delete/:id"
-                                        element={<DeleteUser />}
-                                    />
+                                    {myRole === "super-admin" ||
+                                    myRole === "admin" ||
+                                    myRole === "chief" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewUser />}
+                                            />
+                                            <Route
+                                                path="edit/:id"
+                                                element={<EditUser />}
+                                            />
+                                            <Route
+                                                path="delete/:id"
+                                                element={<DeleteUser />}
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
                                 </Route>
                                 <Route path="departments">
                                     <Route index element={<Departments />} />
-                                    <Route
-                                        path="new"
-                                        element={<NewDepartments />}
-                                    />
-                                    <Route
-                                        path="edit/:id"
-                                        element={<EditDepartments />}
-                                    />
-                                    <Route
-                                        path="delete/:id"
-                                        element={<DeleteDepartments />}
-                                    />
+                                    {myRole === "super-admin" ||
+                                    myRole === "admin" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewDepartments />}
+                                            />
+                                            <Route
+                                                path="edit/:id"
+                                                element={<EditDepartments />}
+                                            />
+                                            <Route
+                                                path="delete/:id"
+                                                element={<DeleteDepartments />}
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
                                 </Route>
                                 <Route path="notifications">
                                     <Route index element={<Notifications />} />
@@ -149,72 +173,131 @@ function App() {
                                         index
                                         element={<MaintenancePlans />}
                                     />
-                                    <Route path="new" element={<NewPlan />} />
-                                    <Route
-                                        path="edit/:id"
-                                        element={<EditPlan />}
-                                    />
-                                    <Route
-                                        path="delete/:id"
-                                        element={<DeletePlan />}
-                                    />
+                                    {myRole === "chief" ||
+                                    myRole === "admin" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewPlan />}
+                                            />
+                                            <Route
+                                                path="edit/:id"
+                                                element={<EditPlan />}
+                                            />
+                                            <Route
+                                                path="delete/:id"
+                                                element={<DeletePlan />}
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
                                 </Route>
                             </Route>
                             <Route path="providers" element={<Providers />}>
                                 <Route index element={<ProvidersList />} />
-                                <Route path="new" element={<NewProvider />} />
-                                <Route
-                                    path="edit/:id"
-                                    element={<EditProvider />}
-                                />
-                                <Route
-                                    path="delete/:id"
-                                    element={<DeleteProvider />}
-                                />
+                                {myRole === "chief" || myRole === "admin" ? (
+                                    <Route>
+                                        <Route
+                                            path="new"
+                                            element={<NewProvider />}
+                                        />
+                                        <Route
+                                            path="edit/:id"
+                                            element={<EditProvider />}
+                                        />
+                                        <Route
+                                            path="delete/:id"
+                                            element={<DeleteProvider />}
+                                        />
+                                    </Route>
+                                ) : (
+                                    <Route
+                                        path="*"
+                                        element={<NoPermitPath />}
+                                    />
+                                )}
                                 <Route path="agreements">
                                     <Route index element={<AgreementsList />} />
-                                    <Route
-                                        path="new"
-                                        element={<NewAgreement />}
-                                    />
-                                    <Route
-                                        path="edit/:id"
-                                        element={<EditAgreement />}
-                                    />
-                                    <Route
-                                        path="delete/:id"
-                                        element={<DeleteAgreement />}
-                                    />
+                                    {myRole === "chief" ||
+                                    myRole === "admin" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewAgreement />}
+                                            />
+                                            <Route
+                                                path="edit/:id"
+                                                element={<EditAgreement />}
+                                            />
+                                            <Route
+                                                path="delete/:id"
+                                                element={<DeleteAgreement />}
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
                                 </Route>
                             </Route>
                             <Route path="inventory" element={<Inventory />}>
                                 <Route index element={<EquipmentList />} />
-                                <Route path="new" element={<NewEquipment />} />
-                                <Route
-                                    path="edit/:id"
-                                    element={<EditEquipment />}
-                                />
-                                <Route
-                                    path="delete/:id"
-                                    element={<DeleteEquipment />}
-                                />
+                                {myRole === "chief" || myRole === "admin" ? (
+                                    <Route>
+                                        <Route
+                                            path="new"
+                                            element={<NewEquipment />}
+                                        />
+                                        <Route
+                                            path="edit/:id"
+                                            element={<EditEquipment />}
+                                        />
+                                        <Route
+                                            path="delete/:id"
+                                            element={<DeleteEquipment />}
+                                        />
+                                    </Route>
+                                ) : (
+                                    <Route
+                                        path="*"
+                                        element={<NoPermitPath />}
+                                    />
+                                )}
                                 <Route path="typelist">
                                     <Route
                                         index
                                         element={<EquipmentTypeList />}
                                     />
-                                    <Route
-                                        path="new"
-                                        element={<NewEquipmentType />}
-                                    />
-                                    <Route
-                                        path="edit/:id"
-                                        element={<EditEquipmentType />}
-                                    />
-                                    <Route
-                                        path="delete/:id"
-                                        element={<DeleteEquipmentType />}
-                                    />
+                                    {myRole === "chief" ||
+                                    myRole === "admin" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewEquipmentType />}
+                                            />
+                                            <Route
+                                                path="edit/:id"
+                                                element={<EditEquipmentType />}
+                                            />
+                                            <Route
+                                                path="delete/:id"
+                                                element={
+                                                    <DeleteEquipmentType />
+                                                }
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
                                 </Route>
                             </Route>
                             <Route

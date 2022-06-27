@@ -12,6 +12,7 @@ const initialState = {
     email: "",
     role: "",
     department: "",
+    photo: "",
 };
 
 const myInfoSlice = createSlice({
@@ -29,6 +30,7 @@ const myInfoSlice = createSlice({
             state.email = action.payload.email;
             state.role = action.payload.role;
             state.department = action.payload.department;
+            state.photo = action.payload.photo;
         },
         myInfoFail: (state) => {
             state.id = "";
@@ -41,6 +43,7 @@ const myInfoSlice = createSlice({
             state.email = "";
             state.role = "";
             state.department = "";
+            state.photo = "";
         },
     },
 });

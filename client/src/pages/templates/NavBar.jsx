@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "../../assets/images/summation.png";
 import { LogoutCrt } from "../../redux/reducers/authSlice.js";
 
 const NavBar = () => {
+    const myName = useSelector((state) => state.myInfoReducer.name);
+    const photo = useSelector((state) => state.myInfoReducer.photo);
+
     const dispatch = useDispatch();
 
     const handlerLogout = () => {
@@ -120,7 +123,16 @@ const NavBar = () => {
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                <i className="bi bi-person-fill" />
+                                {!photo ? (
+                                    <i className="bi bi-person-fill" />
+                                ) : (
+                                    <img
+                                        src={`${process.env.REACT_APP_FILE_URL_SERVER}/${photo}`}
+                                        className="rounded-circle photo-user-navbar"
+                                        alt={myName}
+                                    />
+                                )}{" "}
+                                {myName}
                             </div>
                             <ul
                                 className="dropdown-menu dropdown-menu-end mt-2 bg-dark"

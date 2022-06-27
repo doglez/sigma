@@ -34,7 +34,9 @@ if (Config.NODE_ENV === "development") {
 app.use(
     fileUpload({
         limits: { fieldSize: Config.MAX_FILE_UPLOAD },
+        createParentPath: true,
         safeFileNames: true,
+        preserveExtension: true,
         abortOnLimit: true,
     })
 );
