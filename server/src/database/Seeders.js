@@ -5,6 +5,7 @@ import Config from "../config/Config.js";
 import Company from "../models/Company.js";
 import Department from "../models/Department.js";
 import User from "../models/User.js";
+import Token from "../models/Token.js";
 
 mongoose.connect(Config.MONGO_URL);
 
@@ -39,6 +40,7 @@ const deleteData = async () => {
         await Company.deleteMany();
         await Department.deleteMany();
         await User.deleteMany();
+        await Token.deleteMany();
 
         console.log("Data destroyed...".red.inverse);
         process.exit();
