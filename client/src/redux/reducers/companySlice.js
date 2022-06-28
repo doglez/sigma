@@ -45,7 +45,7 @@ const companySlice = createSlice({
     },
 });
 
-export const CompanyCrt = () => async (dispatch) => {
+export const getCompanyCrt = () => async (dispatch) => {
     await axios
         .get(`${process.env.REACT_APP_API_URL_SERVER}/company`)
         .then((r) => dispatch(getCompanySuccess(r.data.data[0])))

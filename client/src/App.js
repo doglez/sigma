@@ -47,13 +47,15 @@ import EditMyInfo from "./pages/PersonalSettings/EditMyInfo.jsx";
 import NavBar from "./pages/templates/NavBar.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import NoPermitPath from "./pages/NoPermitPath.jsx";
-import { MyInfoCrt } from "./redux/reducers/myInfoSlice.js";
+import { getMyInfoCrt } from "./redux/reducers/myInfoSlice.js";
+import { CoutriesCrt } from "./redux/reducers/coutriesSlice.js";
 
 function App() {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.authReducer.token);
     if (token) {
-        dispatch(MyInfoCrt());
+        dispatch(getMyInfoCrt());
+        dispatch(CoutriesCrt());
     }
     const myRole = useSelector((state) => state.myInfoReducer.role);
 

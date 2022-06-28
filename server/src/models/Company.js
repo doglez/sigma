@@ -27,25 +27,21 @@ const CompanySchema = new mongoose.Schema(
             type: String,
             required: [true, "Country is required."],
             trim: true,
-            maxlength: [25, "Country can not be more than 25 characters."],
-            minlength: [3, "Country must be at least 3 characters."],
+        },
+        isoCountry: {
+            type: String,
+            required: [true, "Country is required."],
+            trim: true,
         },
         stateProvince: {
             type: String,
             required: [true, "State / Province is required."],
             trim: true,
-            maxlength: [
-                25,
-                "State / Province can not be more than 25 characters.",
-            ],
-            minlength: [3, "State / Province must be at least 3 characters."],
         },
         currency: {
             type: String,
             required: [true, "Currency is required."],
             trim: true,
-            maxlength: [10, "Currency can not be more than 10 characters."],
-            minlength: [3, "Currency must be at least 3 characters."],
         },
         phone: {
             type: Number,

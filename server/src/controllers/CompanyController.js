@@ -37,6 +37,7 @@ export const createOrUpdateCompany = AsyncHandler(async (req, res, next) => {
         address,
         zipCode,
         country,
+        isoCountry,
         stateProvince,
         currency,
         phone,
@@ -53,6 +54,7 @@ export const createOrUpdateCompany = AsyncHandler(async (req, res, next) => {
             address,
             zipCode,
             country,
+            isoCountry,
             stateProvince,
             currency,
             phone,
@@ -67,6 +69,7 @@ export const createOrUpdateCompany = AsyncHandler(async (req, res, next) => {
                 address,
                 zipCode,
                 country,
+                isoCountry,
                 stateProvince,
                 currency,
                 phone,
@@ -95,9 +98,10 @@ export const createOrUpdateCompany = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const uploadLogo = AsyncHandler(async (req, res, next) => {
+    console.log(req.files.file);
+
     const companies = await Company.find({ tag: "unique" });
     let company = companies[0];
-    console.log(company);
 
     if (companies.length < 1) {
         return next(

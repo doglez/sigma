@@ -19,7 +19,7 @@ const myInfoSlice = createSlice({
     name: "myInfoReducer",
     initialState,
     reducers: {
-        myInfoSucces: (state, action) => {
+        myInfoSuccess: (state, action) => {
             state.id = action.payload._id;
             state.collaboratorNumber = action.payload.collaboratorNumber;
             state.name = action.payload.name;
@@ -48,15 +48,15 @@ const myInfoSlice = createSlice({
     },
 });
 
-export const MyInfoCrt = () => async (dispatch) => {
+export const getMyInfoCrt = () => async (dispatch) => {
     await axios
         .get(`${process.env.REACT_APP_API_URL_SERVER}/auth/me`)
         .then((r) => {
-            dispatch(myInfoSucces(r.data.data));
+            dispatch(myInfoSuccess(r.data.data));
         })
         .catch((e) => dispatch(myInfoFail(e.response.data)));
 };
 
-export const { myInfoSucces, myInfoFail } = myInfoSlice.actions;
+export const { myInfoSuccess, myInfoFail } = myInfoSlice.actions;
 
 export default myInfoSlice.reducer;
