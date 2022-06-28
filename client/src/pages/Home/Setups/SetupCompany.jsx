@@ -6,7 +6,10 @@ import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getCompanyCrt } from "../../../redux/reducers/companySlice.js";
+import {
+    getCompanyCrt,
+    updateCompanyCrt,
+} from "../../../redux/reducers/companySlice.js";
 
 const SetupCompany = () => {
     const dispatch = useDispatch();
@@ -106,7 +109,7 @@ const SetupCompany = () => {
                         // props.login(values)
                         if (!errorUpload) {
                             toast.success("Upload Success");
-                            console.log(values);
+                            dispatch(updateCompanyCrt(values));
                         }
                     }}
                 >
