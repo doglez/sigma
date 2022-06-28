@@ -5,20 +5,20 @@ const initialState = {
     countries: [],
 };
 
-const coutriesSlice = createSlice({
-    name: "coutriesReducer",
+const countriesSlice = createSlice({
+    name: "countriesReducer",
     initialState,
     reducers: {
-        coutriesSuccess: (state, action) => {
+        countriesSuccess: (state, action) => {
             state.countries = action.payload;
         },
-        coutriesFail: (state) => {
+        countriesFail: (state) => {
             state.countries = [];
         },
     },
 });
 
-export const CoutriesCrt = () => async (dispatch) => {
+export const CountriesCrt = () => async (dispatch) => {
     await axios
         .get(`${process.env.REACT_APP_API_URL_COUNTRYSTATE}/countries`, {
             headers: {
@@ -27,10 +27,10 @@ export const CoutriesCrt = () => async (dispatch) => {
                 Authorization: `Bearer ${process.env.REACT_APP_API_URL_COUNTRYSTATE}`,
             },
         })
-        .then((r) => dispatch(coutriesSuccess(r.data)))
-        .catch((e) => dispatch(coutriesFail(e.data)));
+        .then((r) => dispatch(countriesSuccess(r.data)))
+        .catch((e) => dispatch(countriesFail(e.data)));
 };
 
-export const { coutriesSuccess, coutriesFail } = coutriesSlice.actions;
+export const { countriesSuccess, countriesFail } = countriesSlice.actions;
 
-export default coutriesSlice.reducer;
+export default countriesSlice.reducer;

@@ -48,14 +48,14 @@ import NavBar from "./pages/templates/NavBar.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import NoPermitPath from "./pages/NoPermitPath.jsx";
 import { getMyInfoCrt } from "./redux/reducers/myInfoSlice.js";
-import { CoutriesCrt } from "./redux/reducers/coutriesSlice.js";
+import { CountriesCrt } from "./redux/reducers/countriesSlice.js";
 
 function App() {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.authReducer.token);
     if (token) {
         dispatch(getMyInfoCrt());
-        dispatch(CoutriesCrt());
+        dispatch(CountriesCrt());
     }
     const myRole = useSelector((state) => state.myInfoReducer.role);
 
