@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -10,16 +11,26 @@ import {
     getCompanyCrt,
     updateCompanyCrt,
 } from "../../../redux/reducers/companySlice.js";
+import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
+import { StatesProvincesCrt } from "../../../redux/reducers/statesProvincesSlice.js";
 
 const SetupCompany = () => {
     const dispatch = useDispatch();
-    dispatch(getCompanyCrt());
+
+    const handlerReload = () => {
+        dispatch(getCompanyCrt());
+        dispatch(CountriesCrt());
+        dispatch(StatesProvincesCrt());
+    };
+
+    useEffect(() => {
+        window.addEventListener("beforeunload", handlerReload());
+    }, []);
 
     const countries = useSelector((state) => state.countriesReducer.countries);
     const statesProvinces = useSelector(
         (state) => state.statesProvincesReducer.statesProvinces
     );
-
     const {
         name,
         address,

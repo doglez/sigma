@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import Login from "./pages/Auth/Login.jsx";
@@ -48,17 +49,22 @@ import NavBar from "./pages/templates/NavBar.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import NoPermitPath from "./pages/NoPermitPath.jsx";
 import { getMyInfoCrt } from "./redux/reducers/myInfoSlice.js";
-import { CountriesCrt } from "./redux/reducers/countriesSlice.js";
-import { StatesProvincesCrt } from "./redux/reducers/statesProvincesSlice.js";
+import { useEffect } from "react";
 
 function App() {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.authReducer.token);
-    if (token) {
+
+    const handlerReload = () => {
         dispatch(getMyInfoCrt());
-        dispatch(CountriesCrt());
-        dispatch(StatesProvincesCrt());
-    }
+    };
+
+    useEffect(() => {
+        if (token) {
+            window.addEventListener("beforeunload", handlerReload());
+        }
+    }, []);
+
     const myRole = useSelector((state) => state.myInfoReducer.role);
 
     return (
