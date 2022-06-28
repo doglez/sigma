@@ -34,6 +34,10 @@ $old-lavender: #786e79;
     }
 }
 
+.scrollable-horizontal-allways {
+    overflow-x: scroll;
+}
+
 .scrollable-vertical {
     overflow-y: scroll;
     max-height: 100px;
