@@ -5,6 +5,7 @@ import myInfoSlice from "./reducers/myInfoSlice.js";
 import companySlice from "./reducers/companySlice.js";
 import countriesSlice from "./reducers/countriesSlice.js";
 import statesProvincesSlice from "./reducers/statesProvincesSlice.js";
+import usersSlice from "./reducers/usersSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ let store = configureStore({
         companyReducer: companySlice,
         countriesReducer: countriesSlice,
         statesProvincesReducer: statesProvincesSlice,
+        usersReducer: usersSlice,
     },
     middleware: [thunk],
 });
