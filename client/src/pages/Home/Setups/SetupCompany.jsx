@@ -13,13 +13,15 @@ const SetupCompany = () => {
     dispatch(getCompanyCrt());
 
     const countries = useSelector((state) => state.countriesReducer.countries);
+    const statesProvinces = useSelector(
+        (state) => state.statesProvincesReducer.statesProvinces
+    );
 
     const {
         name,
         address,
         zipCode,
         country,
-        isoCountry,
         stateProvince,
         currency,
         phone,
@@ -73,7 +75,6 @@ const SetupCompany = () => {
                         address: address,
                         zipCode: zipCode,
                         country: country,
-                        isoCountry: isoCountry,
                         stateProvince: stateProvince,
                         currency: currency,
                         phone: phone,
@@ -90,11 +91,6 @@ const SetupCompany = () => {
                         zipCode: Yup.string()
                             .min(3, "Zip Code must be at least 3 characters.")
                             .required("Zip Code is required"),
-                        country: Yup.string().required("Country is required"),
-                        stateProvince: Yup.string().required(
-                            "State/Province is required"
-                        ),
-                        currency: Yup.string().required("Currency is required"),
                         phone: Yup.number()
                             .positive()
                             .integer()
@@ -189,11 +185,10 @@ const SetupCompany = () => {
                                         name="country"
                                         className="form-control"
                                         as="select"
-                                        required
                                     >
                                         {countries.map((country) => (
                                             <option
-                                                value={country.iso}
+                                                value={country.name}
                                                 key={country.id}
                                             >
                                                 {country.name}
@@ -217,14 +212,17 @@ const SetupCompany = () => {
                                         name="stateProvince"
                                         className="form-control"
                                         as="select"
-                                        required
                                     >
-                                        <option defaultValue>
-                                            Select a State or Province
-                                        </option>
-                                        <option value={1}>One</option>
-                                        <option value={2}>Two</option>
-                                        <option value={3}>Three</option>
+                                        {statesProvinces.map(
+                                            (stateProvince) => (
+                                                <option
+                                                    value={stateProvince.name}
+                                                    key={stateProvince.id}
+                                                >
+                                                    {stateProvince.name}
+                                                </option>
+                                            )
+                                        )}
                                     </Field>
                                 </div>
                                 <div className="text-danger error-validation p-0 text-start">
@@ -243,14 +241,9 @@ const SetupCompany = () => {
                                         name="currency"
                                         className="form-control"
                                         as="select"
-                                        required
                                     >
-                                        <option defaultValue>
-                                            Select your Currency
-                                        </option>
-                                        <option value={1}>One</option>
-                                        <option value={2}>Two</option>
-                                        <option value={3}>Three</option>
+                                        <option value={"USD"}>USD</option>
+                                        <option value={"EUR"}>EUR</option>
                                     </Field>
                                 </div>
                                 <div className="text-danger error-validation p-0 text-start">

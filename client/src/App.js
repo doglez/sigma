@@ -49,6 +49,7 @@ import { useDispatch, useSelector } from "react-redux";
 import NoPermitPath from "./pages/NoPermitPath.jsx";
 import { getMyInfoCrt } from "./redux/reducers/myInfoSlice.js";
 import { CountriesCrt } from "./redux/reducers/countriesSlice.js";
+import { StatesProvincesCrt } from "./redux/reducers/statesProvincesSlice.js";
 
 function App() {
     const dispatch = useDispatch();
@@ -56,6 +57,7 @@ function App() {
     if (token) {
         dispatch(getMyInfoCrt());
         dispatch(CountriesCrt());
+        dispatch(StatesProvincesCrt());
     }
     const myRole = useSelector((state) => state.myInfoReducer.role);
 
