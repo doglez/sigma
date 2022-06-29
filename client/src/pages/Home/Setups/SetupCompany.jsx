@@ -56,8 +56,12 @@ const SetupCompany = () => {
 
         if (!selectedFile) {
             setErrorUpload("You need to provide a file");
-        } else if (selectedFile.size >= 1000000) {
-            setErrorUpload("File size must be less than 1MB");
+        } else if (selectedFile.size >= process.env.REACT_APP_MAX_FILE_UPLOAD) {
+            setErrorUpload(
+                `File size must be less than ${
+                    process.env.REACT_APP_MAX_FILE_UPLOAD / 1000000
+                }MB`
+            );
         } else if (selectedFile.type !== "image/png") {
             setErrorUpload("We only support png");
         } else {
