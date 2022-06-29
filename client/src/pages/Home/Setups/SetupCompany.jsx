@@ -72,8 +72,8 @@ const SetupCompany = () => {
                     setErrorUpload();
                 })
                 .catch((err) => {
-                    console.error(err.message);
-                    toast.error("Upload Error");
+                    // console.error(err.message);
+                    toast.error("Upload Logo Error");
                 });
         }
     };
