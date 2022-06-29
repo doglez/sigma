@@ -10,7 +10,8 @@
         "email": "superadmin@example.com",
         "role": "super-admin",
         "department": "62b530b13a5c49c42f5ec64c",
-        "password": "Pass123@"
+        "password": "Pass123@",
+        "photo": "62b63bede321b7c5e3ce81f6_SuperAdmin.png"
     },
     {
         "_id": "62b63bede321b7c5e3ce81f7",
@@ -127,6 +128,7 @@
         "email": "auditor@example.com",
         "role": "auditor",
         "department": "62b635a34e2888409023c012",
-        "password": "Pass123@"
+        "password": "Pass123@",
+        "photo": "62b63bede321b7c5e3ce81ff_AuditorAudit.png"
     }
 ]
