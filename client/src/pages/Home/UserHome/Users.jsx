@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import NoUserPhoto from "../../../assets/images/NoUserPhoto.png";
-import { getUserCrt } from "../../../redux/reducers/usersSlice.js";
+import { getUserCrt } from "../../../redux/reducers/usersReducers/usersSlice.js";
 
 const Users = () => {
     const dispatch = useDispatch();

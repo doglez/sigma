@@ -5,7 +5,7 @@ import myInfoSlice from "./reducers/myInfoSlice.js";
 import companySlice from "./reducers/companySlice.js";
 import countriesSlice from "./reducers/countriesSlice.js";
 import statesProvincesSlice from "./reducers/statesProvincesSlice.js";
-import usersSlice from "./reducers/usersSlice.js";
+import usersSlice from "./reducers/usersReducers/usersSlice.js";
 
 let store = configureStore({
     reducer: {
