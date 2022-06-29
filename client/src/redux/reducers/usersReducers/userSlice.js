@@ -153,6 +153,18 @@ export const updateUserCrt = (userId, data) => async (dispatch) => {
         });
 };
 
+export const deleteUserCrt = (userId) => async (dispatch) => {
+    await axios
+        .delete(`${process.env.REACT_APP_API_URL_SERVER}/users/${userId}`)
+        .then((r) => {
+            dispatch(deleteUserSuccess(r.data.data));
+        })
+        .catch((e) => {
+            console.log(e);
+            dispatch(deleteUserFail(e.response.data));
+        });
+};
+
 export const {
     getUserSuccess,
     getUserFail,
@@ -160,6 +172,8 @@ export const {
     createUserFail,
     updateUserSuccess,
     updateUserFail,
+    deleteUserSuccess,
+    deleteUserFail,
 } = userSlice.actions;
 
 export default userSlice.reducer;

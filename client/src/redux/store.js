@@ -8,6 +8,7 @@ import statesProvincesSlice from "./reducers/statesProvincesSlice.js";
 import usersSlice from "./reducers/usersReducers/usersSlice.js";
 import userSlice from "./reducers/usersReducers/userSlice.js";
 import departmentsSlice from "./reducers/departmentReducers/departmentsSlice.js";
+import departmentSlice from "./reducers/departmentReducers/departmentSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -19,6 +20,7 @@ let store = configureStore({
         usersReducer: usersSlice,
         userReducer: userSlice,
         departmentsReducer: departmentsSlice,
+        departmentReducer: departmentSlice,
     },
     middleware: [thunk],
 });
