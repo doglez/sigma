@@ -38,18 +38,11 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: [true, "Country is required."],
             trim: true,
-            maxlength: [25, "Country can not be more than 25 characters."],
-            minlength: [3, "Country must be at least 3 characters."],
         },
         stateProvince: {
             type: String,
             required: [true, "State / Province is required."],
             trim: true,
-            maxlength: [
-                25,
-                "State / Province can not be more than 25 characters.",
-            ],
-            minlength: [3, "State / Province must be at least 3 characters."],
         },
         phone: {
             type: Number,
