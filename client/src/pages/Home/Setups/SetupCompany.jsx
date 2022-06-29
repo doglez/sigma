@@ -210,9 +210,6 @@ const SetupCompany = () => {
                                         ))}
                                     </Field>
                                 </div>
-                                <div className="text-danger error-validation p-0 text-start">
-                                    <ErrorMessage name="country" />
-                                </div>
                             </div>
                             <div className="col-md-6 col-lg-4 pb-3">
                                 <div className="input-group">
@@ -239,9 +236,6 @@ const SetupCompany = () => {
                                         )}
                                     </Field>
                                 </div>
-                                <div className="text-danger error-validation p-0 text-start">
-                                    <ErrorMessage name="stateProvince" />
-                                </div>
                             </div>
                             <div className="col-md-6 col-lg-4 pb-3">
                                 <div className="input-group">
@@ -259,9 +253,6 @@ const SetupCompany = () => {
                                         <option value={"USD"}>USD</option>
                                         <option value={"EUR"}>EUR</option>
                                     </Field>
-                                </div>
-                                <div className="text-danger error-validation p-0 text-start">
-                                    <ErrorMessage name="currency" />
                                 </div>
                             </div>
                             <div className="col-md-6 col-lg-4 pb-3">
