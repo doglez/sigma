@@ -18,7 +18,7 @@ const usersSlice = createSlice({
     },
 });
 
-export const getUserCrt = () => async (dispatch) => {
+export const getUsersCrt = () => async (dispatch) => {
     await axios
         .get(`${process.env.REACT_APP_API_URL_SERVER}/users`)
         .then((r) => dispatch(getUsersSuccess(r.data.data)))
