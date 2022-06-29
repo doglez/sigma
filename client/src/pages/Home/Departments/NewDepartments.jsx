@@ -1,12 +1,14 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createDepartmentCrt } from "../../../redux/reducers/departmentReducers/departmentSlice.js";
 
 const NewDepartments = () => {
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
+
     return (
         <div className="container">
             <Formik
@@ -30,9 +32,8 @@ const NewDepartments = () => {
                         .required("Please enter a valid email"),
                 })}
                 onSubmit={(values) => {
-                    // props.login(values)
-                    toast.success("Upload Success");
-                    console.log(values);
+                    dispatch(createDepartmentCrt(values));
+                    navigate("../", { replace: true });
                 }}
             >
                 <Form className="text-center">
@@ -91,7 +92,6 @@ const NewDepartments = () => {
                                     name="email"
                                     className="form-control"
                                     type="email"
-                                    placeholder="Company Name"
                                     required
                                 />
                             </div>
@@ -99,7 +99,6 @@ const NewDepartments = () => {
                                 <ErrorMessage name="email" />
                             </div>
                         </div>
-                        <ToastContainer />
                     </div>
                     <div className="d-flex justify-content-start mt-3">
                         <button
