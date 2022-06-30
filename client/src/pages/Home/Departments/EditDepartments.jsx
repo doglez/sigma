@@ -61,7 +61,7 @@ const EditDepartments = () => {
                 >
                     <Form className="text-center">
                         <h1 className="text-deep-saffron py-4 ">
-                            Edit Department
+                            Edit Department {department.name}
                         </h1>
 
                         <div className="row">

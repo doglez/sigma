@@ -43,8 +43,8 @@ const DeleteDepartments = () => {
                 >
                     <Form className="text-center">
                         <h1 className="text-danger pt-4 ">
-                            Warning you are going to delete the department Data
-                            Center
+                            Warning you are going to delete the department{" "}
+                            {department.name}
                         </h1>
                         <h5 className="text-danger pb-4">
                             This change is irreversible.
