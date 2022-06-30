@@ -6,7 +6,8 @@
         "country": "United States",
         "phone": 504999999,
         "email": "help@cisco.com",
-        "website": "https://www.cisco.com/"        
+        "website": "https://www.cisco.com/",
+        "logo": "62bceed46af22f54c0109c91.png"
     },
     {
         "_id": "62bceec86af22f54c0109c8e",
