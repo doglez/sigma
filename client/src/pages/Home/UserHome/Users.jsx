@@ -21,90 +21,97 @@ const Users = () => {
 
     return (
         <div className="container">
-            <h1 className="text-deep-saffron py-4 text-center">
-                List of Users
-            </h1>
-            {myRole !== "super-admin" &&
-            myRole !== "admin" &&
-            myRole !== "chief" ? (
-                <></>
-            ) : (
-                <Link role="button" className="btn btn-primary mb-2" to="new">
-                    New User
-                </Link>
-            )}
-            {!users ? (
+            {!users[0] ? (
                 <div>Your Data is loading...</div>
             ) : (
-                <div className="scrollable-horizontal scrollable-horizontal-allways">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Collaborator #</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Email</th>
-                                {/* <th scope="col">Department</th> */}
-                                <th scope="col">Picture</th>
-                                {myRole !== "super-admin" &&
-                                myRole !== "admin" &&
-                                myRole !== "chief" ? (
-                                    <></>
-                                ) : (
-                                    <th scope="col">Actions</th>
-                                )}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {users.map((user) => (
-                                <tr key={user._id}>
-                                    <td>{user.collaboratorNumber}</td>
-                                    <td>{user.name}</td>
-                                    <td>{user.lastName}</td>
-                                    <td>{user.email}</td>
-                                    {/* <td>{user.department}</td> */}
-                                    <td>
-                                        {!user.photo ? (
-                                            <img
-                                                src={NoUserPhoto}
-                                                className="rounded-circle photo-user"
-                                                alt="..."
-                                            />
-                                        ) : (
-                                            <img
-                                                src={`${process.env.REACT_APP_FILE_URL_SERVER}/${user.photo}`}
-                                                className="rounded-circle photo-user"
-                                                alt="..."
-                                            />
-                                        )}
-                                    </td>
+                <>
+                    <h1 className="text-deep-saffron py-4 text-center">
+                        List of Users
+                    </h1>
+                    {myRole !== "super-admin" &&
+                    myRole !== "admin" &&
+                    myRole !== "chief" ? (
+                        <></>
+                    ) : (
+                        <Link
+                            role="button"
+                            className="btn btn-primary mb-2"
+                            to="new"
+                        >
+                            New User
+                        </Link>
+                    )}
+
+                    <div className="scrollable-horizontal scrollable-horizontal-allways">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Collaborator #</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    {/* <th scope="col">Department</th> */}
+                                    <th scope="col">Picture</th>
                                     {myRole !== "super-admin" &&
                                     myRole !== "admin" &&
                                     myRole !== "chief" ? (
                                         <></>
                                     ) : (
-                                        <td>
-                                            <Link
-                                                role="button"
-                                                className="btn btn-warning mb-md-2 mb-lg-0 me-lg-2 me-md-0 button-action"
-                                                to={`edit/${user._id}`}
-                                            >
-                                                Update
-                                            </Link>
-                                            <Link
-                                                role="button"
-                                                className="btn btn-danger button-action"
-                                                to={`delete/${user._id}`}
-                                            >
-                                                Delete
-                                            </Link>
-                                        </td>
+                                        <th scope="col">Actions</th>
                                     )}
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {users.map((user) => (
+                                    <tr key={user._id}>
+                                        <td>{user.collaboratorNumber}</td>
+                                        <td>{user.name}</td>
+                                        <td>{user.lastName}</td>
+                                        <td>{user.email}</td>
+                                        {/* <td>{user.department}</td> */}
+                                        <td>
+                                            {!user.photo ? (
+                                                <img
+                                                    src={NoUserPhoto}
+                                                    className="rounded-circle photo-user"
+                                                    alt="..."
+                                                />
+                                            ) : (
+                                                <img
+                                                    src={`${process.env.REACT_APP_FILE_URL_SERVER}/${user.photo}`}
+                                                    className="rounded-circle photo-user"
+                                                    alt="..."
+                                                />
+                                            )}
+                                        </td>
+                                        {myRole !== "super-admin" &&
+                                        myRole !== "admin" &&
+                                        myRole !== "chief" ? (
+                                            <></>
+                                        ) : (
+                                            <td>
+                                                <Link
+                                                    role="button"
+                                                    className="btn btn-warning mb-md-2 mb-lg-0 me-lg-2 me-md-0 button-action"
+                                                    to={`edit/${user._id}`}
+                                                >
+                                                    Update
+                                                </Link>
+                                                <Link
+                                                    role="button"
+                                                    className="btn btn-danger button-action"
+                                                    to={`delete/${user._id}`}
+                                                >
+                                                    Delete
+                                                </Link>
+                                            </td>
+                                        )}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </>
             )}
         </div>
     );

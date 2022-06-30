@@ -87,7 +87,10 @@ const EditUser = () => {
 
     return (
         <div className="container">
-            {!user.name ? (
+            {!user.name ||
+            !countries[0] ||
+            !statesProvinces[0] ||
+            !departments[0] ? (
                 <div>Your Data is loading...</div>
             ) : (
                 <>

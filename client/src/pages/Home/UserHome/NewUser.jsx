@@ -34,7 +34,7 @@ const NewUser = () => {
 
     return (
         <div className="container">
-            {!departments ? (
+            {!departments[0] || !countries[0] || !statesProvinces[0] ? (
                 <div>Your Data is loading...</div>
             ) : (
                 <Formik

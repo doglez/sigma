@@ -47,7 +47,8 @@ const DeleteUser = () => {
                     >
                         <Form className="text-center">
                             <h1 className="text-danger pt-4 ">
-                                Warning you are going to delete the user Danilo
+                                Warning you are going to delete the user{" "}
+                                {user.name}
                             </h1>
                             <h5 className="text-danger pb-4">
                                 This change is irreversible.
