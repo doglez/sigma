@@ -2,6 +2,7 @@ import express from "express";
 import AuthRoutes from "./AuthRoutes.js";
 import CompanyRoutes from "./CompanyRoutes.js";
 import DepartmentRoutes from "./DepartmentRoutes.js";
+import EquipmentTypeRoutes from "./EquipmentTypeRoutes.js";
 import ProviderRouter from "./ProviderRoutes.js";
 import UserRouter from "./UserRouter.js";
 
@@ -12,5 +13,6 @@ Routes.use("/company", CompanyRoutes);
 Routes.use("/users", UserRouter);
 Routes.use("/departments", DepartmentRoutes);
 Routes.use("/providers", ProviderRouter);
+Routes.use("/equipmenttypes", EquipmentTypeRoutes);
 
 export default Routes;
