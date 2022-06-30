@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDepartmentsCrt } from "../../../redux/reducers/departmentReducers/departmentsSlice.js";
+import { getDepartmentsCrt } from "../../../redux/reducers/departmentsReducers/departmentsSlice.js";
 
 const Departments = () => {
     const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import React from "react";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { createDepartmentCrt } from "../../../redux/reducers/departmentReducers/departmentSlice.js";
+import { createDepartmentCrt } from "../../../redux/reducers/departmentsReducers/departmentSlice.js";
 
 const NewDepartments = () => {
     const dispatch = useDispatch();

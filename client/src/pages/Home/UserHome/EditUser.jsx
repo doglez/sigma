@@ -11,7 +11,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
 import { StatesProvincesCrt } from "../../../redux/reducers/statesProvincesSlice.js";
-import { getDepartmentsCrt } from "../../../redux/reducers/departmentReducers/departmentsSlice.js";
+import { getDepartmentsCrt } from "../../../redux/reducers/departmentsReducers/departmentsSlice.js";
 import {
     getUserCrt,
     updateUserCrt,

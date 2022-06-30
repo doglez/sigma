@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
     deleteDepartmentCrt,
     getDepartmentCrt,
-} from "../../../redux/reducers/departmentReducers/departmentSlice.js";
+} from "../../../redux/reducers/departmentsReducers/departmentSlice.js";
 
 const DeleteDepartments = () => {
     let navigate = useNavigate();

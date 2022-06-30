@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
 import { StatesProvincesCrt } from "../../../redux/reducers/statesProvincesSlice.js";
 import { createUserCrt } from "../../../redux/reducers/usersReducers/userSlice.js";
-import { getDepartmentsCrt } from "../../../redux/reducers/departmentReducers/departmentsSlice.js";
+import { getDepartmentsCrt } from "../../../redux/reducers/departmentsReducers/departmentsSlice.js";
 
 const NewUser = () => {
     let navigate = useNavigate();

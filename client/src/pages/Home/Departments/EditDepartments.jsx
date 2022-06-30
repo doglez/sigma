@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     getDepartmentCrt,
     updateDepartmentCrt,
-} from "../../../redux/reducers/departmentReducers/departmentSlice.js";
+} from "../../../redux/reducers/departmentsReducers/departmentSlice.js";
 
 const EditDepartments = () => {
     let navigate = useNavigate();
