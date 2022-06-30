@@ -1,7 +1,21 @@
 import mongoose from "mongoose";
 
-const CompanySchema = new mongoose.Schema(
+const ProviderSchema = new mongoose.Schema(
     {
+        ein: {
+            type: String,
+            required: [true, "Enterprise identification number is required."],
+            unique: true,
+            trim: true,
+            maxlength: [
+                10,
+                "Enterprise identification number can not be more than 10 characters.",
+            ],
+            minlength: [
+                3,
+                "Enterprise identification number must be at least 3 characters.",
+            ],
+        },
         name: {
             type: String,
             required: [true, "Name is required."],
@@ -9,33 +23,9 @@ const CompanySchema = new mongoose.Schema(
             maxlength: [25, "Name can not be more than 25 characters."],
             minlength: [3, "Name must be at least 3 characters."],
         },
-        address: {
-            type: String,
-            required: [true, "Address is required."],
-            trim: true,
-            maxlength: [50, "Address can not be more than 50 characters."],
-            minlength: [10, "Address must be at least 10 characters."],
-        },
-        zipCode: {
-            type: String,
-            required: [true, "Zip Code is required."],
-            trim: true,
-            maxlength: [25, "Zip Code can not be more than 25 characters."],
-            minlength: [3, "Zip Code must be at least 3 characters."],
-        },
         country: {
             type: String,
             required: [true, "Country is required."],
-            trim: true,
-        },
-        stateProvince: {
-            type: String,
-            required: [true, "State / Province is required."],
-            trim: true,
-        },
-        currency: {
-            type: String,
-            required: [true, "Currency is required."],
             trim: true,
         },
         phone: {
@@ -66,12 +56,6 @@ const CompanySchema = new mongoose.Schema(
         logo: {
             type: String,
         },
-        tag: {
-            type: String,
-            required: true,
-            unique: true,
-            default: "unique",
-        },
     },
     {
         timestamps: true,
@@ -79,7 +63,7 @@ const CompanySchema = new mongoose.Schema(
 );
 
 // Standarization for name uppercase the first character of each word
-CompanySchema.pre("save", async function (next) {
+ProviderSchema.pre("save", async function (next) {
     const splitStr = await this.name.toLowerCase().split(" ");
 
     for (let i = 0; i < splitStr.length; i++) {
@@ -90,4 +74,4 @@ CompanySchema.pre("save", async function (next) {
     this.name = await splitStr.join(" ");
 });
 
-export default mongoose.model("Company", CompanySchema);
+export default mongoose.model("Provider", ProviderSchema);

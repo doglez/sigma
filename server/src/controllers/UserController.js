@@ -253,9 +253,7 @@ export const uploadPhoto = AsyncHandler(async (req, res, next) => {
             );
         }
 
-        file.name = `${user.id}_${user.name}${user.lastName}.${
-            file.mimetype.split("/")[1]
-        }`;
+        file.name = `${user.id}.${file.mimetype.split("/")[1]}`;
 
         file.mv(`${Config.FILE_UPLOAD_PATH}/${file.name}`, async (error) => {
             if (error) {
