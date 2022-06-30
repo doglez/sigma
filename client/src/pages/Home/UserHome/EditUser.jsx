@@ -16,6 +16,7 @@ import {
     getUserCrt,
     updateUserCrt,
 } from "../../../redux/reducers/usersReducers/userSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const EditUser = () => {
     let navigate = useNavigate();
@@ -87,11 +88,11 @@ const EditUser = () => {
 
     return (
         <div className="container">
-            {!user.name ||
+            {!user ||
             !countries[0] ||
             !statesProvinces[0] ||
             !departments[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <>
                     <Formik

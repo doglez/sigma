@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getProvidersCrt } from "../../../redux/reducers/providersReducers/providersSlice.js";
 import NoLogo from "../../../assets/images/NoLogo.png";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const ProvidersList = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const ProvidersList = () => {
     return (
         <div className="container">
             {!providers[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <div className="scrollable-horizontal">
                     <h1 className="text-deep-saffron py-4 text-center">

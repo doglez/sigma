@@ -8,6 +8,7 @@ import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
 import { StatesProvincesCrt } from "../../../redux/reducers/statesProvincesSlice.js";
 import { createUserCrt } from "../../../redux/reducers/usersReducers/userSlice.js";
 import { getDepartmentsCrt } from "../../../redux/reducers/departmentsReducers/departmentsSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const NewUser = () => {
     let navigate = useNavigate();
@@ -35,7 +36,7 @@ const NewUser = () => {
     return (
         <div className="container">
             {!departments[0] || !countries[0] || !statesProvinces[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <Formik
                     initialValues={{

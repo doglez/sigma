@@ -2,10 +2,11 @@
 import React, { useEffect } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
 import { createProviderCrt } from "../../../redux/reducers/providersReducers/providerSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const NewProvider = () => {
     let navigate = useNavigate();
@@ -25,7 +26,7 @@ const NewProvider = () => {
     return (
         <div className="container">
             {!countries[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <Formik
                     initialValues={{
@@ -201,10 +202,17 @@ const NewProvider = () => {
                         <div className="d-flex justify-content-start">
                             <button
                                 type="submit"
-                                className="btn btn-primary mt-3 col-2"
+                                className="btn btn-primary col-lg-1 col-md-2 me-3"
                             >
                                 Save
                             </button>
+                            <Link
+                                role="button"
+                                to="/providers"
+                                className="btn btn-danger col-lg-1 col-md-2"
+                            >
+                                Cancel
+                            </Link>
                         </div>
                     </Form>
                 </Formik>

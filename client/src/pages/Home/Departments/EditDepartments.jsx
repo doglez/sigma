@@ -8,6 +8,7 @@ import {
     getDepartmentCrt,
     updateDepartmentCrt,
 } from "../../../redux/reducers/departmentsReducers/departmentSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const EditDepartments = () => {
     let navigate = useNavigate();
@@ -28,7 +29,7 @@ const EditDepartments = () => {
     return (
         <div className="container">
             {!department.name ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <Formik
                     initialValues={{

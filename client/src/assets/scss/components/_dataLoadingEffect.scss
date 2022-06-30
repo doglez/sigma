@@ -1,0 +1,14 @@
+.data-loading {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        height: 100px;
+        width: 100px;
+        border: 0.6em solid currentColor;
+        border-right-color: transparent;
+        animation: 1s linear infinite spinner-border;
+    }
+}

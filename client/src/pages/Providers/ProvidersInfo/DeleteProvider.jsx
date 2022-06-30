@@ -8,6 +8,7 @@ import {
     getProviderCrt,
 } from "../../../redux/reducers/providersReducers/providerSlice.js";
 import NoLogo from "../../../assets/images/NoLogo.png";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const DeleteProvider = () => {
     let navigate = useNavigate();
@@ -28,7 +29,7 @@ const DeleteProvider = () => {
     return (
         <div className="container">
             {!provider.name ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <>
                     <Formik

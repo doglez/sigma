@@ -14,6 +14,7 @@ import {
     updateProviderCrt,
 } from "../../../redux/reducers/providersReducers/providerSlice.js";
 import NoLogo from "../../../assets/images/NoLogo.png";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const EditProvider = () => {
     let navigate = useNavigate();
@@ -79,7 +80,7 @@ const EditProvider = () => {
     return (
         <div className="container">
             {!provider.name || !countries[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <>
                     <Formik

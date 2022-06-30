@@ -8,6 +8,7 @@ import {
     deleteUserCrt,
     getUserCrt,
 } from "../../../redux/reducers/usersReducers/userSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const DeleteUser = () => {
     let navigate = useNavigate();
@@ -27,7 +28,7 @@ const DeleteUser = () => {
     return (
         <div className="container">
             {!user.name ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <>
                     <Formik

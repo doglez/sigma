@@ -13,6 +13,7 @@ import {
 } from "../../../redux/reducers/companySlice.js";
 import { CountriesCrt } from "../../../redux/reducers/countriesSlice.js";
 import { StatesProvincesCrt } from "../../../redux/reducers/statesProvincesSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const SetupCompany = () => {
     const dispatch = useDispatch();
@@ -84,8 +85,8 @@ const SetupCompany = () => {
 
     return (
         <div className="container">
-            {!name ? (
-                <div>Your Data is loading...</div>
+            {!name || !countries[0] || !statesProvinces[0] ? (
+                <LoadinEffect />
             ) : (
                 <Formik
                     initialValues={{

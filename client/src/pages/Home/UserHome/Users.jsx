@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import NoUserPhoto from "../../../assets/images/NoUserPhoto.png";
 import { getUsersCrt } from "../../../redux/reducers/usersReducers/usersSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
 
 const Users = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const Users = () => {
     return (
         <div className="container">
             {!users[0] ? (
-                <div>Your Data is loading...</div>
+                <LoadinEffect />
             ) : (
                 <>
                     <h1 className="text-deep-saffron py-4 text-center">
