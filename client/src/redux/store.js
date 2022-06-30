@@ -9,6 +9,8 @@ import usersSlice from "./reducers/usersReducers/usersSlice.js";
 import userSlice from "./reducers/usersReducers/userSlice.js";
 import departmentsSlice from "./reducers/departmentsReducers/departmentsSlice.js";
 import departmentSlice from "./reducers/departmentsReducers/departmentSlice.js";
+import providersSlice from "./reducers/providersReducers/providersSlice.js";
+import providerSlice from "./reducers/providersReducers/providerSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -21,6 +23,8 @@ let store = configureStore({
         userReducer: userSlice,
         departmentsReducer: departmentsSlice,
         departmentReducer: departmentSlice,
+        providersReducer: providersSlice,
+        providerReducer: providerSlice,
     },
     middleware: [thunk],
 });
