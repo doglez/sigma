@@ -2,31 +2,31 @@
     {
         "_id": "62be07372f1d2e915046578a",
         "name": "Blade Server",
-        "description": "Stripped-down server computer with a modular design optimized to minimize the use of physical space and energy"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     },
     {
         "_id": "62be07732f1d2e9150465790",
         "name": "CRAC",
-        "description": "Computer Room Air Conditioning"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     },
     {
         "_id": "62be05eee41ec79632fe1cb3",
         "name": "Firewall",
-        "description": "Network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     },
     {
         "_id": "62be06812f1d2e9150465784",
         "name": "Network",
-        "description": "Networking hardware that connects devices on a computer network by using packet switching to receive and forward data to the destination device"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     },
     {
         "_id": "62be06b62f1d2e9150465787",
         "name": "Server",
-        "description": "Piece of computer hardware or software that provides functionality for other programs or devices"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     },
     {
         "_id": "62be075b2f1d2e915046578d",
         "name": "UPS",
-        "description": "Uninterruptible power supply or uninterruptible power source"
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel perferendis cumque recusandae"
     }
 ]
