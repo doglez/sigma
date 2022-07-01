@@ -83,6 +83,7 @@ const UserSchema = new mongoose.Schema(
         resetPasswordToken: String,
         resetPasswordExpire: Date,
         department: {
+            unique: false,
             type: mongoose.Schema.ObjectId,
             ref: "Department",
         },
@@ -93,7 +94,7 @@ const UserSchema = new mongoose.Schema(
 );
 
 // Prevent user from selecting more than one department
-UserSchema.index({ department: 1 }, { unique: true });
+// UserSchema.index({ department: 1 }, { unique: false });
 
 // Encrypt password using bcrypt
 UserSchema.pre("save", async function (next) {

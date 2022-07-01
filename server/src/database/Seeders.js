@@ -9,6 +9,8 @@ import Token from "../models/Token.js";
 import Provider from "../models/Provider.js";
 import EquipmentType from "../models/EquipmentType.js";
 
+colors.enable();
+
 mongoose.connect(Config.MONGO_URL);
 
 const __dirname = process.cwd();
