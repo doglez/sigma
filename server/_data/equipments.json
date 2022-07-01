@@ -1,0 +1,80 @@
+[
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e445",
+        "inventoryNumber": "100001",
+        "name": "Ubuntu",
+        "brand": "Dell",
+        "model": "PowerEdge",
+        "serial": "123546571",
+        "equipmentType": "62be06b62f1d2e9150465787",
+        "provider": "62bceec86af22f54c0109c8e",
+        "department": "62b6356e4e2888409023c009",
+        "installDate": "2022-06-30T00:00:00.000Z",
+        "usableLife": 12
+    },
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e446",
+        "inventoryNumber": "100002",
+        "name": "Datos-storage",
+        "brand": "Dell",
+        "model": "Unity XT",
+        "serial": "123546572",
+        "equipmentType": "62be07372f1d2e915046578a",
+        "provider": "62bceec86af22f54c0109c8e",
+        "department": "62b6356e4e2888409023c009",
+        "installDate": "2021-01-30T00:00:00.000Z",
+        "usableLife": 24
+    },
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e447",
+        "inventoryNumber": "100003",
+        "name": "Nx7000",
+        "brand": "Cisco",
+        "model": "Nexus 7000",
+        "serial": "123546573",
+        "equipmentType": "62be06812f1d2e9150465784",
+        "provider": "62bceed46af22f54c0109c91",
+        "department": "62b635604e2888409023c006",
+        "installDate": "2022-06-30T00:00:00.000Z",
+        "usableLife": 36
+    },
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e448",
+        "inventoryNumber": "100004",
+        "name": "Fwasa5500",
+        "brand": "Cisco",
+        "model": "ASA 5500",
+        "serial": "123546574",
+        "equipmentType": "62be05eee41ec79632fe1cb3",
+        "provider": "62bceed46af22f54c0109c91",
+        "department": "62b635604e2888409023c006",
+        "installDate": "2021-01-30T00:00:00.000Z",
+        "usableLife": 48
+    },
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e449",
+        "inventoryNumber": "100005",
+        "name": "Ups120k",
+        "brand": "Vertiv",
+        "model": "NX480",
+        "serial": "123546575",
+        "equipmentType": "62be075b2f1d2e915046578d",
+        "provider": "62bceeb96af22f54c0109c8b",
+        "department": "62b6354d4e2888409023c003",
+        "installDate": "2022-06-30T00:00:00.000Z",
+        "usableLife": 60
+    },
+    {
+        "_id": "62bf2bf8b7ff9e13f0c4e44a",
+        "inventoryNumber": "100006",
+        "name": "Crac0203",
+        "brand": "Vertiv",
+        "model": "DS5T",
+        "serial": "123546576",
+        "equipmentType": "62be07732f1d2e9150465790",
+        "provider": "62bceeb96af22f54c0109c8b",
+        "department": "62b6354d4e2888409023c003",
+        "installDate": "2021-01-30T00:00:00.000Z",
+        "usableLife": 120
+    }
+]

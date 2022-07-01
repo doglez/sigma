@@ -3,7 +3,7 @@ import {
     createDepartment,
     deleteDepartment,
     getDepartments,
-    showDepartments,
+    showDepartment,
     updateDepartment,
 } from "../controllers/DepartmentController.js";
 import AdvancedResults from "../middleware/AdvancedResults.js";
@@ -17,7 +17,7 @@ DepartmentRoutes.route("/")
     .get(AdvancedResults(Department), getDepartments)
     .post(authorize("super-admin", "admin", "chief"), createDepartment);
 DepartmentRoutes.route("/:id")
-    .get(showDepartments)
+    .get(showDepartment)
     .put(authorize("super-admin", "admin", "chief"), updateDepartment)
     .delete(authorize("super-admin", "admin", "chief"), deleteDepartment);
 

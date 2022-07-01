@@ -27,7 +27,10 @@ export const getEquipmentType = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showEquipmentType = AsyncHandler(async (req, res, next) => {
-    const equipmenttype = await EquipmentType.findById(req.params.id);
+    const equipmenttype = await EquipmentType.findById(req.params.id).populate({
+        path: "equipment",
+        select: "inventoryNumber name",
+    });
 
     if (!equipmenttype) {
         return next(

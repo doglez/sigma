@@ -58,4 +58,11 @@ DepartmentSchema.virtual("user", {
     justOne: false,
 });
 
+DepartmentSchema.virtual("equipment", {
+    ref: "Equipment",
+    localField: "_id",
+    foreignField: "department",
+    justOne: false,
+});
+
 export default mongoose.model("Department", DepartmentSchema);

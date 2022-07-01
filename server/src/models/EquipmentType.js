@@ -23,6 +23,8 @@ const EquipmentTypeSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
 
@@ -36,6 +38,14 @@ EquipmentTypeSchema.pre("save", async function (next) {
     }
 
     this.name = await splitStr.join(" ");
+});
+
+// Reverse populate with virtuals
+EquipmentTypeSchema.virtual("equipment", {
+    ref: "Equipment",
+    localField: "_id",
+    foreignField: "equipmentType",
+    justOne: false,
 });
 
 export default mongoose.model("EquipmentType", EquipmentTypeSchema);

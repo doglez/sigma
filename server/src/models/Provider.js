@@ -20,7 +20,7 @@ const ProviderSchema = new mongoose.Schema(
             type: String,
             required: [true, "Name is required."],
             trim: true,
-            maxlength: [25, "Name can not be more than 25 characters."],
+            maxlength: [50, "Name can not be more than 50 characters."],
             minlength: [3, "Name must be at least 3 characters."],
         },
         country: {
@@ -59,6 +59,8 @@ const ProviderSchema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true },
     }
 );
 
@@ -72,6 +74,14 @@ ProviderSchema.pre("save", async function (next) {
     }
 
     this.name = await splitStr.join(" ");
+});
+
+// Reverse populate with virtuals
+ProviderSchema.virtual("equipment", {
+    ref: "Equipment",
+    localField: "_id",
+    foreignField: "provider",
+    justOne: false,
 });
 
 export default mongoose.model("Provider", ProviderSchema);

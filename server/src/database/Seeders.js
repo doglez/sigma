@@ -8,6 +8,7 @@ import User from "../models/User.js";
 import Token from "../models/Token.js";
 import Provider from "../models/Provider.js";
 import EquipmentType from "../models/EquipmentType.js";
+import Equipment from "../models/Equipment.js";
 
 colors.enable();
 
@@ -31,6 +32,9 @@ const providers = JSON.parse(
 const equipmenttypes = JSON.parse(
     fs.readFileSync(`${__dirname}/_data/equipmenttypes.json`, "utf-8")
 );
+const equipments = JSON.parse(
+    fs.readFileSync(`${__dirname}/_data/equipments.json`, "utf-8")
+);
 
 const importData = async () => {
     try {
@@ -39,6 +43,7 @@ const importData = async () => {
         await User.create(users);
         await Provider.create(providers);
         await EquipmentType.create(equipmenttypes);
+        await Equipment.create(equipments);
 
         console.log("Data imported...".green.inverse);
         process.exit();
@@ -55,6 +60,7 @@ const deleteData = async () => {
         await Token.deleteMany();
         await Provider.deleteMany();
         await EquipmentType.deleteMany();
+        await Equipment.deleteMany();
 
         console.log("Data destroyed...".red.inverse);
         process.exit();

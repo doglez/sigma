@@ -1,5 +1,6 @@
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Department from "../models/Department.js";
+import Equipment from "../models/Equipment.js";
 import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
@@ -18,8 +19,8 @@ export const getDepartments = AsyncHandler(async (req, res, next) => {
 });
 
 /**
- * @name showDepartments
- * @description Get one departments
+ * @name showDepartment
+ * @description Get one department
  * @route GET /api/v1/departments/:id
  * @access Private
  * @param {*} req
@@ -27,11 +28,16 @@ export const getDepartments = AsyncHandler(async (req, res, next) => {
  * @param {*} next
  * @returns Response
  */
-export const showDepartments = AsyncHandler(async (req, res, next) => {
-    const department = await Department.findById(req.params.id).populate({
-        path: "user",
-        select: "name email",
-    });
+export const showDepartment = AsyncHandler(async (req, res, next) => {
+    const department = await Department.findById(req.params.id)
+        .populate({
+            path: "user",
+            select: "name email",
+        })
+        .populate({
+            path: "equipment",
+            select: "inventoryNumber name",
+        });
 
     if (!department) {
         return next(
@@ -137,6 +143,17 @@ export const deleteDepartment = AsyncHandler(async (req, res, next) => {
         return next(
             new ErrorResponse(
                 `Department cannot be deleted because it has users`,
+                400
+            )
+        );
+    }
+
+    // Validate if the department has equipments
+    const equipments = await Equipment.find({ department: department.id });
+    if (equipments.length > 0) {
+        return next(
+            new ErrorResponse(
+                `Department cannot be deleted because it has equipments`,
                 400
             )
         );
