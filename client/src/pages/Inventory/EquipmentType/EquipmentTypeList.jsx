@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getEquipmentTypesCrt } from "../../../redux/reducers/equipmentType/equipmentTypesSlice.js";
+import { getEquipmentTypesCrt } from "../../../redux/reducers/equipmentTypeReducers/equipmentTypesSlice.js";
 import LoadinEffect from "../../LoadinEffect.jsx";
 
 const EquipmentTypeList = () => {

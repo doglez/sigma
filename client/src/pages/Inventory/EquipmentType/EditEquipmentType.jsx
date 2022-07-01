@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     getEquipmentTypeCrt,
     updateEquipmentTypeCrt,
-} from "../../../redux/reducers/equipmentType/equipmentTypeSlice.js";
+} from "../../../redux/reducers/equipmentTypeReducers/equipmentTypeSlice.js";
 import LoadinEffect from "../../LoadinEffect.jsx";
 
 const EditEquipmentType = () => {

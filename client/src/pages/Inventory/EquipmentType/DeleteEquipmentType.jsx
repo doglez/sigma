@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {
     deleteEquipmentTypeCrt,
     getEquipmentTypeCrt,
-} from "../../../redux/reducers/equipmentType/equipmentTypeSlice.js";
+} from "../../../redux/reducers/equipmentTypeReducers/equipmentTypeSlice.js";
 import LoadinEffect from "../../LoadinEffect.jsx";
 
 const DeleteEquipmentType = () => {

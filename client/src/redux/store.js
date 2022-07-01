@@ -11,8 +11,8 @@ import departmentsSlice from "./reducers/departmentsReducers/departmentsSlice.js
 import departmentSlice from "./reducers/departmentsReducers/departmentSlice.js";
 import providersSlice from "./reducers/providersReducers/providersSlice.js";
 import providerSlice from "./reducers/providersReducers/providerSlice.js";
-import equipmentTypesSlice from "./reducers/equipmentType/equipmentTypesSlice.js";
-import equipmentTypeSlice from "./reducers/equipmentType/equipmentTypeSlice.js";
+import equipmentTypesSlice from "./reducers/equipmentTypeReducers/equipmentTypesSlice.js";
+import equipmentTypeSlice from "./reducers/equipmentTypeReducers/equipmentTypeSlice.js";
 
 let store = configureStore({
     reducer: {
