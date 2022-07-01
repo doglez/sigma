@@ -2,47 +2,29 @@
     {
         "_id": "62bceed46af22f54c0109c91",
         "ein": "100001",
-        "name": "Cisco Systems, Inc.",
-        "country": "United States",
+        "name": "Teleco, Inc.",
+        "country": "Afghanistan",
         "phone": 504999999,
-        "email": "help@cisco.com",
-        "website": "https://www.cisco.com/",
+        "email": "help@teleco.com",
+        "website": "https://www.teleco.com/",
         "logo": "62bceed46af22f54c0109c91.png"
     },
     {
         "_id": "62bceec86af22f54c0109c8e",
         "ein": "100002",
-        "name": "Dell Inc.",
-        "country": "United States",
+        "name": "High Capacity Processor Inc.",
+        "country": "Bangladesh",
         "phone": 504999999,
-        "email": "help@dell.com",
-        "website": "https://www.dell.com/"
+        "email": "help@hcp.com",
+        "website": "https://www.hcp.com/"
     },
     {
         "_id": "62bceeb96af22f54c0109c8b",
         "ein": "100003",
-        "name": "Schneider Electric Se.",
+        "name": "Green Energy Se.",
         "country": "France",
         "phone": 504999999,
-        "email": "help@se.com",
-        "website": "https://www.se.com/"
-    },
-    {
-        "_id": "62bceeaf6af22f54c0109c88",
-        "ein": "100004",
-        "name": "Cummins Inc.",
-        "country": "France",
-        "phone": 504999999,
-        "email": "help@cummins.com",
-        "website": "https://www.cummins.com/"
-    },
-    {
-        "_id": "62bcee52282e5921d0a641aa",
-        "ein": "100005",
-        "name": "Prueba Inc.",
-        "country": "France",
-        "phone": 504999999,
-        "email": "help@prueba.com",
-        "website": "https://www.prueba.com/"
+        "email": "help@ge.com",
+        "website": "https://www.ge.com/"
     }
 ]
