@@ -130,5 +130,44 @@
         "department": "62b635a34e2888409023c012",
         "password": "Pass123@",
         "photo": "62b63bede321b7c5e3ce81ff.png"
+    },
+    {
+        "_id": "62bf1e077db5187174085c1e",
+        "collaboratorNumber": "100011",
+        "name": "Chief",
+        "lastName": "Servers",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999906,
+        "email": "chief.servers@example.com",
+        "role": "chief",
+        "department": "62b6356e4e2888409023c009",
+        "password": "Pass123@"
+    },
+    {
+        "_id": "62bf1e077db5187174085c1f",
+        "collaboratorNumber": "100012",
+        "name": "Engineer One",
+        "lastName": "Servers",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999907,
+        "email": "engineerone.servers@example.com",
+        "role": "engineer",
+        "department": "62b6356e4e2888409023c009",
+        "password": "Pass123@"
+    },
+    {
+        "_id": "62bf1e077db5187174085c20",
+        "collaboratorNumber": "100013",
+        "name": "Engineer Two",
+        "lastName": "Servers",
+        "country": "United States",
+        "stateProvince": "California",
+        "phone": 504999908,
+        "email": "engineertwo.servers@example.com",
+        "role": "engineer",
+        "department": "62b6356e4e2888409023c009",
+        "password": "Pass123@"
     }
 ]
