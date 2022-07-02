@@ -84,4 +84,11 @@ ProviderSchema.virtual("equipment", {
     justOne: false,
 });
 
+ProviderSchema.virtual("agreement", {
+    ref: "Agreement",
+    localField: "_id",
+    foreignField: "provider",
+    justOne: false,
+});
+
 export default mongoose.model("Provider", ProviderSchema);

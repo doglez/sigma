@@ -37,6 +37,10 @@ export const showDepartment = AsyncHandler(async (req, res, next) => {
         .populate({
             path: "equipment",
             select: "inventoryNumber name",
+        })
+        .populate({
+            path: "agreement",
+            select: "reference",
         });
 
     if (!department) {

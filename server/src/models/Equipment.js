@@ -88,4 +88,12 @@ EquipmentSchema.pre("save", async function (next) {
     this.name = await splitStr.join(" ");
 });
 
+// Reverse populate with virtuals
+EquipmentSchema.virtual("agreement", {
+    ref: "Agreement",
+    localField: "_id",
+    foreignField: "equipment",
+    justOne: false,
+});
+
 export default mongoose.model("Equipment", EquipmentSchema, "equipments");

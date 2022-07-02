@@ -28,10 +28,15 @@ export const getProviders = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showProvider = AsyncHandler(async (req, res, next) => {
-    const provider = await Provider.findById(req.params.id).populate({
-        path: "equipment",
-        select: "inventoryNumber name",
-    });
+    const provider = await Provider.findById(req.params.id)
+        .populate({
+            path: "equipment",
+            select: "inventoryNumber name",
+        })
+        .populate({
+            path: "agreement",
+            select: "reference",
+        });
 
     if (!provider) {
         return next(
