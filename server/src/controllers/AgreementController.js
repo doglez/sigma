@@ -34,11 +34,10 @@ export const getAgreements = AsyncHandler(async (req, res, next) => {
 
         agreements.push(body);
     }
-    res.status(200).json(res.advancedResults);
 
-    // res.status(200).json({
-    //     data: agreements,
-    // });
+    res.status(200).json({
+        data: agreements,
+    });
 });
 
 /**
