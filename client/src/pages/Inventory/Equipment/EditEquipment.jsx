@@ -227,9 +227,6 @@ const EditEquipment = () => {
                                         as="select"
                                         required
                                     >
-                                        <option defaultValue value="">
-                                            Select a equipment type
-                                        </option>
                                         {equipmentTypes.map((equipmentType) => (
                                             <option
                                                 value={equipmentType._id}
@@ -258,9 +255,6 @@ const EditEquipment = () => {
                                         as="select"
                                         required
                                     >
-                                        <option defaultValue value="">
-                                            Select a provider
-                                        </option>
                                         {providers.map((provider) => (
                                             <option
                                                 value={provider._id}
@@ -289,9 +283,6 @@ const EditEquipment = () => {
                                         as="select"
                                         required
                                     >
-                                        <option defaultValue value="">
-                                            Select a department
-                                        </option>
                                         {departments.map((department) => (
                                             <option
                                                 value={department._id}
