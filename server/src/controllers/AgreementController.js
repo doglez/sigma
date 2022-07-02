@@ -1,6 +1,8 @@
 import Config from "../config/Config.js";
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Agreement from "../models/Agreement.js";
+import Department from "../models/Department.js";
+import Provider from "../models/Provider.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
 /**
@@ -14,7 +16,29 @@ import ErrorResponse from "../utilis/ErrorResponse.js";
  * @returns Response
  */
 export const getAgreements = AsyncHandler(async (req, res, next) => {
+    let agreements = [];
+
+    for (let i = 0; i < res.advancedResults.data.length; i++) {
+        let body = {};
+        const agreement = res.advancedResults.data[i];
+        let provider = await Provider.findById(agreement.provider);
+        let department = await Department.findById(agreement.department);
+
+        body._id = agreement._id;
+        body.agreementNumber = agreement.agreementNumber;
+        body.reference = agreement.reference;
+        body.provider = provider.name;
+        body.department = department.name;
+        body.startDate = agreement.startDate;
+        body.expDate = agreement.expDate;
+
+        agreements.push(body);
+    }
     res.status(200).json(res.advancedResults);
+
+    // res.status(200).json({
+    //     data: agreements,
+    // });
 });
 
 /**
