@@ -161,7 +161,7 @@ export const deleteEquipment = AsyncHandler(async (req, res, next) => {
         );
     }
 
-    await Equipment.remove();
+    await equipment.remove();
 
     res.status(200).json({
         data: `Equipment ${equipment.name} was deleted`,

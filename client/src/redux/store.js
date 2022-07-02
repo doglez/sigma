@@ -13,6 +13,8 @@ import providersSlice from "./reducers/providersReducers/providersSlice.js";
 import providerSlice from "./reducers/providersReducers/providerSlice.js";
 import equipmentTypesSlice from "./reducers/equipmentTypeReducers/equipmentTypesSlice.js";
 import equipmentTypeSlice from "./reducers/equipmentTypeReducers/equipmentTypeSlice.js";
+import equipmentsSlice from "./reducers/equipmentReducers/equipmentsSlice.js";
+import equipmentSlice from "./reducers/equipmentReducers/equipmentSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -29,6 +31,8 @@ let store = configureStore({
         providerReducer: providerSlice,
         equipmentTypesReducer: equipmentTypesSlice,
         equipmentTypeReducer: equipmentTypeSlice,
+        equipmentsReducer: equipmentsSlice,
+        equipmentReducer: equipmentSlice,
     },
     middleware: [thunk],
 });
