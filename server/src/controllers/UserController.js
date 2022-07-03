@@ -30,7 +30,10 @@ export const getUsers = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showUser = AsyncHandler(async (req, res, next) => {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.params.id).populate({
+        path: "task",
+        select: "reference",
+    });
 
     if (!user) {
         return next(

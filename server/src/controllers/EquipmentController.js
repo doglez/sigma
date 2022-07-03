@@ -26,7 +26,10 @@ export const getEquipment = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showEquipment = AsyncHandler(async (req, res, next) => {
-    const equipment = await Equipment.findById(req.params.id);
+    const equipment = await Equipment.findById(req.params.id).populate({
+        path: "task",
+        select: "reference",
+    });
 
     if (!equipment) {
         return next(

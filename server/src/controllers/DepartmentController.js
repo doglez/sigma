@@ -41,6 +41,10 @@ export const showDepartment = AsyncHandler(async (req, res, next) => {
         .populate({
             path: "agreement",
             select: "reference",
+        })
+        .populate({
+            path: "task",
+            select: "reference",
         });
 
     if (!department) {

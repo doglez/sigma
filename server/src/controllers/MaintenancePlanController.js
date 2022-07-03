@@ -28,7 +28,12 @@ export const getMaintenancePlan = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const showMaintenancePlan = AsyncHandler(async (req, res, next) => {
-    const maintenanceplan = await MaintenancePlan.findById(req.params.id);
+    const maintenanceplan = await MaintenancePlan.findById(
+        req.params.id
+    ).populate({
+        path: "task",
+        select: "reference",
+    });
 
     if (!maintenanceplan) {
         return next(
