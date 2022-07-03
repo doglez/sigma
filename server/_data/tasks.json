@@ -6,7 +6,7 @@
         "department": "62b6354d4e2888409023c003",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c113cf13a58dd04e1974d3",
@@ -15,7 +15,7 @@
         "department": "62b6354d4e2888409023c003",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249595a",
@@ -25,7 +25,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249595d",
@@ -35,7 +35,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495960",
@@ -45,7 +45,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495963",
@@ -55,7 +55,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495966",
@@ -65,7 +65,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495969",
@@ -75,7 +75,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62c0d139f45ece8a6ab647d1",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249596c",
@@ -85,7 +85,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249596f",
@@ -95,7 +95,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495972",
@@ -105,7 +105,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495975",
@@ -115,7 +115,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495978",
@@ -125,7 +125,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249597b",
@@ -135,7 +135,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249597e",
@@ -145,7 +145,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495981",
@@ -155,7 +155,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495984",
@@ -165,7 +165,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb2495987",
@@ -175,7 +175,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249598a",
@@ -185,7 +185,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c114169dafee6bb249598d",
@@ -195,7 +195,7 @@
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b87f",
@@ -205,7 +205,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b882",
@@ -215,7 +215,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b885",
@@ -225,7 +225,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b888",
@@ -235,7 +235,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b88b",
@@ -245,7 +245,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b88e",
@@ -255,7 +255,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e449",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b891",
@@ -265,7 +265,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b894",
@@ -275,7 +275,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b897",
@@ -285,7 +285,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b89a",
@@ -295,7 +295,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b89d",
@@ -305,7 +305,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c119260c687be29c94b8a0",
@@ -315,7 +315,7 @@
         "maintenancePlan": "62c119260c687be29c94b87c",
         "equipment": "62bf2bf8b7ff9e13f0c4e44a",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c1193f0c687be29c94b8a7",
@@ -325,7 +325,7 @@
         "maintenancePlan": "62c1193f0c687be29c94b8a4",
         "equipment": "62bf2bf8b7ff9e13f0c4e447",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c1193f0c687be29c94b8aa",
@@ -335,7 +335,7 @@
         "maintenancePlan": "62c1193f0c687be29c94b8a4",
         "equipment": "62bf2bf8b7ff9e13f0c4e447",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c1193f0c687be29c94b8ad",
@@ -345,7 +345,7 @@
         "maintenancePlan": "62c1193f0c687be29c94b8a4",
         "equipment": "62bf2bf8b7ff9e13f0c4e448",
         "status": "backlog",
-        "file": []
+        "files": []
     },
     {
         "_id": "62c1193f0c687be29c94b8b0",
@@ -355,6 +355,6 @@
         "maintenancePlan": "62c1193f0c687be29c94b8a4",
         "equipment": "62bf2bf8b7ff9e13f0c4e448",
         "status": "backlog",
-        "file": []
+        "files": []
     }
 ]

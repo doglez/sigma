@@ -36,7 +36,7 @@ const TaskSchema = new mongoose.Schema(
             enum: ["backlog", "in-progress", "done", "cancel"],
             default: "backlog",
         },
-        file: {
+        files: {
             type: [String],
         },
     },
