@@ -3,7 +3,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import Login from "./pages/Auth/Login.jsx";
 import PasswordRecovery from "./pages/Auth/PasswordRecovery.jsx";
-import Dashboard from "./pages/Home/Dashboard/Dashboard.jsx";
 import Departments from "./pages/Home/Departments/Departments.jsx";
 import Home from "./pages/Home/Home.jsx";
 import SetupCompany from "./pages/Home/Setups/SetupCompany.jsx";
@@ -26,7 +25,7 @@ import MaintenancePlans from "./pages/Maintentance/MaintenancePlans/MaintenanceP
 import NewPlan from "./pages/Maintentance/MaintenancePlans/NewPlan.jsx";
 import EditPlan from "./pages/Maintentance/MaintenancePlans/EditPlan.jsx";
 import DeletePlan from "./pages/Maintentance/MaintenancePlans/DeletePlan.jsx";
-import KanbanBoard from "./pages/Maintentance/KanbanBoard/KanbanBoard.jsx";
+import KanbanBoard from "./pages/Home/KanbanBoard/KanbanBoard.jsx";
 import ProvidersList from "./pages/Providers/ProvidersInfo/ProvidersList.jsx";
 import NewProvider from "./pages/Providers/ProvidersInfo/NewProvider.jsx";
 import EditProvider from "./pages/Providers/ProvidersInfo/EditProvider.jsx";
@@ -104,7 +103,7 @@ function App() {
                         />
                         <Route path="/" element={<NavBar />}>
                             <Route path="home" element={<Home />}>
-                                <Route index element={<Dashboard />} />
+                                <Route index element={<KanbanBoard />} />
                                 {myRole === "super-admin" ? (
                                     <Route
                                         path="setupcompany"
@@ -177,35 +176,28 @@ function App() {
                                 </Route>
                             </Route>
                             <Route path="maintenance" element={<Maintenance />}>
-                                <Route index element={<KanbanBoard />} />
-                                <Route path="maintenanceplans">
-                                    <Route
-                                        index
-                                        element={<MaintenancePlans />}
-                                    />
-                                    {myRole === "chief" ||
-                                    myRole === "admin" ? (
-                                        <Route>
-                                            <Route
-                                                path="new"
-                                                element={<NewPlan />}
-                                            />
-                                            <Route
-                                                path="edit/:id"
-                                                element={<EditPlan />}
-                                            />
-                                            <Route
-                                                path="delete/:id"
-                                                element={<DeletePlan />}
-                                            />
-                                        </Route>
-                                    ) : (
+                                <Route index element={<MaintenancePlans />} />
+                                {myRole === "chief" || myRole === "admin" ? (
+                                    <Route>
                                         <Route
-                                            path="*"
-                                            element={<NoPermitPath />}
+                                            path="new"
+                                            element={<NewPlan />}
                                         />
-                                    )}
-                                </Route>
+                                        <Route
+                                            path="edit/:id"
+                                            element={<EditPlan />}
+                                        />
+                                        <Route
+                                            path="delete/:id"
+                                            element={<DeletePlan />}
+                                        />
+                                    </Route>
+                                ) : (
+                                    <Route
+                                        path="*"
+                                        element={<NoPermitPath />}
+                                    />
+                                )}
                             </Route>
                             <Route path="providers" element={<Providers />}>
                                 <Route index element={<ProvidersList />} />

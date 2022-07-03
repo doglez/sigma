@@ -10,19 +10,28 @@ const SideBarLinksMaintenance = () => {
             <ul className="navbar-nav px-3 py-3">
                 <li className="nav-item">
                     <Link to="/maintenance" className="nav-link">
-                        Kanban Board
-                    </Link>
-                </li>
-                <hr />
-                <li className="nav-item">
-                    <Link to="maintenanceplans" className="nav-link">
                         Maintenance Plans
                     </Link>
                 </li>
                 {myRole === "chief" || myRole === "admin" ? (
                     <li className="nav-item">
-                        <Link to="maintenanceplans/new" className="nav-link">
+                        <Link to="new" className="nav-link">
                             New Plan
+                        </Link>
+                    </li>
+                ) : (
+                    <></>
+                )}
+                <hr />
+                <li className="nav-item">
+                    <Link to="tasks" className="nav-link">
+                        Tasks
+                    </Link>
+                </li>
+                {myRole === "chief" || myRole === "admin" ? (
+                    <li className="nav-item">
+                        <Link to="tasks/new" className="nav-link">
+                            New Task
                         </Link>
                     </li>
                 ) : (
