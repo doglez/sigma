@@ -1,99 +1,11 @@
 [
     {
-        "_id": "62c113ce13a58dd04e1974cf",
-        "type": "cm",
-        "taskNumber": 1,
-        "department": "62b6354d4e2888409023c003",
-        "equipment": "62bf2bf8b7ff9e13f0c4e449",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c113cf13a58dd04e1974d3",
-        "type": "cm",
-        "taskNumber": 2,
-        "department": "62b6354d4e2888409023c003",
-        "equipment": "62bf2bf8b7ff9e13f0c4e449",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249595a",
+        "_id": "62c114169dafee6bb249598a",
         "type": "pm",
-        "taskNumber": 3,
+        "taskNumber": 19,
         "department": "62b6356e4e2888409023c009",
         "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249595d",
-        "type": "pm",
-        "taskNumber": 4,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495960",
-        "type": "pm",
-        "taskNumber": 5,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495963",
-        "type": "pm",
-        "taskNumber": 6,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495966",
-        "type": "pm",
-        "taskNumber": 7,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495969",
-        "type": "pm",
-        "taskNumber": 8,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62c0d139f45ece8a6ab647d1",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249596c",
-        "type": "pm",
-        "taskNumber": 9,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e445",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249596f",
-        "type": "pm",
-        "taskNumber": 10,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e445",
+        "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
         "files": []
     },
@@ -108,12 +20,22 @@
         "files": []
     },
     {
-        "_id": "62c114169dafee6bb2495975",
+        "_id": "62c114169dafee6bb2495960",
         "type": "pm",
-        "taskNumber": 12,
+        "taskNumber": 5,
         "department": "62b6356e4e2888409023c009",
         "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e445",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "cancel",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb2495984",
+        "type": "pm",
+        "taskNumber": 17,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
         "files": []
     },
@@ -128,62 +50,12 @@
         "files": []
     },
     {
-        "_id": "62c114169dafee6bb249597b",
+        "_id": "62c114169dafee6bb249596c",
         "type": "pm",
-        "taskNumber": 14,
+        "taskNumber": 9,
         "department": "62b6356e4e2888409023c009",
         "maintenancePlan": "62c114169dafee6bb2495957",
         "equipment": "62bf2bf8b7ff9e13f0c4e445",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249597e",
-        "type": "pm",
-        "taskNumber": 15,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e446",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495981",
-        "type": "pm",
-        "taskNumber": 16,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e446",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495984",
-        "type": "pm",
-        "taskNumber": 17,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e446",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb2495987",
-        "type": "pm",
-        "taskNumber": 18,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e446",
-        "status": "backlog",
-        "files": []
-    },
-    {
-        "_id": "62c114169dafee6bb249598a",
-        "type": "pm",
-        "taskNumber": 19,
-        "department": "62b6356e4e2888409023c009",
-        "maintenancePlan": "62c114169dafee6bb2495957",
-        "equipment": "62bf2bf8b7ff9e13f0c4e446",
         "status": "backlog",
         "files": []
     },
@@ -198,6 +70,140 @@
         "files": []
     },
     {
+        "_id": "62c114169dafee6bb249595a",
+        "type": "pm",
+        "taskNumber": 3,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "cancel",
+        "files": [],
+        "user": "62bf1e077db5187174085c1f"
+    },
+    {
+        "_id": "62c114169dafee6bb2495975",
+        "type": "pm",
+        "taskNumber": 12,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e445",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb2495963",
+        "type": "pm",
+        "taskNumber": 6,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb2495981",
+        "type": "pm",
+        "taskNumber": 16,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e446",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb249597b",
+        "type": "pm",
+        "taskNumber": 14,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e445",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb2495969",
+        "type": "pm",
+        "taskNumber": 8,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb2495987",
+        "type": "pm",
+        "taskNumber": 18,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e446",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb249595d",
+        "type": "pm",
+        "taskNumber": 4,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "in-progress",
+        "files": [],
+        "user": "62b63bede321b7c5e3ce81fa"
+    },
+    {
+        "_id": "62c114169dafee6bb249596f",
+        "type": "pm",
+        "taskNumber": 10,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e445",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c113ce13a58dd04e1974cf",
+        "type": "cm",
+        "taskNumber": 1,
+        "department": "62b6354d4e2888409023c003",
+        "equipment": "62bf2bf8b7ff9e13f0c4e449",
+        "status": "in-progress",
+        "files": [],
+        "user": "62bf1e077db5187174085c20"
+    },
+    {
+        "_id": "62c113cf13a58dd04e1974d3",
+        "type": "cm",
+        "taskNumber": 2,
+        "department": "62b6354d4e2888409023c003",
+        "equipment": "62bf2bf8b7ff9e13f0c4e449",
+        "status": "done",
+        "files": [
+            "62c113cf13a58dd04e1974d3_0.jpeg",
+            "62c113cf13a58dd04e1974d3_1.pdf"
+        ],
+        "user": "62b63bede321b7c5e3ce81fe"
+    },
+    {
+        "_id": "62c114169dafee6bb2495966",
+        "type": "pm",
+        "taskNumber": 7,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62c0d139f45ece8a6ab647d1",
+        "status": "backlog",
+        "files": []
+    },
+    {
+        "_id": "62c114169dafee6bb249597e",
+        "type": "pm",
+        "taskNumber": 15,
+        "department": "62b6356e4e2888409023c009",
+        "maintenancePlan": "62c114169dafee6bb2495957",
+        "equipment": "62bf2bf8b7ff9e13f0c4e446",
+        "status": "backlog",
+        "files": []
+    },{
         "_id": "62c119260c687be29c94b87f",
         "type": "pm",
         "taskNumber": 21,

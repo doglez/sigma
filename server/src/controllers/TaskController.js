@@ -49,6 +49,8 @@ export const getTask = AsyncHandler(async (req, res, next) => {
         tasks.push(body);
     }
 
+    // res.status(200).json(res.advancedResults);
+
     res.status(200).json({
         data: tasks,
     });
