@@ -76,5 +76,18 @@
         "department": "62b6354d4e2888409023c003",
         "installDate": "2021-01-30T00:00:00.000Z",
         "usableLife": 120
+    },
+    {
+        "_id": "62c0d139f45ece8a6ab647d1",
+        "inventoryNumber": "100007",
+        "name": "As400",
+        "brand": "IBM",
+        "model": "AS400",
+        "serial": "135aser",
+        "equipmentType": "62be06b62f1d2e9150465787",
+        "provider": "62bceec86af22f54c0109c8e",
+        "department": "62b6356e4e2888409023c009",
+        "installDate": "2022-01-13T00:00:00.000Z",
+        "usableLife": 36
     }
 ]

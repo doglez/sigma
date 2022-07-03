@@ -5,7 +5,9 @@ import CompanyRoutes from "./CompanyRoutes.js";
 import DepartmentRoutes from "./DepartmentRoutes.js";
 import EquipmentRoutes from "./EquipmentRoutes.js";
 import EquipmentTypeRoutes from "./EquipmentTypeRoutes.js";
+import MaintenancePlanRoutes from "./MaintenancePlanRoutes.js";
 import ProviderRouter from "./ProviderRoutes.js";
+import TaskRoutes from "./TaskRouters.js";
 import UserRouter from "./UserRouter.js";
 
 const Routes = express();
@@ -18,5 +20,7 @@ Routes.use("/providers", ProviderRouter);
 Routes.use("/equipmenttypes", EquipmentTypeRoutes);
 Routes.use("/equipments", EquipmentRoutes);
 Routes.use("/agreements", AgreementrRoutes);
+Routes.use("/maintenanceplans", MaintenancePlanRoutes);
+Routes.use("/tasks", TaskRoutes);
 
 export default Routes;

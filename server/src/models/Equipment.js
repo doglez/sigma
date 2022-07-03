@@ -96,4 +96,18 @@ EquipmentSchema.virtual("agreement", {
     justOne: false,
 });
 
+EquipmentSchema.virtual("agreement", {
+    ref: "Agreement",
+    localField: "_id",
+    foreignField: "equipment",
+    justOne: false,
+});
+
+EquipmentSchema.virtual("task", {
+    ref: "Task",
+    localField: "_id",
+    foreignField: "equipment",
+    justOne: false,
+});
+
 export default mongoose.model("Equipment", EquipmentSchema, "equipments");

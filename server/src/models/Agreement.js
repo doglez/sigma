@@ -54,4 +54,19 @@ const AgreementSchema = new mongoose.Schema(
     }
 );
 
+// Reverse populate with virtuals
+AgreementSchema.virtual("maintenancePlan", {
+    ref: "MaintenancePlan",
+    localField: "_id",
+    foreignField: "agreement",
+    justOne: false,
+});
+
+AgreementSchema.virtual("task", {
+    ref: "Task",
+    localField: "_id",
+    foreignField: "agreement",
+    justOne: false,
+});
+
 export default mongoose.model("Agreement", AgreementSchema);

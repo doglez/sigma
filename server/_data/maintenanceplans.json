@@ -1,0 +1,46 @@
+[
+    {
+        "_id": "62c0d6e553d786f7d168ab02",
+        "year": 2021,
+        "name": "Maintenance Plan Servers",
+        "frequency": 6,
+        "department": "62b6356e4e2888409023c009",
+        "agreement": [
+            "62c0d1a2f45ece8a6ab6482c",
+            "62bfbbc70468276618371c31"
+        ],
+        "equipments": [
+            "62c0d139f45ece8a6ab647d1",
+            "62bf2bf8b7ff9e13f0c4e445",
+            "62bf2bf8b7ff9e13f0c4e446"
+        ]
+    },
+    {
+        "_id": "62c0d73353d786f7d168ab06",
+        "year": 2022,
+        "name": "Maintenance Plan Facilities",
+        "frequency": 6,
+        "department": "62b6354d4e2888409023c003",
+        "agreement": [
+            "62bfbc030468276618371c37"
+        ],
+        "equipments": [
+            "62bf2bf8b7ff9e13f0c4e449",
+            "62bf2bf8b7ff9e13f0c4e44a"
+        ]
+    },
+    {
+        "_id": "62c0d75253d786f7d168ab0a",
+        "year": 2022,
+        "name": "Maintenance Plan Network",
+        "frequency": 6,
+        "department": "62b635604e2888409023c006",
+        "agreement": [
+            "62bfbb7e0468276618371c2b"
+        ],
+        "equipments": [
+            "62bf2bf8b7ff9e13f0c4e447",
+            "62bf2bf8b7ff9e13f0c4e448"
+        ]
+    }
+]

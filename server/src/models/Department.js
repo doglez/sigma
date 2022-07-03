@@ -72,4 +72,18 @@ DepartmentSchema.virtual("agreement", {
     justOne: false,
 });
 
+DepartmentSchema.virtual("maintenancePlan", {
+    ref: "MaintenancePlan",
+    localField: "_id",
+    foreignField: "department",
+    justOne: false,
+});
+
+DepartmentSchema.virtual("task", {
+    ref: "Task",
+    localField: "_id",
+    foreignField: "department",
+    justOne: false,
+});
+
 export default mongoose.model("Department", DepartmentSchema);
