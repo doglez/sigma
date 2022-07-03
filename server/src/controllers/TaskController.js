@@ -1,6 +1,7 @@
 import AsyncHandler from "../middleware/AsyncHandler.js";
-import MaintenancePlan from "../models/MaintenancePlan.js";
+import Department from "../models/Department.js";
 import Task from "../models/Task.js";
+import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
 /**
@@ -14,7 +15,42 @@ import ErrorResponse from "../utilis/ErrorResponse.js";
  * @returns Response
  */
 export const getTask = AsyncHandler(async (req, res, next) => {
-    res.status(200).json(res.advancedResults);
+    const tasks = [];
+    const currentTasks = await Task.find();
+
+    for (let i = 0; i < currentTasks.length; i++) {
+        const { _id, type, taskNumber, department, user, status } =
+            currentTasks[i];
+
+        const departmentInfo = await Department.findById(department);
+        const userInfo = await User.findById(user);
+        let body;
+
+        if (!userInfo) {
+            body = {
+                _id,
+                type,
+                taskNumber,
+                department: departmentInfo.name,
+                status,
+            };
+        } else {
+            body = {
+                _id,
+                type,
+                taskNumber,
+                department: departmentInfo.name,
+                user: userInfo.name,
+                status,
+            };
+        }
+
+        tasks.push(body);
+    }
+
+    res.status(200).json({
+        data: tasks,
+    });
 });
 
 /**
