@@ -60,9 +60,13 @@ const DeleteTask = () => {
                             }}
                         >
                             <Form className="text-center">
-                                <h1 className="text-deep-saffron py-4 ">
-                                    Edit taks {task.taskNumber}
+                                <h1 className="text-danger pt-4 ">
+                                    Warning you are going to delete the task{" "}
+                                    {task.taskNumber}
                                 </h1>
+                                <h5 className="text-danger pb-4">
+                                    This change is irreversible.
+                                </h5>
 
                                 <div className="row">
                                     <div className="col-md-6 col-lg-4 pb-3">
@@ -77,7 +81,6 @@ const DeleteTask = () => {
                                                 name="type"
                                                 className="form-control"
                                                 as="select"
-                                                required
                                                 disabled
                                             >
                                                 <option value="cm">
@@ -101,7 +104,6 @@ const DeleteTask = () => {
                                                 name="department"
                                                 className="form-control"
                                                 as="select"
-                                                required
                                                 disabled
                                             >
                                                 <option defaultValue value="">
@@ -134,7 +136,7 @@ const DeleteTask = () => {
                                                 name="user"
                                                 className="form-control"
                                                 as="select"
-                                                required
+                                                disabled
                                             >
                                                 <option defaultValue value="">
                                                     Select a user
@@ -162,7 +164,7 @@ const DeleteTask = () => {
                                                 name="equipment"
                                                 className="form-control"
                                                 as="select"
-                                                required
+                                                disabled
                                             >
                                                 <option defaultValue value="">
                                                     Select a equipment type
@@ -190,7 +192,7 @@ const DeleteTask = () => {
                                                 name="status"
                                                 className="form-control"
                                                 as="select"
-                                                required
+                                                disabled
                                             >
                                                 <option value="backlog">
                                                     Backlog

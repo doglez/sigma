@@ -19,6 +19,8 @@ import agreementsSlice from "./reducers/agreementReducers/agreementsSlice.js";
 import agreementSlice from "./reducers/agreementReducers/agreementSlice.js";
 import tasksSlice from "./reducers/tasksReducers/tasksSlice.js";
 import taskSlice from "./reducers/tasksReducers/taskSlice.js";
+import maintenancePlansSlice from "./reducers/maintenancePlanReducers/maintenancePlansSlice.js";
+import maintenancePlanSlice from "./reducers/maintenancePlanReducers/maintenancePlanSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -41,6 +43,8 @@ let store = configureStore({
         agreementReducer: agreementSlice,
         tasksReducer: tasksSlice,
         taskReducer: taskSlice,
+        maintenancePlansReducer: maintenancePlansSlice,
+        maintenancePlanReducer: maintenancePlanSlice,
     },
     middleware: [thunk],
 });

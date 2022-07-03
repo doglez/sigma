@@ -5,7 +5,7 @@
         "name": "Maintenance Plan Servers",
         "frequency": 6,
         "department": "62b6356e4e2888409023c009",
-        "agreement": [
+        "agreements": [
             "62c0d1a2f45ece8a6ab6482c",
             "62bfbbc70468276618371c31"
         ],
@@ -21,7 +21,7 @@
         "name": "Maintenance Plan Facilities",
         "frequency": 6,
         "department": "62b6354d4e2888409023c003",
-        "agreement": [
+        "agreements": [
             "62bfbc030468276618371c37"
         ],
         "equipments": [
@@ -35,7 +35,7 @@
         "name": "Maintenance Plan Network",
         "frequency": 2,
         "department": "62b635604e2888409023c006",
-        "agreement": [
+        "agreements": [
             "62bfbb7e0468276618371c2b"
         ],
         "equipments": [

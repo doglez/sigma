@@ -24,7 +24,7 @@ const MaintenancePlanSchema = new mongoose.Schema(
             type: mongoose.Schema.ObjectId,
             ref: "Department",
         },
-        agreement: {
+        agreements: {
             type: [mongoose.Schema.ObjectId],
             ref: "Agreement",
             unique: false,

@@ -1,50 +1,76 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { toast } from "react-toastify";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
-
-const validate = (value) => {
-    let errorMessage;
-
-    if (!/\d{4}/.test(value)) {
-        errorMessage = "Invalid year format";
-    }
-    return errorMessage;
-};
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getDepartmentsCrt } from "../../../redux/reducers/departmentsReducers/departmentsSlice.js";
+import { getAgreementsCrt } from "../../../redux/reducers/agreementReducers/agreementsSlice.js";
+import LoadinEffect from "../../LoadinEffect.jsx";
+import {
+    getMaintenancePlanCrt,
+    updateMaintenancePlanCrt,
+} from "../../../redux/reducers/maintenancePlanReducers/maintenancePlanSlice.js";
 
 const EditPlan = () => {
+    let navigate = useNavigate();
+    const maintenancePlanId = window.location.pathname.split("/")[3];
+
+    const dispatch = useDispatch();
+
+    const handlerReload = () => {
+        dispatch(getDepartmentsCrt());
+        dispatch(getAgreementsCrt());
+        dispatch(getMaintenancePlanCrt(maintenancePlanId));
+    };
+
+    useEffect(() => {
+        window.addEventListener("beforeunload", handlerReload());
+    }, []);
+
+    const departments = useSelector((state) => state.departmentsReducer.data);
+    const agreements = useSelector((state) => state.agreementsReducer.data);
+    const maintenancePlan = useSelector(
+        (state) => state.maintenancePlanReducer
+    );
+
     return (
         <div className="container">
-            <Formik
-                initialValues={{
-                    year: "2022",
-                    name: "Servers",
-                    department: "Data Center",
-                    chief: "Danilo Gonzalez",
-                    timesYear: "12",
-                    equipments: ["Server 1"],
-                }}
-                validationSchema={Yup.object({
-                    name: Yup.string()
-                        .min(3, "Name must be at least 3 characters.")
-                        .required("Name is required"),
-                    department: Yup.string().required("Department is required"),
-                    chief: Yup.string().required("Chief is required"),
-                })}
-                onSubmit={(values) => {
-                    // props.login(values)
-
-                    toast.success("Upload Success");
-                    console.log(values);
-                }}
-            >
-                {({ errors, touched }) => (
+            {!agreements[0] || !departments[0] || !maintenancePlan.name ? (
+                <LoadinEffect />
+            ) : (
+                <Formik
+                    initialValues={{
+                        year: maintenancePlan.year,
+                        name: maintenancePlan.name,
+                        department: maintenancePlan.department,
+                        frequency: maintenancePlan.frequency,
+                        agreements: maintenancePlan.agreements,
+                    }}
+                    validationSchema={Yup.object({
+                        year: Yup.number()
+                            .min(
+                                2022,
+                                "Year must be greater than the year 2020."
+                            )
+                            .required("Year is required"),
+                        name: Yup.string()
+                            .min(3, "Name must be at least 3 characters.")
+                            .required("Name is required"),
+                        department: Yup.string().required(
+                            "Department is required"
+                        ),
+                    })}
+                    onSubmit={(values) => {
+                        dispatch(
+                            updateMaintenancePlanCrt(maintenancePlanId, values)
+                        );
+                        navigate("../", { replace: true });
+                    }}
+                >
                     <Form className="text-center">
                         <h1 className="text-deep-saffron py-4 ">
-                            Edit Maintenance Plan Information
+                            Edit {maintenancePlan.name}
                         </h1>
 
                         <div className="row">
@@ -57,17 +83,14 @@ const EditPlan = () => {
                                         Year
                                     </label>
                                     <Field
-                                        validate={validate}
                                         className="form-control"
                                         name="year"
                                         type="number"
                                     />
                                 </div>
-                                {errors.year && touched.year ? (
-                                    <div className="text-danger error-validation p-0 text-start">
-                                        {errors.year}
-                                    </div>
-                                ) : null}
+                                <div className="text-danger error-validation p-0 text-start">
+                                    <ErrorMessage name="year" />
+                                </div>
                             </div>
                             <div className="col-md-6 col-lg-4 pb-3">
                                 <div className="input-group">
@@ -102,12 +125,17 @@ const EditPlan = () => {
                                         as="select"
                                         required
                                     >
-                                        <option defaultValue>
-                                            Select your Department
+                                        <option defaultValue value="">
+                                            Select a department
                                         </option>
-                                        <option value={1}>One</option>
-                                        <option value={2}>Two</option>
-                                        <option value={3}>Three</option>
+                                        {departments.map((department) => (
+                                            <option
+                                                value={department._id}
+                                                key={department._id}
+                                            >
+                                                {department.name}
+                                            </option>
+                                        ))}
                                     </Field>
                                 </div>
                                 <div className="text-danger error-validation p-0 text-start">
@@ -118,135 +146,67 @@ const EditPlan = () => {
                                 <div className="input-group">
                                     <label
                                         className="input-group-text col-5"
-                                        htmlFor="chief"
-                                    >
-                                        Chief
-                                    </label>
-                                    <Field
-                                        name="chief"
-                                        className="form-control"
-                                        as="select"
-                                        required
-                                    >
-                                        <option defaultValue>
-                                            Select your name
-                                        </option>
-                                        <option value={1}>One</option>
-                                        <option value={2}>Two</option>
-                                        <option value={3}>Three</option>
-                                    </Field>
-                                </div>
-                                <div className="text-danger error-validation p-0 text-start">
-                                    <ErrorMessage name="chief" />
-                                </div>
-                            </div>
-                            <div className="col-md-6 col-lg-4 pb-3">
-                                <div className="input-group">
-                                    <label
-                                        className="input-group-text col-5"
-                                        htmlFor="timesYear"
+                                        htmlFor="frequency"
                                     >
                                         Times a Year
                                     </label>
                                     <Field
-                                        name="timesYear"
+                                        name="frequency"
                                         className="form-control"
                                         as="select"
                                         required
                                     >
-                                        <option value="1">Once a year</option>
-                                        <option value="2">Twice a year</option>
-                                        <option value="4">
+                                        <option value={1}>Once a year</option>
+                                        <option value={2}>Twice a year</option>
+                                        <option value={4}>
                                             4 times a year
                                         </option>
-                                        <option value="6">
+                                        <option value={6}>
                                             6 times a year
                                         </option>
-                                        <option value="12">
+                                        <option value={12}>
                                             12 times a year
                                         </option>
                                     </Field>
                                 </div>
                             </div>
-                            <div className="col-md-6 col-lg-4 pb-3">
+                            <div className="col-md-6 col-lg-8 pb-3">
                                 <div className="input-group">
                                     <div
-                                        className="input-group-text col-5"
+                                        className="input-group-text col-3"
                                         id="checkbox-group"
                                     >
-                                        Equipments
+                                        Agreements
                                     </div>
                                     <div
                                         className="form-control scrollable-vertical"
                                         role="group"
                                         aria-labelledby="checkbox-group"
                                     >
-                                        <div className="form-check">
-                                            <label
-                                                className="form-check-label"
-                                                htmlFor="server1"
+                                        {agreements.map((agreement) => (
+                                            <div
+                                                className="form-check"
+                                                key={agreement._id}
                                             >
-                                                Server 1
-                                            </label>
-                                            <Field
-                                                type="checkbox"
-                                                id="server1"
-                                                className="form-check-input"
-                                                name="equipments"
-                                                value="Server 1"
-                                            />
-                                        </div>
-                                        <div className="form-check">
-                                            <label
-                                                className="form-check-label"
-                                                htmlFor="server2"
-                                            >
-                                                Server 2
-                                            </label>
-                                            <Field
-                                                type="checkbox"
-                                                id="server2"
-                                                className="form-check-input"
-                                                name="equipments"
-                                                value="Server 2"
-                                            />
-                                        </div>
-                                        <div className="form-check">
-                                            <label
-                                                className="form-check-label"
-                                                htmlFor="server3"
-                                            >
-                                                Server 3
-                                            </label>
-                                            <Field
-                                                type="checkbox"
-                                                id="server3"
-                                                className="form-check-input"
-                                                name="equipments"
-                                                value="Server 3"
-                                            />
-                                        </div>
-                                        <div className="form-check">
-                                            <label
-                                                className="form-check-label"
-                                                htmlFor="server4"
-                                            >
-                                                Server 4
-                                            </label>
-                                            <Field
-                                                type="checkbox"
-                                                id="server4"
-                                                className="form-check-input"
-                                                name="equipments"
-                                                value="Server 4"
-                                            />
-                                        </div>
+                                                <Field
+                                                    type="checkbox"
+                                                    className="form-check-input"
+                                                    name="agreements"
+                                                    value={agreement._id}
+                                                />
+                                                <label
+                                                    className="form-check-label d-flex justify-content-start"
+                                                    htmlFor="server1"
+                                                >
+                                                    {agreement.reference}
+                                                </label>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-                            <ToastContainer />
                         </div>
-                        <div className="d-flex justify-content-start mt-3">
+                        <div className="d-flex justify-content-start">
                             <button
                                 type="submit"
                                 className="btn btn-primary col-lg-1 col-md-2 me-3"
@@ -255,15 +215,15 @@ const EditPlan = () => {
                             </button>
                             <Link
                                 role="button"
-                                to="/maintenance/maintenanceplans"
+                                to="/maintenance"
                                 className="btn btn-danger col-lg-1 col-md-2"
                             >
                                 Cancel
                             </Link>
                         </div>
                     </Form>
-                )}
-            </Formik>
+                </Formik>
+            )}
         </div>
     );
 };
