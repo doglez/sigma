@@ -49,6 +49,10 @@ import { useDispatch, useSelector } from "react-redux";
 import NoPermitPath from "./pages/NoPermitPath.jsx";
 import { getMyInfoCrt } from "./redux/reducers/myInfoSlice.js";
 import { useEffect } from "react";
+import TasksList from "./pages/Maintentance/Tasks/TasksList.jsx";
+import NewTask from "./pages/Maintentance/Tasks/NewTask.jsx";
+import EditTask from "./pages/Maintentance/Tasks/EditTask.jsx";
+import DeleteTask from "./pages/Maintentance/Tasks/DeleteTask.jsx";
 
 function App() {
     const dispatch = useDispatch();
@@ -198,6 +202,41 @@ function App() {
                                         element={<NoPermitPath />}
                                     />
                                 )}
+                                <Route path="tasks">
+                                    <Route index element={<TasksList />} />
+                                    {myRole === "chief" ||
+                                    myRole === "supervisor" ? (
+                                        <Route>
+                                            <Route
+                                                path="new"
+                                                element={<NewTask />}
+                                            />
+
+                                            <Route
+                                                path="cancel/:id"
+                                                element={<DeleteTask />}
+                                            />
+                                        </Route>
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
+                                    {myRole === "chief" ||
+                                    myRole === "supervisor" ||
+                                    myRole === "engineer" ? (
+                                        <Route
+                                            path="edit/:id"
+                                            element={<EditTask />}
+                                        />
+                                    ) : (
+                                        <Route
+                                            path="*"
+                                            element={<NoPermitPath />}
+                                        />
+                                    )}
+                                </Route>
                             </Route>
                             <Route path="providers" element={<Providers />}>
                                 <Route index element={<ProvidersList />} />
