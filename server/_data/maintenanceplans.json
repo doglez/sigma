@@ -1,6 +1,6 @@
 [
     {
-        "_id": "62c0d6e553d786f7d168ab02",
+        "_id": "62c114169dafee6bb2495957",
         "year": 2021,
         "name": "Maintenance Plan Servers",
         "frequency": 6,
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "_id": "62c0d73353d786f7d168ab06",
+        "_id": "62c119260c687be29c94b87c",
         "year": 2022,
         "name": "Maintenance Plan Facilities",
         "frequency": 6,
@@ -30,10 +30,10 @@
         ]
     },
     {
-        "_id": "62c0d75253d786f7d168ab0a",
+        "_id": "62c1193f0c687be29c94b8a4",
         "year": 2022,
         "name": "Maintenance Plan Network",
-        "frequency": 6,
+        "frequency": 2,
         "department": "62b635604e2888409023c006",
         "agreement": [
             "62bfbb7e0468276618371c2b"

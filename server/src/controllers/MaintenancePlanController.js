@@ -1,6 +1,7 @@
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Agreement from "../models/Agreement.js";
 import MaintenancePlan from "../models/MaintenancePlan.js";
+import Task from "../models/Task.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
 /**
@@ -83,6 +84,27 @@ export const createMaintenancePlan = AsyncHandler(async (req, res, next) => {
         agreement,
         equipments,
     });
+
+    for (let k = 0; k < equipments.length; k++) {
+        for (let l = 1; l <= frequency; l++) {
+            const tasks = await Task.find();
+            let taskNumber;
+
+            if (tasks.length === 0) {
+                taskNumber = 1;
+            } else {
+                taskNumber = tasks.length + 1;
+            }
+
+            const equipment = equipments[k];
+            const task = await Task.create({
+                taskNumber,
+                department,
+                maintenancePlan: maintenanceplan._id,
+                equipment,
+            });
+        }
+    }
 
     res.status(201).json({
         data: maintenanceplan,
