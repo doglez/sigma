@@ -62,11 +62,4 @@ AgreementSchema.virtual("maintenancePlan", {
     justOne: false,
 });
 
-AgreementSchema.virtual("task", {
-    ref: "Task",
-    localField: "_id",
-    foreignField: "agreement",
-    justOne: false,
-});
-
 export default mongoose.model("Agreement", AgreementSchema);

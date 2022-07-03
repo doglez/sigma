@@ -147,4 +147,11 @@ UserSchema.methods.getResetPasswordToken = function () {
     return resetToken;
 };
 
+UserSchema.virtual("task", {
+    ref: "Task",
+    localField: "_id",
+    foreignField: "user",
+    justOne: false,
+});
+
 export default mongoose.model("User", UserSchema);

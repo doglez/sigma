@@ -1,10 +1,11 @@
 import AsyncHandler from "../middleware/AsyncHandler.js";
+import MaintenancePlan from "../models/MaintenancePlan.js";
 import Task from "../models/Task.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
 
 /**
  * @name getTask
- * @description Get all Maintenance Plans
+ * @description Get all Tasks
  * @route GET /api/v1/tasks
  * @access Private
  * @param {*} req
@@ -18,7 +19,7 @@ export const getTask = AsyncHandler(async (req, res, next) => {
 
 /**
  * @name showTask
- * @description Get one Maintenance Plan
+ * @description Get one Task
  * @route GET /api/v1/tasks/:id
  * @access Private
  * @param {*} req
@@ -45,7 +46,7 @@ export const showTask = AsyncHandler(async (req, res, next) => {
 
 /**
  * @name createTask
- * @description Create one Maintenance Plan
+ * @description Create one Task
  * @route POST /api/v1/tasks
  * @access Private
  * @param {*} req
@@ -54,63 +55,32 @@ export const showTask = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const createTask = AsyncHandler(async (req, res, next) => {
-    const {
+    const { type, department, equipment } = req.body;
+    const tasks = await Task.find();
+
+    let taskNumber;
+
+    if (tasks.length === 0) {
+        taskNumber = 1;
+    } else {
+        taskNumber = tasks.length + 1;
+    }
+
+    const task = await Task.create({
         type,
         taskNumber,
         department,
-        agreement,
-        maintenancePlan,
         equipment,
-        user,
-        status,
-    } = req.body;
-
-    const tasks = await Task.find();
-
-    console.log(tasks);
-
-    if (!tasks) {
-        return next(
-            new ErrorResponse(
-                `Task Type not found with id ${req.params.id}`,
-                400
-            )
-        );
-    }
-
-    // let equipments = [];
-
-    // for (let i = 0; i < agreement.length; i++) {
-    //     const agreementID = agreement[i];
-    //     const agreementsInfo = await Agreement.findById(agreementID);
-
-    //     const equipmentsList = agreementsInfo.equipments;
-
-    //     for (let j = 0; j < equipmentsList.length; j++) {
-    //         const equipment = equipmentsList[j];
-    //         equipments.push(equipment);
-    //     }
-    // }
-
-    // const task = await Task.create({
-    //     type,
-    //     taskNumber,
-    //     department,
-    //     agreement,
-    //     maintenancePlan,
-    //     equipment,
-    //     user,
-    //     status,
-    // });
+    });
 
     res.status(201).json({
-        data: "task",
+        data: task,
     });
 });
 
 /**
  * @name updateTask
- * @description Update a Maintenance Plan
+ * @description Update a Task
  * @route PUT /api/v1/tasks/:id
  * @access Private
  * @param {*} req
@@ -119,33 +89,30 @@ export const createTask = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const updateTask = AsyncHandler(async (req, res, next) => {
-    const { year, name, frequency, department, agreement } = req.body;
+    const { type, department, equipment, user, status } = req.body;
 
     let task = await Task.findById(req.params.id);
 
     if (!task) {
         return next(
-            new ErrorResponse(
-                `Provider not found with id of ${req.params.id}`,
-                404
-            )
+            new ErrorResponse(`Task not found with id of ${req.params.id}`, 404)
         );
     }
 
     task = await Task.findByIdAndUpdate(
         req.params.id,
-        { name, description },
+        { type, department, equipment, user, status },
         { new: true, runValidators: true }
     );
 
     res.status(200).json({
-        data: "task",
+        data: task,
     });
 });
 
 /**
  * @name deleteTask
- * @description Delete one Maintenance Plan
+ * @description Delete one Task
  * @route DELETE /api/v1/tasks/:id
  * @access Private
  * @param {*} req
@@ -154,20 +121,21 @@ export const updateTask = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const deleteTask = AsyncHandler(async (req, res, next) => {
-    const task = await Task.findById(req.params.id);
+    let task = await Task.findById(req.params.id);
 
     if (!task) {
         return next(
-            new ErrorResponse(
-                `Maintenance Plan not found with id of ${req.params.id}`,
-                404
-            )
+            new ErrorResponse(`Task not found with id of ${req.params.id}`, 404)
         );
     }
 
-    await task.remove();
+    task = await Task.findByIdAndUpdate(
+        req.params.id,
+        { status: "cancel" },
+        { new: true, runValidators: true }
+    );
 
     res.status(200).json({
-        data: `Maintenance Plan ${task.name} was deleted`,
+        data: task,
     });
 });
