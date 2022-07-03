@@ -17,6 +17,8 @@ import equipmentsSlice from "./reducers/equipmentReducers/equipmentsSlice.js";
 import equipmentSlice from "./reducers/equipmentReducers/equipmentSlice.js";
 import agreementsSlice from "./reducers/agreementReducers/agreementsSlice.js";
 import agreementSlice from "./reducers/agreementReducers/agreementSlice.js";
+import tasksSlice from "./reducers/tasksReducers/tasksSlice.js";
+import taskSlice from "./reducers/tasksReducers/taskSlice.js";
 
 let store = configureStore({
     reducer: {
@@ -37,6 +39,8 @@ let store = configureStore({
         equipmentReducer: equipmentSlice,
         agreementsReducer: agreementsSlice,
         agreementReducer: agreementSlice,
+        tasksReducer: tasksSlice,
+        taskReducer: taskSlice,
     },
     middleware: [thunk],
 });

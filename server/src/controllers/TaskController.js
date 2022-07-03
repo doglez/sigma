@@ -1,3 +1,4 @@
+import Config from "../config/Config.js";
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Department from "../models/Department.js";
 import Task from "../models/Task.js";
@@ -91,7 +92,7 @@ export const showTask = AsyncHandler(async (req, res, next) => {
  * @returns Response
  */
 export const createTask = AsyncHandler(async (req, res, next) => {
-    const { type, department, equipment } = req.body;
+    const { type, department, equipment, user } = req.body;
     const tasks = await Task.find();
 
     let taskNumber;
@@ -107,6 +108,7 @@ export const createTask = AsyncHandler(async (req, res, next) => {
         taskNumber,
         department,
         equipment,
+        user,
     });
 
     res.status(201).json({
@@ -169,6 +171,87 @@ export const deleteTask = AsyncHandler(async (req, res, next) => {
         req.params.id,
         { status: "cancel" },
         { new: true, runValidators: true }
+    );
+
+    res.status(200).json({
+        data: task,
+    });
+});
+
+/**
+ * @name uploadFiles
+ * @description Upload array files
+ * @route PUT /api/v1/tasks/uploadfiles/:id
+ * @access Private
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns Response
+ */
+export const uploadFiles = AsyncHandler(async (req, res, next) => {
+    let task = await Task.findById(req.params.id);
+
+    if (!task) {
+        return next(new ErrorResponse(`Task not found`, 400));
+    }
+
+    if (!req.files) {
+        return next(new ErrorResponse(`Please upload a file`, 400));
+    }
+
+    let files = [];
+
+    if (!req.files.file.length) {
+        files = [req.files.file];
+    } else {
+        files = [...req.files.file];
+    }
+
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+
+        if (
+            file.mimetype !== "image/jpeg" &&
+            file.mimetype !== "application/pdf"
+        ) {
+            return next(new ErrorResponse(`Only supports PDF and JPG`, 400));
+        }
+
+        if (file.size > Config.MAX_FILE_UPLOAD) {
+            return next(
+                new ErrorResponse(
+                    `Some file size is more than ${
+                        Config.MAX_FILE_UPLOAD / 1000000
+                    }MB`,
+                    400
+                )
+            );
+        }
+
+        file.name = `${task.id}_${i}.${file.mimetype.split("/")[1]}`;
+
+        file.mv(
+            `${Config.FILE_UPLOAD_PATH}/tasks/${file.name}`,
+            async (error) => {
+                if (error) {
+                    console.error(error);
+                    return next(
+                        new ErrorResponse("Problems with file upload", 500)
+                    );
+                }
+            }
+        );
+
+        files[i] = file.name;
+    }
+
+    task = await Task.findByIdAndUpdate(
+        req.params.id,
+        { files: files },
+        {
+            new: true,
+            runValidators: true,
+        }
     );
 
     res.status(200).json({

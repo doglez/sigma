@@ -5,6 +5,7 @@ import {
     getTask,
     showTask,
     updateTask,
+    uploadFiles,
 } from "../controllers/TaskController.js";
 import AdvancedResults from "../middleware/AdvancedResults.js";
 import { authorize, protect } from "../middleware/AuthMiddleware.js";
@@ -15,11 +16,16 @@ TaskRoutes.use(protect);
 
 TaskRoutes.route("/")
     .get(AdvancedResults(Task), getTask)
-    .post(authorize("admin", "chief"), createTask);
+    .post(authorize("chief", "supervisor"), createTask);
 
 TaskRoutes.route("/:id")
-    .get(authorize("admin", "chief"), showTask)
-    .put(authorize("admin", "chief"), updateTask)
-    .delete(authorize("admin", "chief"), deleteTask);
+    .get(authorize("chief", "supervisor"), showTask)
+    .put(authorize("chief", "supervisor", "engineer"), updateTask)
+    .delete(authorize("chief", "supervisor"), deleteTask);
+
+TaskRoutes.route("/uploadfiles/:id").put(
+    authorize("chief", "supervisor", "engineer"),
+    uploadFiles
+);
 
 export default TaskRoutes;

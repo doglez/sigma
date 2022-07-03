@@ -11,21 +11,21 @@ import AdvancedResults from "../middleware/AdvancedResults.js";
 import { authorize, protect } from "../middleware/AuthMiddleware.js";
 import Agreement from "../models/Agreement.js";
 
-const AgreementrRoutes = express.Router();
-AgreementrRoutes.use(protect);
+const AgreementRoutes = express.Router();
+AgreementRoutes.use(protect);
 
-AgreementrRoutes.route("/")
+AgreementRoutes.route("/")
     .get(AdvancedResults(Agreement), getAgreements)
     .post(authorize("admin", "chief"), createAgreement);
 
-AgreementrRoutes.route("/:id")
+AgreementRoutes.route("/:id")
     .get(showAgreement)
     .put(authorize("admin", "chief"), updateAgreement)
     .delete(authorize("admin", "chief"), deleteAgreement);
 
-AgreementrRoutes.route("/uploadfiles/:id").put(
+AgreementRoutes.route("/uploadfiles/:id").put(
     authorize("admin", "chief"),
     uploadFiles
 );
 
-export default AgreementrRoutes;
+export default AgreementRoutes;
