@@ -13,10 +13,7 @@
         ],
         "files": [
             "62bfbbc70468276618371c31_0.pdf"
-        ],
-        "createdAt": "2022-07-02T04:06:31.765Z",
-        "updatedAt": "2022-07-02T21:33:56.883Z",
-        "__v": 0
+        ]
     },
     {
         "_id": "62bfbb7e0468276618371c2b",
@@ -34,10 +31,7 @@
             "62bfbb7e0468276618371c2b_0.pdf",
             "62bfbb7e0468276618371c2b_1.pdf",
             "62bfbb7e0468276618371c2b_2.pdf"
-        ],
-        "createdAt": "2022-07-02T04:06:31.765Z",
-        "updatedAt": "2022-07-02T21:34:28.234Z",
-        "__v": 0
+        ]
     },
     {
         "_id": "62bfbc030468276618371c37",
@@ -51,9 +45,19 @@
             "62bf2bf8b7ff9e13f0c4e449",
             "62bf2bf8b7ff9e13f0c4e44a"
         ],
-        "files": [],
-        "createdAt": "2022-07-02T04:06:31.765Z",
-        "updatedAt": "2022-07-02T21:34:47.883Z",
-        "__v": 0
+        "files": []
+    },
+    {
+        "_id": "62c0d1a2f45ece8a6ab6482c",
+        "agreementNumber": "1000004",
+        "reference": "AS400 maintenance contract",
+        "provider": "62bceec86af22f54c0109c8e",
+        "department": "62b6356e4e2888409023c009",
+        "startDate": "2022-01-01T00:00:00.000Z",
+        "expDate": "2022-12-31T00:00:00.000Z",
+        "equipments": [
+            "62c0d139f45ece8a6ab647d1"
+        ],
+        "files": []
     }
 ]
