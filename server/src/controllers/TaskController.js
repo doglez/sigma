@@ -1,6 +1,8 @@
 import Config from "../config/Config.js";
 import AsyncHandler from "../middleware/AsyncHandler.js";
 import Department from "../models/Department.js";
+import Equipment from "../models/Equipment.js";
+import MaintenancePlan from "../models/MaintenancePlan.js";
 import Task from "../models/Task.js";
 import User from "../models/User.js";
 import ErrorResponse from "../utilis/ErrorResponse.js";
@@ -258,5 +260,129 @@ export const uploadFiles = AsyncHandler(async (req, res, next) => {
 
     res.status(200).json({
         data: task,
+    });
+});
+
+/**
+ * @name getFilteredTasks
+ * @description Get all Tasks filtered by status and department
+ * @route GET /api/v1/filteredtasks
+ * @access Private
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns Response
+ */
+export const getFilteredTasks = AsyncHandler(async (req, res, next) => {
+    const dept = req.query.dept;
+    const bTasks = [];
+    const ipTasks = [];
+    const dTasks = [];
+    const cTasks = [];
+
+    let backlogTasks;
+    let inProgressTasks;
+    let doneTasks;
+    let cancelTasks;
+
+    if (dept) {
+        backlogTasks = await Task.find({ department: dept, status: "backlog" });
+        inProgressTasks = await Task.find({
+            department: dept,
+            status: "in-progress",
+        });
+        doneTasks = await Task.find({ department: dept, status: "done" });
+        cancelTasks = await Task.find({ department: dept, status: "cancel" });
+    } else {
+        backlogTasks = await Task.find({ status: "backlog" });
+        inProgressTasks = await Task.find({ status: "in-progress" });
+        doneTasks = await Task.find({ status: "done" });
+        cancelTasks = await Task.find({ status: "cancel" });
+    }
+
+    for (let i = 0; i < backlogTasks.length; i++) {
+        const {
+            _id,
+            type,
+            taskNumber,
+            department,
+            equipment,
+            status,
+            maintenancePlan,
+        } = backlogTasks[i];
+
+        const departmentInfo = await Department.findById(department);
+        const equipmentInfo = await Equipment.findById(equipment);
+        const maintenancePlanInfo = await MaintenancePlan.findById(
+            maintenancePlan
+        );
+
+        bTasks.push({
+            _id,
+            type,
+            taskNumber,
+            maintenancePlan: maintenancePlanInfo.name,
+            department: departmentInfo.name,
+            equipment: equipmentInfo.name,
+            status,
+        });
+    }
+
+    for (let i = 0; i < inProgressTasks.length; i++) {
+        const { _id, type, taskNumber, department, equipment, status } =
+            inProgressTasks[i];
+
+        const departmentInfo = await Department.findById(department);
+        const equipmentInfo = await Equipment.findById(equipment);
+
+        ipTasks.push({
+            _id,
+            type,
+            taskNumber,
+            department: departmentInfo.name,
+            equipment: equipmentInfo.name,
+            status,
+        });
+    }
+
+    for (let i = 0; i < doneTasks.length; i++) {
+        const { _id, type, taskNumber, department, equipment, status } =
+            doneTasks[i];
+
+        const departmentInfo = await Department.findById(department);
+        const equipmentInfo = await Equipment.findById(equipment);
+
+        dTasks.push({
+            _id,
+            type,
+            taskNumber,
+            department: departmentInfo.name,
+            equipment: equipmentInfo.name,
+            status,
+        });
+    }
+
+    for (let i = 0; i < cancelTasks.length; i++) {
+        const { _id, type, taskNumber, department, equipment, status } =
+            cancelTasks[i];
+
+        const departmentInfo = await Department.findById(department);
+        const equipmentInfo = await Equipment.findById(equipment);
+
+        cTasks.push({
+            _id,
+            type,
+            taskNumber,
+            department: departmentInfo.name,
+            equipment: equipmentInfo.name,
+            status,
+        });
+    }
+
+    res.status(200).json({
+        backlog: bTasks,
+        inProgress: ipTasks,
+        done: dTasks,
+        cancel: cTasks,
     });
 });

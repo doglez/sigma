@@ -1,4 +1,5 @@
 import express from "express";
+import { getFilteredTasks } from "../controllers/TaskController.js";
 import AgreementRoutes from "./AgreementRoutes.js";
 import AuthRoutes from "./AuthRoutes.js";
 import CompanyRoutes from "./CompanyRoutes.js";
@@ -22,5 +23,6 @@ Routes.use("/equipments", EquipmentRoutes);
 Routes.use("/agreements", AgreementRoutes);
 Routes.use("/maintenanceplans", MaintenancePlanRoutes);
 Routes.use("/tasks", TaskRoutes);
+Routes.get("/filteredtasks", getFilteredTasks);
 
 export default Routes;

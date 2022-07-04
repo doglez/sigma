@@ -1,21 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const KanbanCard = () => {
+const KanbanCard = ({ tasks }) => {
     return (
         <div>
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Equipment Name</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">
-                        Equipment Type
-                    </h6>
-                    <p className="card-text">Plan Name</p>
-                    <Link className="card-link" to="id">
-                        MP20514
-                    </Link>
-                </div>
-            </div>
+            {!tasks[0] ? (
+                <></>
+            ) : (
+                tasks.map((task) => (
+                    <div className="card mb-1" key={task._id}>
+                        <div className="card-body mt">
+                            <h5 className="card-title">{task.equipment}</h5>
+                            <h6 className="card-subtitle mb-2 text-muted">
+                                {task.department}
+                            </h6>
+                            {!task.maintenancePlan ? (
+                                <p className="card-text">No maintenance plan</p>
+                            ) : (
+                                <p className="card-text">
+                                    {task.maintenancePlan}
+                                </p>
+                            )}
+                            <Link
+                                className="card-link"
+                                to={`/maintenance/tasks/edit/${task._id}`}
+                            >
+                                {task.type}-{task.taskNumber}
+                            </Link>
+                        </div>
+                    </div>
+                ))
+            )}
         </div>
     );
 };
