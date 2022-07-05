@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 .gitignore
 /src/assets/scss
+
+package.json
+package-lock.json
