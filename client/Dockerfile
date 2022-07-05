@@ -17,3 +17,6 @@ COPY . .
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
+
+# To build a image
+# docker build . -t sigma-fe
