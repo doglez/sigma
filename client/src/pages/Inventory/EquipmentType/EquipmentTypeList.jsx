@@ -28,7 +28,7 @@ const EquipmentTypeList = () => {
             ) : (
                 <div className="scrollable-horizontal">
                     <h1 className="text-deep-saffron py-4 text-center">
-                        Inventory
+                        Equipment Types
                     </h1>
                     {myRole !== "admin" && myRole !== "chief" ? (
                         <></>

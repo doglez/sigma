@@ -47,13 +47,13 @@ const EditMyInfo = () => {
             <Formik
                 initialValues={{
                     collaboratorNumber: "45aser",
-                    name: "Danilo",
-                    lastName: "Gonzalez",
+                    name: "Chief",
+                    lastName: "Telecommunications",
                     department: "Data Center",
                     country: "",
                     stateProvince: "",
                     phone: "+50000000",
-                    email: "dg@gmail.com",
+                    email: "chief.telecommunications@example.com",
                 }}
                 validationSchema={Yup.object({
                     collaboratorNumber: Yup.string()
