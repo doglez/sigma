@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 
-dotenv.config({ path: "./.env" });
+dotenv.config({ path: "./prod.env" });
 
 const Config = {
     NODE_ENV: process.env.NODE_ENV,

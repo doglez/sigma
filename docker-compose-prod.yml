@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  sigma-fe:
+    image: sigma-fe-prod
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - sigma-app
+   
+  sigma-be:
+    image: sigma-be-prod
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    networks:
+      - sigma-app
+  
+networks:
+  sigma-app:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
+
+
+#  docker-compose -f docker-compose-prod.yml up

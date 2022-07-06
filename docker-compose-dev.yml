@@ -7,6 +7,9 @@ services:
       - "3000:3000"
     networks:
       - sigma-app
+    volumes:
+      - ./client/:/usr/src/app
+      - /usr/src/app/node_modules
 
   sigma-be:
     image: sigma-be
@@ -15,6 +18,9 @@ services:
       - "5000:5000"
     networks:
       - sigma-app
+    volumes:
+      - ./server/:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - mongo
 
