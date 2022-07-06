@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  sigma-fe:
+    image: sigma-fe
+    build: ./client/
+    ports:
+      - "3000:3000"
+    networks:
+      - sigma-app
+
+  sigma-be:
+    image: sigma-be
+    build: ./server/
+    ports:
+      - "5000:5000"
+    networks:
+      - sigma-app
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:5.0.9-focal
+    ports:
+      - "27017:27017"
+    networks:
+      - sigma-app
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  sigma-app:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local

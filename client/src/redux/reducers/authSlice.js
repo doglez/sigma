@@ -86,7 +86,6 @@ export const LoginCrt = (loginData) => async (dispatch) => {
             dispatch(loginSuccess(r.data));
         })
         .catch((e) => {
-            window.location.reload();
             dispatch(loginFail(e.response.data));
             localStorage.removeItem("MmVQtoHjRadQgkFO");
         });

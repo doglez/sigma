@@ -14,9 +14,10 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+RUN chmod +x start.sh
 
 EXPOSE 5000
-CMD [ "npm", "start" ]
+CMD [ "bash","start.sh" ]
 
 # To build a image
 # docker build . -t sigma-be
