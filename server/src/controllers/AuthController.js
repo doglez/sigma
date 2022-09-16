@@ -511,7 +511,7 @@ const sendTokenResponse = (user, statusCode, res) => {
         token: token,
     });
 
-    res.status(statusCode).cookie("token", token.options).json({
+    res.status(statusCode).cookie("token", token, options).json({
         token,
     });
 };
