@@ -10,7 +10,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
@@ -20,4 +20,4 @@ EXPOSE 5000
 CMD [ "bash","start.sh" ]
 
 # To build a image
-# docker build . -t sigma-be
+# docker build . -t sigma-be-prod

@@ -27,5 +27,5 @@ volumes:
 
 
 # docker-compose -f docker-compose-prod.yml up
-# docker tag sigma-be-prod gcr.io/sigma-355519/sigma-be
-# docker push gcr.io/sigma-355519/sigma-be
+# docker tag sigma-be-prod gcr.io/sigma-2f077/sigma-be
+# docker push gcr.io/sigma-2f077/sigma-be
